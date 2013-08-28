@@ -55,6 +55,7 @@
     <EntitySetMapping Name="propiedades">
       <EntityTypeMapping TypeName="domvaModel.propiedades">
         <MappingFragment StoreEntitySet="propiedades">
+          <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
           <ScalarProperty Name="Categoria" ColumnName="Categoria" />
           <ScalarProperty Name="idPropiedad" ColumnName="idPropiedad" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -74,6 +75,22 @@
           <ScalarProperty Name="Localidad" ColumnName="Localidad" />
           <ScalarProperty Name="Direccion" ColumnName="Direccion" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="poblaciones">
+      <EntityTypeMapping TypeName="domvaModel.poblaciones">
+        <MappingFragment StoreEntitySet="poblaciones">
+          <ScalarProperty Name="CodPostal" ColumnName="CodPostal" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="domvaModel.usuarios">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -140,11 +140,17 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Propiedad.cs" />
+    <Compile Include="poblaciones.cs">
+      <DependentUpon>domvaeer.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="propiedades.cs">
       <DependentUpon>domvaeer.tt</DependentUpon>
     </Compile>
     <Compile Include="propietarios.cs">
+      <DependentUpon>domvaeer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usuarios.cs">
       <DependentUpon>domvaeer.tt</DependentUpon>
     </Compile>
   </ItemGroup>

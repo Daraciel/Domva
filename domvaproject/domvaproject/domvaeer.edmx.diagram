@@ -16,6 +16,9 @@
         <AssociationConnector Association="domvaModel.fk_DescrRU_Propiedad" ManuallyRouted="false" />
         <AssociationConnector Association="domvaModel.fk_Foto_Propiedad" ManuallyRouted="false" />
         <AssociationConnector Association="domvaModel.fk_Propiedad_Propietario" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="domvaModel.poblaciones" Width="1.5" PointX="7.625" PointY="7.375" />
+        <AssociationConnector Association="domvaModel.fk_Propiedad_Poblacion" />
+        <EntityTypeShape EntityType="domvaModel.usuarios" Width="1.5" PointX="0.75" PointY="8" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

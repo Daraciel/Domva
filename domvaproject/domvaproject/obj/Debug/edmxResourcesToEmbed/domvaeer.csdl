@@ -27,6 +27,12 @@
       <End Role="propietarios" EntitySet="propietarios" />
       <End Role="propiedades" EntitySet="propiedades" />
     </AssociationSet>
+    <EntitySet Name="poblaciones" EntityType="domvaModel.poblaciones" />
+    <AssociationSet Name="fk_Propiedad_Poblacion" Association="domvaModel.fk_Propiedad_Poblacion">
+      <End Role="poblaciones" EntitySet="poblaciones" />
+      <End Role="propiedades" EntitySet="propiedades" />
+    </AssociationSet>
+    <EntitySet Name="usuarios" EntityType="domvaModel.usuarios" />
   </EntityContainer>
   <EntityType Name="caracteristicas">
     <Key>
@@ -95,6 +101,8 @@
     <NavigationProperty Name="fotos" Relationship="domvaModel.fk_Foto_Propiedad" FromRole="propiedades" ToRole="fotos" />
     <NavigationProperty Name="propietarios" Relationship="domvaModel.fk_Propiedad_Propietario" FromRole="propiedades" ToRole="propietarios" />
     <Property Type="String" Name="Categoria" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Poblacion" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="poblaciones" Relationship="domvaModel.fk_Propiedad_Poblacion" FromRole="propiedades" ToRole="poblaciones" />
   </EntityType>
   <EntityType Name="propietarios">
     <Key>
@@ -169,4 +177,31 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="poblaciones">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CodPostal" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_Propiedad_Poblacion" FromRole="poblaciones" ToRole="propiedades" />
+  </EntityType>
+  <Association Name="fk_Propiedad_Poblacion">
+    <End Type="domvaModel.poblaciones" Role="poblaciones" Multiplicity="0..1" />
+    <End Type="domvaModel.propiedades" Role="propiedades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="poblaciones">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="propiedades">
+        <PropertyRef Name="Poblacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Pass" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

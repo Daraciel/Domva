@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles Propietario</h2>
 
 <fieldset>
-    <legend>propietarios</legend>
+    <legend>Propietario</legend>
 
     <div class="display-label">idPropietario</div>
     <div class="display-field">
@@ -72,6 +72,11 @@
             <td>
                 @Html.DisplayFor(Propiedades => props.Precio)
             </td>
+            <td>
+                @Html.ActionLink("Editar", "../Propiedades/Edit", new { id=props.idPropiedad }) |
+                @Html.ActionLink("Detalles", "../Propiedades/Details", new { id=props.idPropiedad }) |
+                @Html.ActionLink("Borrar", "../Propiedades/Delete", new { id=props.idPropiedad })
+            </td>
         </tr>
     }
     </table>
@@ -81,6 +86,6 @@
 
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Atrás", "Index")
 </p>

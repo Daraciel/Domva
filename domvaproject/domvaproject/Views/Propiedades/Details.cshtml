@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles</h2>
 
 <fieldset>
     <legend>propiedades</legend>
@@ -26,7 +26,8 @@
 
     <div class="display-label">Propietario</div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Propietario)
+    @Html.ActionLink(Model.propietarios.Nombre, "../Propietarios/Details", new { id = Model.propietarios.idPropietario })
+        
     </div>
 
     <div class="display-label">Descripción Interna</div>
@@ -39,75 +40,81 @@
         @Html.DisplayFor(model => model.Categoria)
     </div>
 
-    <h3>Características</h3>
+    <div class="display-label">Población</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Poblacion)
+    </div>
+    <div id="caracteristicas">
+        <h3>Características</h3>
     
-        <table>
-            <tr>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.AAcondicionado)
-                    <label>Aire Acondicionado</label>
-                </th>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.Ascensor)
-                    <label>Ascensor</label>
-                </th>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.Barbacoa)
-                    <label>Barbacoa</label>
-                </th>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.Calefaccion)
-                    <label>Calefacción</label>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.Chimenea)
-                    <label>Chimenea</label>
-                </th>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.Garage)
-                    <label>Garage</label>
-                </th>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.Jardin)
-                    <label>Jardin</label>
-                </th>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.Montana)
-                    <label>Montaña</label>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.PInfantil)
-                    <label>Parque Infantil</label>
-                </th>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.Piscina)
-                    <label>Piscina</label>
-                </th>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.Terraza)
-                    <label>Terraza</label>
-                </th>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.VMar)
-                    <label>Vistas al Mar</label>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    @Html.DisplayFor(model => model.caracteristicas.ZDeportiva)
-                    <label>Zona Deportiva</label>
-                </th>
-            </tr>
-        </table>
-        
-        <div class="display-label">Vendida</div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.caracteristicas.Vendida)
-        </div>
+            <table>
+                <tr>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.AAcondicionado)
+                        <label>Aire Acondicionado</label>
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.Ascensor)
+                        <label>Ascensor</label>
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.Barbacoa)
+                        <label>Barbacoa</label>
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.Calefaccion)
+                        <label>Calefacción</label>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.Chimenea)
+                        <label>Chimenea</label>
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.Garage)
+                        <label>Garage</label>
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.Jardin)
+                        <label>Jardin</label>
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.Montana)
+                        <label>Montaña</label>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.PInfantil)
+                        <label>Parque Infantil</label>
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.Piscina)
+                        <label>Piscina</label>
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.Terraza)
+                        <label>Terraza</label>
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.VMar)
+                        <label>Vistas al Mar</label>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayFor(model => model.caracteristicas.ZDeportiva)
+                        <label>Zona Deportiva</label>
+                    </th>
+                </tr>
+            </table>
+    </div>
+
+    <div class="display-label">Vendida</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.caracteristicas.Vendida)
+    </div>
         
         <div class="display-label">
             <label>Número de Baños</label>
@@ -136,9 +143,36 @@
         <div class="display-field">
             @Html.DisplayFor(model => model.caracteristicas.Metros)
         </div>
+    <div id="fotos">
+        <h4>Imágenes</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Principal</th>
+                    <th>Imagen</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            @foreach (var foto in Model.fotos)
+            {
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src= "@Url.Content("~/images/thumbs/"+foto.Imagen)" alt="IMAGES" />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Borrar", "../Fotos/Delete", new { id = foto.idFoto })
+                    </td>
+                </tr>
+            }
+        </table>
+        @Html.ActionLink("Añadir Foto", "../Fotos/Create")
+
+    </div>
+        
 
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idPropiedad }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idPropiedad }) |
+    @Html.ActionLink("Ver todos", "Index")
 </p>

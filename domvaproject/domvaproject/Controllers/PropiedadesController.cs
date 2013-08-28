@@ -38,6 +38,9 @@ namespace domvaproject.Controllers
             List<propietarios> props = new List<propietarios>();
             props = db.propietarios.ToList();
             ViewBag.Propietarios = new SelectList(props,"idPropietario", "Nombre" );
+            List<poblaciones> pobls = new List<poblaciones>();
+            pobls = db.poblaciones.ToList();
+            ViewBag.Poblaciones = new SelectList(pobls, "Nombre","Nombre");
             return View();
         } 
 

@@ -41,7 +41,9 @@ namespace domvaproject.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.idFoto = new SelectList(db.propiedades, "idPropiedad", "Nombre");
+            List<propiedades> props = new List<propiedades>();
+            props = db.propiedades.ToList();
+            ViewBag.Propiedades = new SelectList(props, "idPropiedad", "Nombre");
             return View();
         }
 
@@ -80,10 +82,10 @@ namespace domvaproject.Controllers
                 using (MD5 md5Hash = MD5.Create())
                 {
                     HttpPostedFileBase archivo = Request.Files[0];
-                    string md5 = GetMd5Hash(md5Hash, archivo.FileName);
+                    string md5 = GetMd5Hash(md5Hash, archivo.FileName)+".jpg";
                     fotos.Imagen = md5;
-                    var path = Path.Combine(Server.MapPath("~/images/photo"), md5+".jpg");
-                    var pathThumb = Path.Combine(Server.MapPath("~/images/thumbs"), md5+".jpg");
+                    var path = Path.Combine(Server.MapPath("~/images/photo"), md5);
+                    var pathThumb = Path.Combine(Server.MapPath("~/images/thumbs"), md5);
                     archivo.SaveAs(path);
                     Bitmap bmp = CreateThumbnail(path, tamW, tamH);
                     string OutputFilename = null;

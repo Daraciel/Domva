@@ -25,11 +25,13 @@ namespace domvaproject
         public Nullable<int> Propietario { get; set; }
         public string DescripcionInterna { get; set; }
         public string Categoria { get; set; }
+        public string Poblacion { get; set; }
     
         public virtual caracteristicas caracteristicas { get; set; }
         public virtual descripcionesesp descripcionesesp { get; set; }
         public virtual descripcionesru descripcionesru { get; set; }
         public virtual ICollection<fotos> fotos { get; set; }
         public virtual propietarios propietarios { get; set; }
+        public virtual poblaciones poblaciones { get; set; }
     }
 }

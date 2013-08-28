@@ -12,13 +12,13 @@
 <table>
     <tr>
         <th>
-            propiedades
+            Imagen
         </th>
         <th>
             Propiedad
         </th>
         <th>
-            Principal
+            Principal?
         </th>
         <th></th>
     </tr>
@@ -26,17 +26,15 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.propiedades.Nombre)
+            <img src= "@Url.Content("~/images/thumbs/"+item.Imagen)" alt="IMAGES" />
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Propiedad)
+            @Html.DisplayFor(modelItem => item.propiedades.Nombre)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Principal)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id= item.idFoto, propiedad= item.Propiedad  }) |
-            @Html.ActionLink("Details", "Details", new { id= item.idFoto, propiedad= item.Propiedad }) |
             @Html.ActionLink("Delete", "Delete", new { id= item.idFoto, propiedad= item.Propiedad })
         </td>
     </tr>

@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo", "Create")
 </p>
 <table>
     <tr>
@@ -22,9 +22,6 @@
         </th>
         <th>
             Propietario
-        </th>
-        <th>
-            DescripcionInterna
         </th>
         <th>
             Categoria
@@ -44,18 +41,15 @@
             @Html.DisplayFor(modelItem => item.Precio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Propietario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DescripcionInterna)
+            @Html.DisplayFor(modelItem => item.propietarios.Nombre)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Categoria)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.idPropiedad }) |
-            @Html.ActionLink("Details", "Details", new { id = item.idPropiedad }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.idPropiedad })
+            @Html.ActionLink("Editar", "Edit", new { id = item.idPropiedad }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.idPropiedad }) |
+            @Html.ActionLink("Borrar", "Delete", new { id = item.idPropiedad })
         </td>
     </tr>
 }

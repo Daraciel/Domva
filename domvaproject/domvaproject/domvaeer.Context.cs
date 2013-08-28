@@ -31,5 +31,7 @@ namespace domvaproject
         public DbSet<fotos> fotos { get; set; }
         public DbSet<propiedades> propiedades { get; set; }
         public DbSet<propietarios> propietarios { get; set; }
+        public DbSet<poblaciones> poblaciones { get; set; }
+        public DbSet<usuarios> usuarios { get; set; }
     }
 }
