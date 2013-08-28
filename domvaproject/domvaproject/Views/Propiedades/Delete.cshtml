@@ -1,0 +1,48 @@
+﻿@model domvaproject.propiedades
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>propiedades</legend>
+
+    <div class="display-label">idPropiedad</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idPropiedad)
+    </div>
+
+    <div class="display-label">Nombre</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">Precio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Precio)
+    </div>
+
+    <div class="display-label">Propietario</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Propietario)
+    </div>
+
+    <div class="display-label">DescripcionInterna</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescripcionInterna)
+    </div>
+
+    <div class="display-label">Categoria</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Categoria)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

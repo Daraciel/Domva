@@ -1,0 +1,113 @@
+﻿@model domvaproject.caracteristicas
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>caracteristicas</legend>
+
+    <div class="display-label">propiedades</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.propiedades.Nombre)
+    </div>
+
+    <div class="display-label">Piscina</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Piscina)
+    </div>
+
+    <div class="display-label">AAcondicionado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AAcondicionado)
+    </div>
+
+    <div class="display-label">Barbacoa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Barbacoa)
+    </div>
+
+    <div class="display-label">VMar</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VMar)
+    </div>
+
+    <div class="display-label">Ascensor</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ascensor)
+    </div>
+
+    <div class="display-label">Calefaccion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Calefaccion)
+    </div>
+
+    <div class="display-label">Garage</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Garage)
+    </div>
+
+    <div class="display-label">ZDeportiva</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ZDeportiva)
+    </div>
+
+    <div class="display-label">Jardin</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Jardin)
+    </div>
+
+    <div class="display-label">PInfantil</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PInfantil)
+    </div>
+
+    <div class="display-label">Terraza</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Terraza)
+    </div>
+
+    <div class="display-label">Montana</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Montana)
+    </div>
+
+    <div class="display-label">Metros</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Metros)
+    </div>
+
+    <div class="display-label">Baños</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Baños)
+    </div>
+
+    <div class="display-label">Dormitorios</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Dormitorios)
+    </div>
+
+    <div class="display-label">DMar</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DMar)
+    </div>
+
+    <div class="display-label">Chimenea</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Chimenea)
+    </div>
+
+    <div class="display-label">Vendida</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Vendida)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

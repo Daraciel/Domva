@@ -1,0 +1,86 @@
+﻿@model domvaproject.propietarios
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>propietarios</legend>
+
+    <div class="display-label">idPropietario</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idPropietario)
+    </div>
+
+    <div class="display-label">Nombre</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">Telefono</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telefono)
+    </div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">Localidad</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Localidad)
+    </div>
+
+    <div class="display-label">Direccion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Direccion)
+    </div>
+
+    <div class="display-label">Descripcion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+    
+    <div class="display-label">Propiedades</div>
+    <div class="display-field">
+        
+    <table>
+        
+        <tr>
+            <th>
+                idPropiedad
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Precio
+            </th>
+        </tr>
+    @foreach (var props in Model.propiedades)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(Propiedades => props.idPropiedad)
+            </td>
+            <td>
+                @Html.DisplayFor(Propiedades => props.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(Propiedades => props.Precio)
+            </td>
+        </tr>
+    }
+    </table>
+
+    </div>
+
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

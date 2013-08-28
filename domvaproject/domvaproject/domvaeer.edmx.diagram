@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="02778bc2d2234fb894e6cffd4f97df25" Name="Diagrama1">
+        <EntityTypeShape EntityType="domvaModel.caracteristicas" Width="1.5" PointX="7.875" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.descripcionesesp" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.descripcionesru" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.fotos" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.propiedades" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.propietarios" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="domvaModel.fk_Carac_Propiedad" ManuallyRouted="false" />
+        <AssociationConnector Association="domvaModel.fk_DescrESP_Propiedad" ManuallyRouted="false" />
+        <AssociationConnector Association="domvaModel.fk_DescrRU_Propiedad" ManuallyRouted="false" />
+        <AssociationConnector Association="domvaModel.fk_Foto_Propiedad" ManuallyRouted="false" />
+        <AssociationConnector Association="domvaModel.fk_Propiedad_Propietario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,25 @@
+﻿@model domvaproject.descripcionesesp
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>descripcionesesp</legend>
+
+    <div class="display-label">propiedades</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.propiedades.Nombre)
+    </div>
+
+    <div class="display-label">DescripcionESP</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescripcionESP)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

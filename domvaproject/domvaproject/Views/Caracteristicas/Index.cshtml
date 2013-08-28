@@ -1,0 +1,141 @@
+﻿@model IEnumerable<domvaproject.caracteristicas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            propiedades
+        </th>
+        <th>
+            Piscina
+        </th>
+        <th>
+            AAcondicionado
+        </th>
+        <th>
+            Barbacoa
+        </th>
+        <th>
+            VMar
+        </th>
+        <th>
+            Ascensor
+        </th>
+        <th>
+            Calefaccion
+        </th>
+        <th>
+            Garage
+        </th>
+        <th>
+            ZDeportiva
+        </th>
+        <th>
+            Jardin
+        </th>
+        <th>
+            PInfantil
+        </th>
+        <th>
+            Terraza
+        </th>
+        <th>
+            Montana
+        </th>
+        <th>
+            Metros
+        </th>
+        <th>
+            Baños
+        </th>
+        <th>
+            Dormitorios
+        </th>
+        <th>
+            DMar
+        </th>
+        <th>
+            Chimenea
+        </th>
+        <th>
+            Vendida
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.propiedades.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Piscina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AAcondicionado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Barbacoa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VMar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ascensor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Calefaccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Garage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZDeportiva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Jardin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PInfantil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Terraza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Montana)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Metros)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Baños)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dormitorios)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DMar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chimenea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vendida)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
