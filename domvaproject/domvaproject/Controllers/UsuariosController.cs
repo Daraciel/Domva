@@ -6,6 +6,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using domvaproject;
+using System.Data.Objects.SqlClient;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace domvaproject.Controllers
 { 
@@ -36,8 +39,12 @@ namespace domvaproject.Controllers
         public ActionResult Create()
         {
             return View();
-        } 
+        }
 
+        public ActionResult Login()
+        {
+            return View();
+        } 
         //
         // POST: /Usuarios/Create
 
@@ -54,15 +61,18 @@ namespace domvaproject.Controllers
             return View(usuarios);
         }
         [HttpPost]
-        public ActionResult Login(string Nombre, string Contra)
+        public ActionResult Login(usuarios usu)
         {
             if (ModelState.IsValid)
             {
-                usuarios usuario = db.usuarios.Find(Nombre, Contra);
-                if(usuario!=null)
-                    return RedirectToAction("Index"); 
-                else
-                    return RedirectToAction("Index"); 
+                var query2 = db.usuarios.Where(u => u.Nombre == usu.Nombre & u.Pass == "password('"+usu.Pass+"')" );
+                Type t = typeof(int);
+                var fun = db.Database.SqlQuery<int>("SELECT Login(@param1,@param2)", 
+                    new MySqlParameter("@param1", usu.Nombre), 
+                    new MySqlParameter("@param2", usu.Pass));
+                //return query.FirstOrDefault();
+                if(fun.First()==1)
+                    return RedirectToAction("Create");  
             }
                 return RedirectToAction("Index"); 
 
