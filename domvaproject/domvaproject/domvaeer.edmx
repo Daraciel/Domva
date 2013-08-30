@@ -250,24 +250,24 @@
             <PropertyRef Name="Propiedad" />
           </Key>
           <Property Name="Propiedad" Type="Int32" Nullable="false" />
-          <Property Name="Piscina" Type="Boolean" />
-          <Property Name="AAcondicionado" Type="Boolean" />
-          <Property Name="Barbacoa" Type="Boolean" />
-          <Property Name="VMar" Type="Boolean" />
-          <Property Name="Ascensor" Type="Boolean" />
-          <Property Name="Calefaccion" Type="Boolean" />
-          <Property Name="Garage" Type="Boolean" />
-          <Property Name="ZDeportiva" Type="Boolean" />
-          <Property Name="Jardin" Type="Boolean" />
-          <Property Name="PInfantil" Type="Boolean" />
-          <Property Name="Terraza" Type="Boolean" />
-          <Property Name="Montana" Type="Boolean" />
+          <Property Name="Piscina" Type="Boolean" Nullable="false" />
+          <Property Name="AAcondicionado" Type="Boolean" Nullable="false" />
+          <Property Name="Barbacoa" Type="Boolean" Nullable="false" />
+          <Property Name="VMar" Type="Boolean" Nullable="false" />
+          <Property Name="Ascensor" Type="Boolean" Nullable="false" />
+          <Property Name="Calefaccion" Type="Boolean" Nullable="false" />
+          <Property Name="Garage" Type="Boolean" Nullable="false" />
+          <Property Name="ZDeportiva" Type="Boolean" Nullable="false" />
+          <Property Name="Jardin" Type="Boolean" Nullable="false" />
+          <Property Name="PInfantil" Type="Boolean" Nullable="false" />
+          <Property Name="Terraza" Type="Boolean" Nullable="false" />
+          <Property Name="Montana" Type="Boolean" Nullable="false" />
           <Property Name="Metros" Type="Int32" />
           <Property Name="Baños" Type="Int32" />
           <Property Name="Dormitorios" Type="Int32" />
           <Property Name="DMar" Type="Int32" />
-          <Property Name="Chimenea" Type="Boolean" />
-          <Property Name="Vendida" Type="Boolean" />
+          <Property Name="Chimenea" Type="Boolean" Nullable="false" />
+          <Property Name="Vendida" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_Carac_Propiedad" FromRole="caracteristicas" ToRole="propiedades" />
         </EntityType>
         <EntityType Name="descripcionesesp">

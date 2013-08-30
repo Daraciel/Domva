@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="2aac3adb604a4ff199a942a3b1ed780c" Name="Diagrama1">
         <EntityTypeShape EntityType="domvaModel.caracteristicas" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="domvaModel.descripcionesesp" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.descripcionesesp" Width="1.5" PointX="3.5" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="domvaModel.descripcionesru" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="domvaModel.fotos" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="domvaModel.poblaciones" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />

@@ -15,24 +15,24 @@ namespace domvaproject
     public partial class caracteristicas
     {
         public int Propiedad { get; set; }
-        public Nullable<bool> Piscina { get; set; }
-        public Nullable<bool> AAcondicionado { get; set; }
-        public Nullable<bool> Barbacoa { get; set; }
-        public Nullable<bool> VMar { get; set; }
-        public Nullable<bool> Ascensor { get; set; }
-        public Nullable<bool> Calefaccion { get; set; }
-        public Nullable<bool> Garage { get; set; }
-        public Nullable<bool> ZDeportiva { get; set; }
-        public Nullable<bool> Jardin { get; set; }
-        public Nullable<bool> PInfantil { get; set; }
-        public Nullable<bool> Terraza { get; set; }
-        public Nullable<bool> Montana { get; set; }
+        public bool Piscina { get; set; }
+        public bool AAcondicionado { get; set; }
+        public bool Barbacoa { get; set; }
+        public bool VMar { get; set; }
+        public bool Ascensor { get; set; }
+        public bool Calefaccion { get; set; }
+        public bool Garage { get; set; }
+        public bool ZDeportiva { get; set; }
+        public bool Jardin { get; set; }
+        public bool PInfantil { get; set; }
+        public bool Terraza { get; set; }
+        public bool Montana { get; set; }
         public Nullable<int> Metros { get; set; }
         public Nullable<int> Baños { get; set; }
         public Nullable<int> Dormitorios { get; set; }
         public Nullable<int> DMar { get; set; }
-        public Nullable<bool> Chimenea { get; set; }
-        public Nullable<bool> Vendida { get; set; }
+        public bool Chimenea { get; set; }
+        public bool Vendida { get; set; }
     
         public virtual propiedades propiedades { get; set; }
     }

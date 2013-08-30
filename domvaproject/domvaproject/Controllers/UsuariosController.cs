@@ -60,6 +60,7 @@ namespace domvaproject.Controllers
 
             return View(usuarios);
         }
+
         [HttpPost]
         public ActionResult Login(usuarios usu)
         {
@@ -71,8 +72,11 @@ namespace domvaproject.Controllers
                     new MySqlParameter("@param1", usu.Nombre), 
                     new MySqlParameter("@param2", usu.Pass));
                 //return query.FirstOrDefault();
-                if(fun.First()==1)
-                    return RedirectToAction("Create");  
+                if (fun.First() == 1)
+                {
+                    Session["User"] = usu.Nombre;
+                    return Redirect("~/");
+                }
             }
                 return RedirectToAction("Index"); 
 

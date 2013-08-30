@@ -68,6 +68,12 @@ namespace domvaproject.Controllers
         public ActionResult Edit(int id)
         {
             propiedades propiedades = db.propiedades.Find(id);
+            List<propietarios> props = new List<propietarios>();
+            props = db.propietarios.ToList();
+            ViewBag.Propietarios = new SelectList(props, "idPropietario", "Nombre");
+            List<poblaciones> pobls = new List<poblaciones>();
+            pobls = db.poblaciones.ToList();
+            ViewBag.Poblaciones = new SelectList(pobls, "Nombre", "Nombre");
             return View(propiedades);
         }
 
@@ -79,7 +85,14 @@ namespace domvaproject.Controllers
         {
             if (ModelState.IsValid)
             {
+                propiedades.descripcionesesp.Propiedad = propiedades.idPropiedad;
+                descripcionesesp desc = propiedades.descripcionesesp;
+                propiedades.caracteristicas.Propiedad = propiedades.idPropiedad;
+                caracteristicas carac = propiedades.caracteristicas;
+
                     db.Entry(propiedades).State = EntityState.Modified;
+                    db.Entry(desc).State = EntityState.Modified;
+                    db.Entry(carac).State = EntityState.Modified;
                     db.SaveChanges();
                 return RedirectToAction("Index");
             }
