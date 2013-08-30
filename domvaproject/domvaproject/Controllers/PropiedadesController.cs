@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using domvaproject;
+using System.Data.Entity.Infrastructure;
+using System.Data.Objects.SqlClient;
 
 namespace domvaproject.Controllers
 { 
@@ -77,8 +79,8 @@ namespace domvaproject.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(propiedades).State = EntityState.Modified;
-                db.SaveChanges();
+                    db.Entry(propiedades).State = EntityState.Modified;
+                    db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(propiedades);

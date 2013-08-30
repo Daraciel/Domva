@@ -158,10 +158,10 @@
                 <tr>
                     <td></td>
                     <td>
-                        <img src= "@Url.Content("~/images/thumbs/"+foto.Imagen)" alt="IMAGES" />
+                        <img src= "@Url.Content("~/images/thumbs/" + foto.Imagen)" alt="IMAGES" />
                     </td>
                     <td>
-                        @Html.ActionLink("Borrar", "../Fotos/Delete", new { id = foto.idFoto })
+                        @Html.ActionLink("Borrar", "../Fotos/Delete", new { id = foto.idFoto, propiedad= Model.idPropiedad  })
                     </td>
                 </tr>
             }

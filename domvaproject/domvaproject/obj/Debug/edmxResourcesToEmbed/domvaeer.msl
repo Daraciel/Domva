@@ -4,25 +4,25 @@
     <EntitySetMapping Name="caracteristicas">
       <EntityTypeMapping TypeName="domvaModel.caracteristicas">
         <MappingFragment StoreEntitySet="caracteristicas">
-          <ScalarProperty Name="Vendida" ColumnName="Vendida" />
-          <ScalarProperty Name="Chimenea" ColumnName="Chimenea" />
-          <ScalarProperty Name="DMar" ColumnName="DMar" />
-          <ScalarProperty Name="Dormitorios" ColumnName="Dormitorios" />
-          <ScalarProperty Name="Baños" ColumnName="Baños" />
-          <ScalarProperty Name="Metros" ColumnName="Metros" />
-          <ScalarProperty Name="Montana" ColumnName="Montana" />
-          <ScalarProperty Name="Terraza" ColumnName="Terraza" />
-          <ScalarProperty Name="PInfantil" ColumnName="PInfantil" />
-          <ScalarProperty Name="Jardin" ColumnName="Jardin" />
-          <ScalarProperty Name="ZDeportiva" ColumnName="ZDeportiva" />
-          <ScalarProperty Name="Garage" ColumnName="Garage" />
-          <ScalarProperty Name="Calefaccion" ColumnName="Calefaccion" />
-          <ScalarProperty Name="Ascensor" ColumnName="Ascensor" />
-          <ScalarProperty Name="VMar" ColumnName="VMar" />
-          <ScalarProperty Name="Barbacoa" ColumnName="Barbacoa" />
-          <ScalarProperty Name="AAcondicionado" ColumnName="AAcondicionado" />
           <ScalarProperty Name="Propiedad" ColumnName="Propiedad" />
           <ScalarProperty Name="Piscina" ColumnName="Piscina" />
+          <ScalarProperty Name="AAcondicionado" ColumnName="AAcondicionado" />
+          <ScalarProperty Name="Barbacoa" ColumnName="Barbacoa" />
+          <ScalarProperty Name="VMar" ColumnName="VMar" />
+          <ScalarProperty Name="Ascensor" ColumnName="Ascensor" />
+          <ScalarProperty Name="Calefaccion" ColumnName="Calefaccion" />
+          <ScalarProperty Name="Garage" ColumnName="Garage" />
+          <ScalarProperty Name="ZDeportiva" ColumnName="ZDeportiva" />
+          <ScalarProperty Name="Jardin" ColumnName="Jardin" />
+          <ScalarProperty Name="PInfantil" ColumnName="PInfantil" />
+          <ScalarProperty Name="Terraza" ColumnName="Terraza" />
+          <ScalarProperty Name="Montana" ColumnName="Montana" />
+          <ScalarProperty Name="Metros" ColumnName="Metros" />
+          <ScalarProperty Name="Baños" ColumnName="Baños" />
+          <ScalarProperty Name="Dormitorios" ColumnName="Dormitorios" />
+          <ScalarProperty Name="DMar" ColumnName="DMar" />
+          <ScalarProperty Name="Chimenea" ColumnName="Chimenea" />
+          <ScalarProperty Name="Vendida" ColumnName="Vendida" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -52,16 +52,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="poblaciones">
+      <EntityTypeMapping TypeName="domvaModel.poblaciones">
+        <MappingFragment StoreEntitySet="poblaciones">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodPostal" ColumnName="CodPostal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="propiedades">
       <EntityTypeMapping TypeName="domvaModel.propiedades">
         <MappingFragment StoreEntitySet="propiedades">
-          <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
-          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
           <ScalarProperty Name="idPropiedad" ColumnName="idPropiedad" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Precio" ColumnName="Precio" />
           <ScalarProperty Name="Propietario" ColumnName="Propietario" />
           <ScalarProperty Name="DescripcionInterna" ColumnName="DescripcionInterna" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -78,19 +86,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="poblaciones">
-      <EntityTypeMapping TypeName="domvaModel.poblaciones">
-        <MappingFragment StoreEntitySet="poblaciones">
-          <ScalarProperty Name="CodPostal" ColumnName="CodPostal" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="usuarios">
       <EntityTypeMapping TypeName="domvaModel.usuarios">
         <MappingFragment StoreEntitySet="usuarios">
-          <ScalarProperty Name="Pass" ColumnName="Pass" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

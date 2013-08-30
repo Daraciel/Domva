@@ -111,6 +111,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PropiedadesController.cs" />
     <Compile Include="Controllers\PropietariosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="descripcionesesp.cs">
       <DependentUpon>domvaeer.tt</DependentUpon>
     </Compile>
@@ -292,6 +293,11 @@
     <Content Include="Views\Caracteristicas\Create.cshtml" />
     <Content Include="Views\Caracteristicas\Edit.cshtml" />
     <Content Include="Views\Caracteristicas\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -320,7 +326,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>2275</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:2998/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -66,11 +66,19 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DescripcionInterna)
+           Descripción Interna
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.DescripcionInterna)
             @Html.ValidationMessageFor(model => model.DescripcionInterna)
+        </div>
+
+        <div class="editor-label">
+            Descripcion en Español
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.descripcionesesp.DescripcionESP)
+            @Html.ValidationMessageFor(model => model.descripcionesesp.DescripcionESP)
         </div>
 
         <div class="editor-label">

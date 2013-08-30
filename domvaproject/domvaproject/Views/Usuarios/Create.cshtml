@@ -1,4 +1,4 @@
-﻿@model domvaproject.descripcionesesp
+﻿@model domvaproject.usuarios
 
 @{
     ViewBag.Title = "Create";
@@ -12,30 +12,30 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>descripcionesesp</legend>
+        <legend>usuarios</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Propiedad, "propiedades")
+            @Html.LabelFor(model => model.Nombre)
         </div>
         <div class="editor-field">
-            @Html.DropDownList("Propiedad", String.Empty)
-            @Html.ValidationMessageFor(model => model.Propiedad)
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
         </div>
 
         <div class="editor-label">
-            Descripción en Español
+            @Html.LabelFor(model => model.Pass)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DescripcionESP)
-            @Html.ValidationMessageFor(model => model.DescripcionESP)
+            @Html.EditorFor(model => model.Pass)
+            @Html.ValidationMessageFor(model => model.Pass)
         </div>
 
         <p>
-            <input type="submit" value="Crear" />
+            <input type="submit" value="Create" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Atrás", "Index")
+    @Html.ActionLink("Back to List", "Index")
 </div>

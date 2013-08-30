@@ -4,20 +4,22 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Borrar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Estás seguro de querer borrar esta foto?</h3>
 <fieldset>
     <legend>fotos</legend>
+    
 
-    <div class="display-label">propiedades</div>
+    <div class="display-label">Imagen</div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.propiedades.Nombre)
+        <img src= "@Url.Content("~/images/thumbs/" + Model.Imagen)" alt="IMAGES" />
     </div>
+
 
     <div class="display-label">Propiedad</div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Propiedad)
+        @Html.DisplayFor(model => model.propiedades.Nombre)
     </div>
 
     <div class="display-label">Principal</div>
@@ -27,7 +29,7 @@
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+        <input type="submit" value="Borrar" /> |
+        @Html.ActionLink("Atrás", "Index")
     </p>
 }

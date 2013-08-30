@@ -31,7 +31,7 @@ namespace domvaproject
         public virtual descripcionesesp descripcionesesp { get; set; }
         public virtual descripcionesru descripcionesru { get; set; }
         public virtual ICollection<fotos> fotos { get; set; }
-        public virtual propietarios propietarios { get; set; }
         public virtual poblaciones poblaciones { get; set; }
+        public virtual propietarios propietarios { get; set; }
     }
 }

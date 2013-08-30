@@ -52,7 +52,7 @@ namespace domvaproject.Controllers
         {
 
             // Convert the input string to a byte array and compute the hash.
-            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input+System.DateTime.Now.Millisecond.ToString()));
 
             // Create a new Stringbuilder to collect the bytes
             // and create a string.
@@ -137,10 +137,10 @@ namespace domvaproject.Controllers
 
         //
         // GET: /Fotos/Delete/5
- 
-        public ActionResult Delete(int id)
+
+        public ActionResult Delete(int id, int propiedad)
         {
-            fotos fotos = db.fotos.Find(id);
+            fotos fotos = db.fotos.Find(id, propiedad);
             return View(fotos);
         }
 
@@ -148,9 +148,9 @@ namespace domvaproject.Controllers
         // POST: /Fotos/Delete/5
 
         [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, int propiedad)
         {            
-            fotos fotos = db.fotos.Find(id);
+            fotos fotos = db.fotos.Find(id, propiedad);
             db.fotos.Remove(fotos);
             db.SaveChanges();
             return RedirectToAction("Index");

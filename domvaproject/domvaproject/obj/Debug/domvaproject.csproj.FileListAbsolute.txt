@@ -23,3 +23,28 @@ c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaprojec
 c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\obj\Debug\domvaproject.csprojResolveAssemblyReference.cache
 c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\obj\Debug\domvaproject.dll
 c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\obj\Debug\domvaproject.pdb
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\domvaproject.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\domvaproject.pdb
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\EntityFramework.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\MySql.Data.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\MySql.Data.Entity.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Helpers.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Mvc.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Providers.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Razor.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.WebPages.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.WebPages.Razor.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\EntityFramework.xml
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Helpers.xml
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Mvc.xml
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Razor.xml
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.WebPages.xml
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.WebPages.Razor.xml
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\es\EntityFramework.resources.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\es\System.Web.Providers.resources.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Debug\domvaproject.csprojResolveAssemblyReference.cache
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Debug\domvaproject.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Debug\domvaproject.pdb
