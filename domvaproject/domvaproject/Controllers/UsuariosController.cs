@@ -54,7 +54,7 @@ namespace domvaproject.Controllers
             if (ModelState.IsValid)
             {
                 var fun = db.Database.SqlQuery<string>("SELECT password(@param1)",
-                    new MySqlParameter("@param2", usuarios.Pass));
+                    new MySqlParameter("@param1", usuarios.Pass));
                 usuarios.Pass = fun.First();
                 db.usuarios.Add(usuarios);
                 db.SaveChanges();

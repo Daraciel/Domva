@@ -10,7 +10,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/domvaproject.dll">
-      <publishTime>08/30/2013 20:39:06</publishTime>
+      <publishTime>09/02/2013 17:08:10</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>08/19/2013 12:27:46</publishTime>
@@ -28,6 +28,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/13/2013 02:24:56</publishTime>
     </File>
     <File Include="bin/MySql.Data.Entity.dll">
+      <publishTime>06/13/2013 02:24:56</publishTime>
+    </File>
+    <File Include="bin/MySql.Web.dll">
       <publishTime>06/13/2013 02:24:56</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
@@ -223,7 +226,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>08/19/2013 12:27:33</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>08/19/2013 12:28:06</publishTime>
+      <publishTime>09/02/2013 16:43:38</publishTime>
     </File>
     <File Include="Scripts/jquery-1.7.1.js">
       <publishTime>08/19/2013 12:28:01</publishTime>
@@ -394,10 +397,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>08/30/2013 11:36:49</publishTime>
     </File>
     <File Include="Views/Usuarios/Index.cshtml">
-      <publishTime>08/30/2013 12:07:26</publishTime>
+      <publishTime>09/02/2013 16:02:21</publishTime>
     </File>
     <File Include="Views/Usuarios/Login.cshtml">
-      <publishTime>08/30/2013 17:45:49</publishTime>
+      <publishTime>09/02/2013 16:05:05</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>08/19/2013 12:27:33</publishTime>
@@ -406,7 +409,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>08/19/2013 12:27:33</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/31/2013 11:57:54</publishTime>
+      <publishTime>09/02/2013 17:08:15</publishTime>
     </File>
   </ItemGroup>
 </Project>
