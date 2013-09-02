@@ -1,0 +1,53 @@
+﻿@model domvaproject.propietarios
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Borrar</h2>
+
+<h3>¿Estas seguro de que quieres borrar este propietario?</h3>
+<fieldset>
+    <legend>propietarios</legend>
+
+    <div class="display-label">idPropietario</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idPropietario)
+    </div>
+
+    <div class="display-label">Nombre</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">Telefono</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Telefono)
+    </div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">Localidad</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Localidad)
+    </div>
+
+    <div class="display-label">Direccion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Direccion)
+    </div>
+
+    <div class="display-label">Descripcion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" title="Borrar" value="Borrar" /> |
+        @Html.ActionLink("Atrás", "Index")
+    </p>
+}

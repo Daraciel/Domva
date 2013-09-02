@@ -1,0 +1,39 @@
+﻿@model IEnumerable<domvaproject.descripcionesesp>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            propiedades
+        </th>
+        <th>
+            DescripcionESP
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.propiedades.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionESP)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.Propiedad }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.Propiedad }) |
+            @Html.ActionLink("Borrar", "Delete", new { id = item.Propiedad })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,228 @@
+﻿@model domvaproject.propiedades
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    List<SelectListItem> items = new List<SelectListItem>();
+    items.Add(new SelectListItem
+    {
+        Text = "Apartamento",
+        Value = "Apartamento"
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "Villa",
+        Value = "Villa"
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "Bungalow",
+        Value = "Bungalow"
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "Local Comercial",
+        Value = "Local Comercial"
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "Negocio",
+        Value = "Negocio"
+    });
+    <fieldset>
+        <legend>propiedades</legend>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Precio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Precio)
+            @Html.ValidationMessageFor(model => model.Precio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Propietario)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Propietario, (SelectList)ViewBag.Propietarios)
+            @Html.ValidationMessageFor(model => model.Propietario)
+        </div>
+
+        <div class="editor-label">
+           Descripción Interna
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DescripcionInterna)
+            @Html.ValidationMessageFor(model => model.DescripcionInterna)
+        </div>
+
+        <div class="editor-label">
+            Descripcion en Español
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.descripcionesesp.DescripcionESP)
+            @Html.ValidationMessageFor(model => model.descripcionesesp.DescripcionESP)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Categoria)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Categoria, items)
+            @Html.ValidationMessageFor(model => model.Categoria)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Poblacion)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Poblacion, (SelectList)ViewBag.Poblaciones)
+            @Html.ValidationMessageFor(model => model.Poblacion)
+        </div>
+        
+        
+        <h3>Características</h3>
+
+        <table>
+            <tr>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.AAcondicionado)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.AAcondicionado)
+                    <label>Aire Acondicionado</label>
+                </th>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.Ascensor)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.Ascensor)
+                    <label>Ascensor</label>
+                </th>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.Barbacoa)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.Barbacoa)
+                    <label>Barbacoa</label>
+                </th>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.Calefaccion)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.Calefaccion)
+                    <label>Calefacción</label>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.Chimenea)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.Chimenea)
+                    <label>Chimenea</label>
+                </th>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.Garage)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.Garage)
+                    <label>Garage</label>
+                </th>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.Jardin)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.Jardin)
+                    <label>Jardin</label>
+                </th>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.Montana)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.Montana)
+                    <label>Montaña</label>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.PInfantil)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.PInfantil)
+                    <label>Parque Infantil</label>
+                </th>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.Piscina)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.Piscina)
+                    <label>Piscina</label>
+                </th>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.Terraza)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.Terraza)
+                    <label>Terraza</label>
+                </th>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.VMar)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.VMar)
+                    <label>Vistas al Mar</label>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.CheckBoxFor(model => model.caracteristicas.ZDeportiva)
+                    @Html.ValidationMessageFor(model => model.caracteristicas.ZDeportiva)
+                    <label>Zona Deportiva</label>
+                </th>
+            </tr>
+        </table>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.caracteristicas.Vendida)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.caracteristicas.Vendida)
+            @Html.ValidationMessageFor(model => model.caracteristicas.Vendida)
+        </div>
+        
+        <div class="editor-label">
+            <label>Número de Baños</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.caracteristicas.Baños)
+            @Html.ValidationMessageFor(model => model.caracteristicas.Baños)
+        </div>
+        
+        <div class="editor-label">
+            <label>Distancia al mar</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.caracteristicas.DMar)
+            @Html.ValidationMessageFor(model => model.caracteristicas.DMar)
+        </div>
+        
+        <div class="editor-label">
+            <label>Número de Dormitorios</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.caracteristicas.Dormitorios)
+            @Html.ValidationMessageFor(model => model.caracteristicas.Dormitorios)
+        </div>
+        
+        <div class="editor-label">
+            <label>Cantidad de Metros Cuadrados</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.caracteristicas.Metros)
+            @Html.ValidationMessageFor(model => model.caracteristicas.Metros)
+        </div>
+
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Atras", "Index")
+</div>

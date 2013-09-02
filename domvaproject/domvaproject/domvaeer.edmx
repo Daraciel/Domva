@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="domvaModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="domvaModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="domvaModelStoreContainer">
-          <EntitySet Name="caracteristicas" EntityType="domvaModel.Store.caracteristicas" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="descripcionesesp" EntityType="domvaModel.Store.descripcionesesp" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="descripcionesru" EntityType="domvaModel.Store.descripcionesru" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="fotos" EntityType="domvaModel.Store.fotos" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="poblaciones" EntityType="domvaModel.Store.poblaciones" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="propiedades" EntityType="domvaModel.Store.propiedades" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="propietarios" EntityType="domvaModel.Store.propietarios" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="usuarios" EntityType="domvaModel.Store.usuarios" store:Type="Tables" Schema="domva" />
+          <EntitySet Name="caracteristicas" EntityType="domvaModel.Store.caracteristicas" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="descripcionesesp" EntityType="domvaModel.Store.descripcionesesp" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="descripcionesru" EntityType="domvaModel.Store.descripcionesru" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="fotos" EntityType="domvaModel.Store.fotos" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="poblaciones" EntityType="domvaModel.Store.poblaciones" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="propiedades" EntityType="domvaModel.Store.propiedades" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="propietarios" EntityType="domvaModel.Store.propietarios" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="usuarios" EntityType="domvaModel.Store.usuarios" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <AssociationSet Name="fk_Carac_Propiedad" Association="domvaModel.Store.fk_Carac_Propiedad">
             <End Role="propiedades" EntitySet="propiedades" />
             <End Role="caracteristicas" EntitySet="caracteristicas" />
@@ -210,8 +210,8 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="domvaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="domvaEntities" annotation:LazyLoadingEnabled="true">
+      <Schema Namespace="domvaModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="domvaEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="caracteristicas" EntityType="domvaModel.caracteristicas" />
           <EntitySet Name="descripcionesesp" EntityType="domvaModel.descripcionesesp" />
           <EntitySet Name="descripcionesru" EntityType="domvaModel.descripcionesru" />
@@ -291,7 +291,7 @@
             <PropertyRef Name="idFoto" />
             <PropertyRef Name="Propiedad" />
           </Key>
-          <Property Name="idFoto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idFoto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Imagen" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Propiedad" Type="Int32" Nullable="false" />
           <Property Name="Principal" Type="Boolean" />
@@ -309,7 +309,7 @@
           <Key>
             <PropertyRef Name="idPropiedad" />
           </Key>
-          <Property Name="idPropiedad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPropiedad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Precio" Type="Int32" />
           <Property Name="Propietario" Type="Int32" />
@@ -327,7 +327,7 @@
           <Key>
             <PropertyRef Name="idPropietario" />
           </Key>
-          <Property Name="idPropietario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPropietario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Telefono" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Email" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
@@ -427,7 +427,7 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="domvaModelStoreContainer" CdmEntityContainer="domvaEntities">
           <EntitySetMapping Name="caracteristicas">
             <EntityTypeMapping TypeName="domvaModel.caracteristicas">
@@ -527,7 +527,7 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
@@ -542,6 +542,6 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams />
   </Designer>
 </edmx:Edmx>

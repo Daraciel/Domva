@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2aac3adb604a4ff199a942a3b1ed780c" Name="Diagrama1">
+        <EntityTypeShape EntityType="domvaModel.caracteristicas" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.descripcionesesp" Width="1.5" PointX="3.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.descripcionesru" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.fotos" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.poblaciones" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.propiedades" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.propietarios" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="domvaModel.usuarios" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="domvaModel.fk_Carac_Propiedad" ManuallyRouted="false" />
+        <AssociationConnector Association="domvaModel.fk_DescrESP_Propiedad" ManuallyRouted="false" />
+        <AssociationConnector Association="domvaModel.fk_DescrRU_Propiedad" ManuallyRouted="false" />
+        <AssociationConnector Association="domvaModel.fk_Foto_Propiedad" ManuallyRouted="false" />
+        <AssociationConnector Association="domvaModel.fk_Propiedad_Poblacion" ManuallyRouted="false" />
+        <AssociationConnector Association="domvaModel.fk_Propiedad_Propietario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -53,6 +53,9 @@ namespace domvaproject.Controllers
         {
             if (ModelState.IsValid)
             {
+                var fun = db.Database.SqlQuery<string>("SELECT password(@param1)",
+                    new MySqlParameter("@param2", usuarios.Pass));
+                usuarios.Pass = fun.First();
                 db.usuarios.Add(usuarios);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
@@ -66,9 +69,7 @@ namespace domvaproject.Controllers
         {
             if (ModelState.IsValid)
             {
-                var query2 = db.usuarios.Where(u => u.Nombre == usu.Nombre & u.Pass == "password('"+usu.Pass+"')" );
-                Type t = typeof(int);
-                var fun = db.Database.SqlQuery<int>("SELECT Login(@param1,@param2)", 
+                var fun = db.Database.SqlQuery<int>("SELECT Count(*) FROM Usuarios U WHERE U.Nombre =@param1 AND U.Pass = password(@param2)", 
                     new MySqlParameter("@param1", usu.Nombre), 
                     new MySqlParameter("@param2", usu.Pass));
                 //return query.FirstOrDefault();

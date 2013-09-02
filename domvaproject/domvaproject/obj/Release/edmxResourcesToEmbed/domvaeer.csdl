@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="domvaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="domvaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="caracteristicas" EntityType="domvaModel.caracteristicas" />
+    <EntitySet Name="descripcionesesp" EntityType="domvaModel.descripcionesesp" />
+    <EntitySet Name="descripcionesru" EntityType="domvaModel.descripcionesru" />
+    <EntitySet Name="fotos" EntityType="domvaModel.fotos" />
+    <EntitySet Name="poblaciones" EntityType="domvaModel.poblaciones" />
+    <EntitySet Name="propiedades" EntityType="domvaModel.propiedades" />
+    <EntitySet Name="propietarios" EntityType="domvaModel.propietarios" />
+    <EntitySet Name="usuarios" EntityType="domvaModel.usuarios" />
+    <AssociationSet Name="fk_Carac_Propiedad" Association="domvaModel.fk_Carac_Propiedad">
+      <End Role="propiedades" EntitySet="propiedades" />
+      <End Role="caracteristicas" EntitySet="caracteristicas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DescrESP_Propiedad" Association="domvaModel.fk_DescrESP_Propiedad">
+      <End Role="propiedades" EntitySet="propiedades" />
+      <End Role="descripcionesesp" EntitySet="descripcionesesp" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DescrRU_Propiedad" Association="domvaModel.fk_DescrRU_Propiedad">
+      <End Role="propiedades" EntitySet="propiedades" />
+      <End Role="descripcionesru" EntitySet="descripcionesru" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Foto_Propiedad" Association="domvaModel.fk_Foto_Propiedad">
+      <End Role="propiedades" EntitySet="propiedades" />
+      <End Role="fotos" EntitySet="fotos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Propiedad_Poblacion" Association="domvaModel.fk_Propiedad_Poblacion">
+      <End Role="poblaciones" EntitySet="poblaciones" />
+      <End Role="propiedades" EntitySet="propiedades" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Propiedad_Propietario" Association="domvaModel.fk_Propiedad_Propietario">
+      <End Role="propietarios" EntitySet="propietarios" />
+      <End Role="propiedades" EntitySet="propiedades" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="caracteristicas">
+    <Key>
+      <PropertyRef Name="Propiedad" />
+    </Key>
+    <Property Name="Propiedad" Type="Int32" Nullable="false" />
+    <Property Name="Piscina" Type="Boolean" Nullable="false" />
+    <Property Name="AAcondicionado" Type="Boolean" Nullable="false" />
+    <Property Name="Barbacoa" Type="Boolean" Nullable="false" />
+    <Property Name="VMar" Type="Boolean" Nullable="false" />
+    <Property Name="Ascensor" Type="Boolean" Nullable="false" />
+    <Property Name="Calefaccion" Type="Boolean" Nullable="false" />
+    <Property Name="Garage" Type="Boolean" Nullable="false" />
+    <Property Name="ZDeportiva" Type="Boolean" Nullable="false" />
+    <Property Name="Jardin" Type="Boolean" Nullable="false" />
+    <Property Name="PInfantil" Type="Boolean" Nullable="false" />
+    <Property Name="Terraza" Type="Boolean" Nullable="false" />
+    <Property Name="Montana" Type="Boolean" Nullable="false" />
+    <Property Name="Metros" Type="Int32" />
+    <Property Name="Baños" Type="Int32" />
+    <Property Name="Dormitorios" Type="Int32" />
+    <Property Name="DMar" Type="Int32" />
+    <Property Name="Chimenea" Type="Boolean" Nullable="false" />
+    <Property Name="Vendida" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_Carac_Propiedad" FromRole="caracteristicas" ToRole="propiedades" />
+  </EntityType>
+  <EntityType Name="descripcionesesp">
+    <Key>
+      <PropertyRef Name="Propiedad" />
+    </Key>
+    <Property Name="Propiedad" Type="Int32" Nullable="false" />
+    <Property Name="DescripcionESP" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_DescrESP_Propiedad" FromRole="descripcionesesp" ToRole="propiedades" />
+  </EntityType>
+  <EntityType Name="descripcionesru">
+    <Key>
+      <PropertyRef Name="Propiedad" />
+    </Key>
+    <Property Name="Propiedad" Type="Int32" Nullable="false" />
+    <Property Name="DescripcionRU" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_DescrRU_Propiedad" FromRole="descripcionesru" ToRole="propiedades" />
+  </EntityType>
+  <EntityType Name="fotos">
+    <Key>
+      <PropertyRef Name="idFoto" />
+      <PropertyRef Name="Propiedad" />
+    </Key>
+    <Property Name="idFoto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Imagen" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Propiedad" Type="Int32" Nullable="false" />
+    <Property Name="Principal" Type="Boolean" />
+    <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_Foto_Propiedad" FromRole="fotos" ToRole="propiedades" />
+  </EntityType>
+  <EntityType Name="poblaciones">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="CodPostal" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_Propiedad_Poblacion" FromRole="poblaciones" ToRole="propiedades" />
+  </EntityType>
+  <EntityType Name="propiedades">
+    <Key>
+      <PropertyRef Name="idPropiedad" />
+    </Key>
+    <Property Name="idPropiedad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Precio" Type="Int32" />
+    <Property Name="Propietario" Type="Int32" />
+    <Property Name="DescripcionInterna" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="Categoria" Type="String" MaxLength="65532" Unicode="false" FixedLength="false" />
+    <Property Name="Poblacion" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="caracteristicas" Relationship="domvaModel.fk_Carac_Propiedad" FromRole="propiedades" ToRole="caracteristicas" />
+    <NavigationProperty Name="descripcionesesp" Relationship="domvaModel.fk_DescrESP_Propiedad" FromRole="propiedades" ToRole="descripcionesesp" />
+    <NavigationProperty Name="descripcionesru" Relationship="domvaModel.fk_DescrRU_Propiedad" FromRole="propiedades" ToRole="descripcionesru" />
+    <NavigationProperty Name="fotos" Relationship="domvaModel.fk_Foto_Propiedad" FromRole="propiedades" ToRole="fotos" />
+    <NavigationProperty Name="poblaciones" Relationship="domvaModel.fk_Propiedad_Poblacion" FromRole="propiedades" ToRole="poblaciones" />
+    <NavigationProperty Name="propietarios" Relationship="domvaModel.fk_Propiedad_Propietario" FromRole="propiedades" ToRole="propietarios" />
+  </EntityType>
+  <EntityType Name="propietarios">
+    <Key>
+      <PropertyRef Name="idPropietario" />
+    </Key>
+    <Property Name="idPropietario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Telefono" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Localidad" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_Propiedad_Propietario" FromRole="propietarios" ToRole="propiedades" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Pass" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <Association Name="fk_Carac_Propiedad">
+    <End Role="propiedades" Type="domvaModel.propiedades" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="caracteristicas" Type="domvaModel.caracteristicas" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="propiedades">
+        <PropertyRef Name="idPropiedad" />
+      </Principal>
+      <Dependent Role="caracteristicas">
+        <PropertyRef Name="Propiedad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DescrESP_Propiedad">
+    <End Role="propiedades" Type="domvaModel.propiedades" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="descripcionesesp" Type="domvaModel.descripcionesesp" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="propiedades">
+        <PropertyRef Name="idPropiedad" />
+      </Principal>
+      <Dependent Role="descripcionesesp">
+        <PropertyRef Name="Propiedad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DescrRU_Propiedad">
+    <End Role="propiedades" Type="domvaModel.propiedades" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="descripcionesru" Type="domvaModel.descripcionesru" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="propiedades">
+        <PropertyRef Name="idPropiedad" />
+      </Principal>
+      <Dependent Role="descripcionesru">
+        <PropertyRef Name="Propiedad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Foto_Propiedad">
+    <End Role="propiedades" Type="domvaModel.propiedades" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="fotos" Type="domvaModel.fotos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="propiedades">
+        <PropertyRef Name="idPropiedad" />
+      </Principal>
+      <Dependent Role="fotos">
+        <PropertyRef Name="Propiedad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Propiedad_Poblacion">
+    <End Role="poblaciones" Type="domvaModel.poblaciones" Multiplicity="0..1" />
+    <End Role="propiedades" Type="domvaModel.propiedades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="poblaciones">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="propiedades">
+        <PropertyRef Name="Poblacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Propiedad_Propietario">
+    <End Role="propietarios" Type="domvaModel.propietarios" Multiplicity="0..1" />
+    <End Role="propiedades" Type="domvaModel.propiedades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="propietarios">
+        <PropertyRef Name="idPropietario" />
+      </Principal>
+      <Dependent Role="propiedades">
+        <PropertyRef Name="Propietario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

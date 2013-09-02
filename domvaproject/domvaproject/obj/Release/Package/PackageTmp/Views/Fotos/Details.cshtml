@@ -1,0 +1,30 @@
+﻿@model domvaproject.fotos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>fotos</legend>
+
+    <div class="display-label">propiedades</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.propiedades.Nombre)
+    </div>
+
+    <div class="display-label">Propiedad</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Propiedad)
+    </div>
+
+    <div class="display-label">Principal</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Principal)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

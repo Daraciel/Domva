@@ -48,3 +48,4 @@ C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\es\System
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Debug\domvaproject.csprojResolveAssemblyReference.cache
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Debug\domvaproject.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Debug\domvaproject.pdb
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\MySql.Web.dll

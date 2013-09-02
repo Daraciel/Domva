@@ -1,0 +1,57 @@
+﻿@model IEnumerable<domvaproject.propiedades>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            idPropiedad
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Precio
+        </th>
+        <th>
+            Propietario
+        </th>
+        <th>
+            Categoria
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idPropiedad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.propietarios.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoria)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.idPropiedad }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.idPropiedad }) |
+            @Html.ActionLink("Borrar", "Delete", new { id = item.idPropiedad })
+        </td>
+    </tr>
+}
+
+</table>

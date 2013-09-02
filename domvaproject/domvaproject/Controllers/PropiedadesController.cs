@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using domvaproject;
 using System.Data.Entity.Infrastructure;
 using System.Data.Objects.SqlClient;
+using System.IO;
 
 namespace domvaproject.Controllers
 { 
@@ -117,6 +118,16 @@ namespace domvaproject.Controllers
             propiedades propiedades = db.propiedades.Find(id);
             db.propiedades.Remove(propiedades);
             db.SaveChanges();
+            /*
+            var fso = Server.CreateObject("Scripting.FileSystemObject");
+            foreach (fotos foto in propiedades.fotos)
+            {
+                
+                var path = Path.Combine(Server.MapPath("~/images/photo"), foto.Imagen);
+                var pathThumb = Path.Combine(Server.MapPath("~/images/thumbs"), foto.Imagen);
+                File.Delete(path);
+                DeleteFile(path, false);
+            }*/
             return RedirectToAction("Index");
         }
 
