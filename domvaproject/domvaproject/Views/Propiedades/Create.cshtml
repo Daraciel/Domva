@@ -82,6 +82,14 @@
         </div>
 
         <div class="editor-label">
+            Descripcion en Ruso
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.descripcionesru.DescripcionRU)
+            @Html.ValidationMessageFor(model => model.descripcionesru.DescripcionRU)
+        </div>
+
+        <div class="editor-label">
             @Html.LabelFor(model => model.Categoria)
         </div>
         <div class="editor-field">

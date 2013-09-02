@@ -88,13 +88,16 @@ namespace domvaproject.Controllers
             {
                 propiedades.descripcionesesp.Propiedad = propiedades.idPropiedad;
                 descripcionesesp desc = propiedades.descripcionesesp;
+                propiedades.descripcionesru.Propiedad = propiedades.idPropiedad;
+                descripcionesru desc2 = propiedades.descripcionesru;
                 propiedades.caracteristicas.Propiedad = propiedades.idPropiedad;
                 caracteristicas carac = propiedades.caracteristicas;
 
-                    db.Entry(propiedades).State = EntityState.Modified;
-                    db.Entry(desc).State = EntityState.Modified;
-                    db.Entry(carac).State = EntityState.Modified;
-                    db.SaveChanges();
+                db.Entry(propiedades).State = EntityState.Modified;
+                db.Entry(desc).State = EntityState.Modified;
+                db.Entry(desc2).State = EntityState.Modified;
+                db.Entry(carac).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(propiedades);
@@ -114,20 +117,24 @@ namespace domvaproject.Controllers
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
-        {            
+        {
+            var fotos = db.fotos.ToList();
             propiedades propiedades = db.propiedades.Find(id);
             db.propiedades.Remove(propiedades);
             db.SaveChanges();
-            /*
-            var fso = Server.CreateObject("Scripting.FileSystemObject");
-            foreach (fotos foto in propiedades.fotos)
+            foreach (fotos foto in fotos)
             {
-                
-                var path = Path.Combine(Server.MapPath("~/images/photo"), foto.Imagen);
-                var pathThumb = Path.Combine(Server.MapPath("~/images/thumbs"), foto.Imagen);
-                File.Delete(path);
-                DeleteFile(path, false);
-            }*/
+                if (foto.Propiedad == id)
+                {
+                    var path = Path.Combine(Server.MapPath("~/images/photo"), foto.Imagen);
+                    var pathThumb = Path.Combine(Server.MapPath("~/images/thumbs"), foto.Imagen);
+                    if (System.IO.File.Exists(path))
+                        System.IO.File.Delete(path);
+                    if (System.IO.File.Exists(pathThumb))
+                        System.IO.File.Delete(pathThumb);
+                }
+
+            }
             return RedirectToAction("Index");
         }
 
