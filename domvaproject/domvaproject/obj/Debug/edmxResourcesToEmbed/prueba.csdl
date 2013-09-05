@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db488059728Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="db488059728Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="caracteristicas" EntityType="db488059728Model.caracteristicas" />
+    <EntitySet Name="descripcionesesp" EntityType="db488059728Model.descripcionesesp" />
+    <EntitySet Name="descripcionesru" EntityType="db488059728Model.descripcionesru" />
+    <EntitySet Name="fotos" EntityType="db488059728Model.fotos" />
+    <EntitySet Name="poblaciones" EntityType="db488059728Model.poblaciones" />
+    <EntitySet Name="propiedades" EntityType="db488059728Model.propiedades" />
+    <EntitySet Name="propietarios" EntityType="db488059728Model.propietarios" />
+    <EntitySet Name="usuarios" EntityType="db488059728Model.usuarios" />
+    <AssociationSet Name="fk_Carac_Propiedad" Association="db488059728Model.fk_Carac_Propiedad">
+      <End Role="propiedades" EntitySet="propiedades" />
+      <End Role="caracteristicas" EntitySet="caracteristicas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DescrESP_Propiedad" Association="db488059728Model.fk_DescrESP_Propiedad">
+      <End Role="propiedades" EntitySet="propiedades" />
+      <End Role="descripcionesesp" EntitySet="descripcionesesp" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DescrRU_Propiedad" Association="db488059728Model.fk_DescrRU_Propiedad">
+      <End Role="propiedades" EntitySet="propiedades" />
+      <End Role="descripcionesru" EntitySet="descripcionesru" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Foto_Propiedad" Association="db488059728Model.fk_Foto_Propiedad">
+      <End Role="propiedades" EntitySet="propiedades" />
+      <End Role="fotos" EntitySet="fotos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Propiedad_Poblacion" Association="db488059728Model.fk_Propiedad_Poblacion">
+      <End Role="poblaciones" EntitySet="poblaciones" />
+      <End Role="propiedades" EntitySet="propiedades" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Propiedad_Propietario" Association="db488059728Model.fk_Propiedad_Propietario">
+      <End Role="propietarios" EntitySet="propietarios" />
+      <End Role="propiedades" EntitySet="propiedades" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="caracteristicas">
+    <Key>
+      <PropertyRef Name="Propiedad" />
+    </Key>
+    <Property Name="Propiedad" Type="Int32" Nullable="false" />
+    <Property Name="Piscina" Type="Boolean" />
+    <Property Name="AAcondicionado" Type="Boolean" />
+    <Property Name="Barbacoa" Type="Boolean" />
+    <Property Name="VMar" Type="Boolean" />
+    <Property Name="Ascensor" Type="Boolean" />
+    <Property Name="Calefaccion" Type="Boolean" />
+    <Property Name="Garage" Type="Boolean" />
+    <Property Name="ZDeportiva" Type="Boolean" />
+    <Property Name="Jardin" Type="Boolean" />
+    <Property Name="PInfantil" Type="Boolean" />
+    <Property Name="Terraza" Type="Boolean" />
+    <Property Name="Montana" Type="Boolean" />
+    <Property Name="Metros" Type="Int32" />
+    <Property Name="Baños" Type="Int32" />
+    <Property Name="Dormitorios" Type="Int32" />
+    <Property Name="DMar" Type="Int32" />
+    <Property Name="Chimenea" Type="Boolean" />
+    <Property Name="Vendida" Type="Boolean" />
+    <NavigationProperty Name="propiedades" Relationship="db488059728Model.fk_Carac_Propiedad" FromRole="caracteristicas" ToRole="propiedades" />
+  </EntityType>
+  <EntityType Name="descripcionesesp">
+    <Key>
+      <PropertyRef Name="Propiedad" />
+    </Key>
+    <Property Name="Propiedad" Type="Int32" Nullable="false" />
+    <Property Name="DescripcionESP" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="propiedades" Relationship="db488059728Model.fk_DescrESP_Propiedad" FromRole="descripcionesesp" ToRole="propiedades" />
+  </EntityType>
+  <EntityType Name="descripcionesru">
+    <Key>
+      <PropertyRef Name="Propiedad" />
+    </Key>
+    <Property Name="Propiedad" Type="Int32" Nullable="false" />
+    <Property Name="DescripcionRU" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="propiedades" Relationship="db488059728Model.fk_DescrRU_Propiedad" FromRole="descripcionesru" ToRole="propiedades" />
+  </EntityType>
+  <EntityType Name="fotos">
+    <Key>
+      <PropertyRef Name="idFoto" />
+      <PropertyRef Name="Propiedad" />
+    </Key>
+    <Property Name="idFoto" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Imagen" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Propiedad" Type="Int32" Nullable="false" />
+    <Property Name="Principal" Type="Boolean" />
+    <NavigationProperty Name="propiedades" Relationship="db488059728Model.fk_Foto_Propiedad" FromRole="fotos" ToRole="propiedades" />
+  </EntityType>
+  <EntityType Name="poblaciones">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="CodPostal" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="propiedades" Relationship="db488059728Model.fk_Propiedad_Poblacion" FromRole="poblaciones" ToRole="propiedades" />
+  </EntityType>
+  <EntityType Name="propiedades">
+    <Key>
+      <PropertyRef Name="idPropiedad" />
+    </Key>
+    <Property Name="idPropiedad" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Precio" Type="Int32" />
+    <Property Name="Propietario" Type="Int32" />
+    <Property Name="DescripcionInterna" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="Categoria" Type="String" MaxLength="65532" Unicode="false" FixedLength="false" />
+    <Property Name="Poblacion" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="caracteristicas" Relationship="db488059728Model.fk_Carac_Propiedad" FromRole="propiedades" ToRole="caracteristicas" />
+    <NavigationProperty Name="descripcionesesp" Relationship="db488059728Model.fk_DescrESP_Propiedad" FromRole="propiedades" ToRole="descripcionesesp" />
+    <NavigationProperty Name="descripcionesru" Relationship="db488059728Model.fk_DescrRU_Propiedad" FromRole="propiedades" ToRole="descripcionesru" />
+    <NavigationProperty Name="fotos" Relationship="db488059728Model.fk_Foto_Propiedad" FromRole="propiedades" ToRole="fotos" />
+    <NavigationProperty Name="poblaciones" Relationship="db488059728Model.fk_Propiedad_Poblacion" FromRole="propiedades" ToRole="poblaciones" />
+    <NavigationProperty Name="propietarios" Relationship="db488059728Model.fk_Propiedad_Propietario" FromRole="propiedades" ToRole="propietarios" />
+  </EntityType>
+  <EntityType Name="propietarios">
+    <Key>
+      <PropertyRef Name="idPropietario" />
+    </Key>
+    <Property Name="idPropietario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Telefono" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Localidad" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="propiedades" Relationship="db488059728Model.fk_Propiedad_Propietario" FromRole="propietarios" ToRole="propiedades" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Pass" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <Association Name="fk_Carac_Propiedad">
+    <End Role="propiedades" Type="db488059728Model.propiedades" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="caracteristicas" Type="db488059728Model.caracteristicas" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="propiedades">
+        <PropertyRef Name="idPropiedad" />
+      </Principal>
+      <Dependent Role="caracteristicas">
+        <PropertyRef Name="Propiedad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DescrESP_Propiedad">
+    <End Role="propiedades" Type="db488059728Model.propiedades" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="descripcionesesp" Type="db488059728Model.descripcionesesp" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="propiedades">
+        <PropertyRef Name="idPropiedad" />
+      </Principal>
+      <Dependent Role="descripcionesesp">
+        <PropertyRef Name="Propiedad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DescrRU_Propiedad">
+    <End Role="propiedades" Type="db488059728Model.propiedades" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="descripcionesru" Type="db488059728Model.descripcionesru" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="propiedades">
+        <PropertyRef Name="idPropiedad" />
+      </Principal>
+      <Dependent Role="descripcionesru">
+        <PropertyRef Name="Propiedad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Foto_Propiedad">
+    <End Role="propiedades" Type="db488059728Model.propiedades" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="fotos" Type="db488059728Model.fotos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="propiedades">
+        <PropertyRef Name="idPropiedad" />
+      </Principal>
+      <Dependent Role="fotos">
+        <PropertyRef Name="Propiedad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Propiedad_Poblacion">
+    <End Role="poblaciones" Type="db488059728Model.poblaciones" Multiplicity="0..1" />
+    <End Role="propiedades" Type="db488059728Model.propiedades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="poblaciones">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="propiedades">
+        <PropertyRef Name="Poblacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Propiedad_Propietario">
+    <End Role="propietarios" Type="db488059728Model.propietarios" Multiplicity="0..1" />
+    <End Role="propiedades" Type="db488059728Model.propiedades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="propietarios">
+        <PropertyRef Name="idPropietario" />
+      </Principal>
+      <Dependent Role="propiedades">
+        <PropertyRef Name="Propietario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

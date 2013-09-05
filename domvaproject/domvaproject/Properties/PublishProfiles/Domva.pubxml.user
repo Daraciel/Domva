@@ -10,7 +10,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/domvaproject.dll">
-      <publishTime>09/02/2013 17:08:10</publishTime>
+      <publishTime>09/04/2013 10:45:50</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>08/19/2013 12:27:46</publishTime>
@@ -20,6 +20,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     </File>
     <File Include="bin/es/System.Web.Providers.resources.dll">
       <publishTime>08/19/2013 12:28:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CSharp.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>08/19/2013 12:27:55</publishTime>
@@ -33,6 +36,24 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="bin/MySql.Web.dll">
       <publishTime>06/13/2013 02:24:56</publishTime>
     </File>
+    <File Include="bin/ru/domvaproject.resources.dll">
+      <publishTime>09/04/2013 10:45:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.Abstractions.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.ApplicationServices.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.DynamicData.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Entity.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Extensions.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>08/19/2013 12:27:56</publishTime>
     </File>
@@ -44,6 +65,12 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     </File>
     <File Include="bin/System.Web.Razor.dll">
       <publishTime>08/19/2013 12:27:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Routing.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Services.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
       <publishTime>08/19/2013 12:27:57</publishTime>
@@ -226,7 +253,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>08/19/2013 12:27:33</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>09/02/2013 16:43:38</publishTime>
+      <publishTime>02/09/2013 16:43:38</publishTime>
     </File>
     <File Include="Scripts/jquery-1.7.1.js">
       <publishTime>08/19/2013 12:28:01</publishTime>
@@ -321,6 +348,21 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="Views/DescripcionesESP/Index.cshtml">
       <publishTime>08/28/2013 12:46:37</publishTime>
     </File>
+    <File Include="Views/DescripcionesRU/Create.cshtml">
+      <publishTime>09/02/2013 17:51:07</publishTime>
+    </File>
+    <File Include="Views/DescripcionesRU/Delete.cshtml">
+      <publishTime>09/02/2013 17:51:08</publishTime>
+    </File>
+    <File Include="Views/DescripcionesRU/Details.cshtml">
+      <publishTime>09/02/2013 17:51:06</publishTime>
+    </File>
+    <File Include="Views/DescripcionesRU/Edit.cshtml">
+      <publishTime>09/02/2013 17:51:07</publishTime>
+    </File>
+    <File Include="Views/DescripcionesRU/Index.cshtml">
+      <publishTime>09/02/2013 17:51:05</publishTime>
+    </File>
     <File Include="Views/Fotos/Create.cshtml">
       <publishTime>08/28/2013 11:55:18</publishTime>
     </File>
@@ -343,16 +385,16 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>08/28/2013 10:37:16</publishTime>
     </File>
     <File Include="Views/Propiedades/Create.cshtml">
-      <publishTime>08/30/2013 18:04:25</publishTime>
+      <publishTime>09/02/2013 18:14:17</publishTime>
     </File>
     <File Include="Views/Propiedades/Delete.cshtml">
       <publishTime>08/28/2013 11:00:44</publishTime>
     </File>
     <File Include="Views/Propiedades/Details.cshtml">
-      <publishTime>08/28/2013 12:25:22</publishTime>
+      <publishTime>09/02/2013 18:13:43</publishTime>
     </File>
     <File Include="Views/Propiedades/Edit.cshtml">
-      <publishTime>08/30/2013 18:03:40</publishTime>
+      <publishTime>09/02/2013 18:14:52</publishTime>
     </File>
     <File Include="Views/Propiedades/Index.cshtml">
       <publishTime>08/28/2013 10:38:14</publishTime>
@@ -376,7 +418,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>08/19/2013 12:27:33</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/30/2013 18:14:12</publishTime>
+      <publishTime>09/03/2013 11:20:48</publishTime>
     </File>
     <File Include="Views/Shared/_LoginLayout.cshtml">
       <publishTime>08/30/2013 17:45:19</publishTime>
@@ -397,10 +439,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>08/30/2013 11:36:49</publishTime>
     </File>
     <File Include="Views/Usuarios/Index.cshtml">
-      <publishTime>09/02/2013 16:02:21</publishTime>
+      <publishTime>02/09/2013 16:02:21</publishTime>
     </File>
     <File Include="Views/Usuarios/Login.cshtml">
-      <publishTime>09/02/2013 16:05:05</publishTime>
+      <publishTime>02/09/2013 16:05:05</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>08/19/2013 12:27:33</publishTime>
@@ -409,7 +451,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>08/19/2013 12:27:33</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/02/2013 17:08:15</publishTime>
+      <publishTime>09/04/2013 10:45:56</publishTime>
     </File>
   </ItemGroup>
 </Project>

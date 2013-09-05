@@ -24,3 +24,16 @@ C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Release\d
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Release\domvaproject.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Release\domvaproject.pdb
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\MySql.Web.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\ru\domvaproject.resources.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\Microsoft.CSharp.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Abstractions.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.ApplicationServices.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.DynamicData.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Entity.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Extensions.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Routing.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Services.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Release\domvaproject.Resources.Views.Shared.SharedStrings.resources
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Release\domvaproject.Resources.Views.Shared.SharedStrings.ru.resources
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Release\domvaproject.csproj.GenerateResource.Cache
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Release\ru\domvaproject.resources.dll
