@@ -44,6 +44,16 @@ namespace domvaproject.Controllers
         public ActionResult Login()
         {
             return View();
+        }
+
+        public ActionResult Zasca()
+        {
+            return View();
+        }
+
+        public ActionResult Login2()
+        {
+            return View();
         } 
         //
         // POST: /Usuarios/Create
@@ -82,7 +92,50 @@ namespace domvaproject.Controllers
                 return RedirectToAction("Index"); 
 
         }
-        
+
+        [HttpPost]
+        public ActionResult Login2(usuarios usu)
+        {
+            MySqlCommand com = new MySqlCommand();
+            MySqlConnection conn = new MySqlConnection();
+            try
+            {
+                conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["domvaEntities"].ToString());
+                conn.Open();
+                conn.Close();
+                return RedirectToAction("Login2");
+            }
+            catch (Exception ex)
+            {
+                AspNetHostingPermissionLevel ass = GetCurrentTrustLevel();
+                Session["Confianza"] = ass.ToString();
+                Session["Error"] = ex;
+                return RedirectToAction("Zasca");
+
+            }
+                
+                
+                /*
+            oConn = New System.Data.SQLClient.SQLConnection ("server=mssqlxxx.1and1.es; initial catalog=dbxxxxxxxxx;uid=dboxxxxxxxxx;pwd=xxxxxxxx")
+			oConn.Open()
+			oCom = New System.Data.SQLClient.SqlCommand()
+			oCom.Connection = oConn
+			oCom.CommandText = "SELECT * FROM products"
+			oDR = oCom.ExecuteReader()
+			While oDR.Read
+	    		Response.Write(oDR.Item("id") & ", " & oDR.Item("price"))
+	    		Response.Write("<BR/>")
+    		End While
+        catch
+            Response.Write("Error:" & err.Description)
+        Finally
+        	oDR = Nothing
+        	oCom = Nothing
+        	oConn.Close()
+        	oConn = Nothing
+        end try*/
+
+        }
         //
         // GET: /Usuarios/Edit/5
  
@@ -132,6 +185,31 @@ namespace domvaproject.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+
+        AspNetHostingPermissionLevel GetCurrentTrustLevel()
+        {
+            foreach (AspNetHostingPermissionLevel trustLevel in
+            new AspNetHostingPermissionLevel[] {
+                    AspNetHostingPermissionLevel.Unrestricted,
+                    AspNetHostingPermissionLevel.High,
+                    AspNetHostingPermissionLevel.Medium,
+                    AspNetHostingPermissionLevel.Low,
+                    AspNetHostingPermissionLevel.Minimal 
+                    })
+            {
+                try
+                {
+                    new AspNetHostingPermission(trustLevel).Demand();
+                }
+                catch (System.Security.SecurityException)
+                {
+                    continue;
+                }
+                return trustLevel;
+            }
+            return AspNetHostingPermissionLevel.None;
         }
     }
 }

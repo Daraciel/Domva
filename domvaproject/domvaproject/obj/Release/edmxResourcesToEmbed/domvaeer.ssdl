@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="domvaModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="domvaModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="domvaModelStoreContainer">
-    <EntitySet Name="caracteristicas" EntityType="domvaModel.Store.caracteristicas" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="descripcionesesp" EntityType="domvaModel.Store.descripcionesesp" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="descripcionesru" EntityType="domvaModel.Store.descripcionesru" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="fotos" EntityType="domvaModel.Store.fotos" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="poblaciones" EntityType="domvaModel.Store.poblaciones" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="propiedades" EntityType="domvaModel.Store.propiedades" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="propietarios" EntityType="domvaModel.Store.propietarios" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="usuarios" EntityType="domvaModel.Store.usuarios" store:Type="Tables" Schema="domva" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="caracteristicas" EntityType="domvaModel.Store.caracteristicas" store:Type="Tables" Schema="domva" />
+    <EntitySet Name="descripcionesesp" EntityType="domvaModel.Store.descripcionesesp" store:Type="Tables" Schema="domva" />
+    <EntitySet Name="descripcionesru" EntityType="domvaModel.Store.descripcionesru" store:Type="Tables" Schema="domva" />
+    <EntitySet Name="fotos" EntityType="domvaModel.Store.fotos" store:Type="Tables" Schema="domva" />
+    <EntitySet Name="poblaciones" EntityType="domvaModel.Store.poblaciones" store:Type="Tables" Schema="domva" />
+    <EntitySet Name="propiedades" EntityType="domvaModel.Store.propiedades" store:Type="Tables" Schema="domva" />
+    <EntitySet Name="propietarios" EntityType="domvaModel.Store.propietarios" store:Type="Tables" Schema="domva" />
+    <EntitySet Name="usuarios" EntityType="domvaModel.Store.usuarios" store:Type="Tables" Schema="domva" />
     <AssociationSet Name="fk_Carac_Propiedad" Association="domvaModel.Store.fk_Carac_Propiedad">
       <End Role="propiedades" EntitySet="propiedades" />
       <End Role="caracteristicas" EntitySet="caracteristicas" />

@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Zasca";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    Exception ex = (Exception)Session["Error"];
+}
+
+<h2>Zasca</h2>
+
+
+<h3>Cosas</h3>
+<label>Nivel:</label>
+@Html.Label(Session["Confianza"].ToString())
+<br />
+<label>Escec:</label>
+@ex.InnerException.Message;
+<br />
+<label>Message:</label>
+@ex.Message;
+<br />

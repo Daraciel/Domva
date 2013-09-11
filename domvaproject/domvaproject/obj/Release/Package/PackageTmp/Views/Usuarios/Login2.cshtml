@@ -13,8 +13,8 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>usuarios</legend>
-        <!-- @Html.ActionLink("Login", "Login2", "Usuarios") -->
+        <legend>Login2</legend>
+
         <div class="editor-label">
             @Html.LabelFor(model => model.Nombre)
         </div>
@@ -30,6 +30,7 @@
             @Html.PasswordFor(model => model.Pass)
             @Html.ValidationMessageFor(model => model.Pass)
         </div>
+
 
         <p>
             <input type="submit" value="Login" />
