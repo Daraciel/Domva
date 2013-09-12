@@ -27,10 +27,10 @@ namespace domvaproject
         public bool PInfantil { get; set; }
         public bool Terraza { get; set; }
         public bool Montana { get; set; }
-        public Nullable<int> Metros { get; set; }
-        public Nullable<int> Baños { get; set; }
-        public Nullable<int> Dormitorios { get; set; }
-        public Nullable<int> DMar { get; set; }
+        public int Metros { get; set; }
+        public int Baños { get; set; }
+        public int Dormitorios { get; set; }
+        public int DMar { get; set; }
         public bool Chimenea { get; set; }
         public bool Vendida { get; set; }
     

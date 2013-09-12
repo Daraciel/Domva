@@ -1,35 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="domvaModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="domvaModelStoreContainer">
-    <EntitySet Name="caracteristicas" EntityType="domvaModel.Store.caracteristicas" store:Type="Tables" Schema="domva" />
-    <EntitySet Name="descripcionesesp" EntityType="domvaModel.Store.descripcionesesp" store:Type="Tables" Schema="domva" />
-    <EntitySet Name="descripcionesru" EntityType="domvaModel.Store.descripcionesru" store:Type="Tables" Schema="domva" />
-    <EntitySet Name="fotos" EntityType="domvaModel.Store.fotos" store:Type="Tables" Schema="domva" />
-    <EntitySet Name="poblaciones" EntityType="domvaModel.Store.poblaciones" store:Type="Tables" Schema="domva" />
-    <EntitySet Name="propiedades" EntityType="domvaModel.Store.propiedades" store:Type="Tables" Schema="domva" />
-    <EntitySet Name="propietarios" EntityType="domvaModel.Store.propietarios" store:Type="Tables" Schema="domva" />
-    <EntitySet Name="usuarios" EntityType="domvaModel.Store.usuarios" store:Type="Tables" Schema="domva" />
-    <AssociationSet Name="fk_Carac_Propiedad" Association="domvaModel.Store.fk_Carac_Propiedad">
+<Schema Namespace="db488059728Model.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="db488059728ModelStoreContainer">
+    <EntitySet Name="caracteristicas" EntityType="db488059728Model.Store.caracteristicas" store:Type="Tables" Schema="db488059728" />
+    <EntitySet Name="descripcionesesp" EntityType="db488059728Model.Store.descripcionesesp" store:Type="Tables" Schema="db488059728" />
+    <EntitySet Name="descripcionesru" EntityType="db488059728Model.Store.descripcionesru" store:Type="Tables" Schema="db488059728" />
+    <EntitySet Name="fotos" EntityType="db488059728Model.Store.fotos" store:Type="Tables" Schema="db488059728" />
+    <EntitySet Name="poblaciones" EntityType="db488059728Model.Store.poblaciones" store:Type="Tables" Schema="db488059728" />
+    <EntitySet Name="propiedades" EntityType="db488059728Model.Store.propiedades" store:Type="Tables" Schema="db488059728" />
+    <EntitySet Name="propietarios" EntityType="db488059728Model.Store.propietarios" store:Type="Tables" Schema="db488059728" />
+    <EntitySet Name="usuarios" EntityType="db488059728Model.Store.usuarios" store:Type="Tables" Schema="db488059728" />
+    <AssociationSet Name="fk_Carac_Propiedad" Association="db488059728Model.Store.fk_Carac_Propiedad">
       <End Role="propiedades" EntitySet="propiedades" />
       <End Role="caracteristicas" EntitySet="caracteristicas" />
     </AssociationSet>
-    <AssociationSet Name="fk_DescrESP_Propiedad" Association="domvaModel.Store.fk_DescrESP_Propiedad">
+    <AssociationSet Name="fk_DescrESP_Propiedad" Association="db488059728Model.Store.fk_DescrESP_Propiedad">
       <End Role="propiedades" EntitySet="propiedades" />
       <End Role="descripcionesesp" EntitySet="descripcionesesp" />
     </AssociationSet>
-    <AssociationSet Name="fk_DescrRU_Propiedad" Association="domvaModel.Store.fk_DescrRU_Propiedad">
+    <AssociationSet Name="fk_DescrRU_Propiedad" Association="db488059728Model.Store.fk_DescrRU_Propiedad">
       <End Role="propiedades" EntitySet="propiedades" />
       <End Role="descripcionesru" EntitySet="descripcionesru" />
     </AssociationSet>
-    <AssociationSet Name="fk_Foto_Propiedad" Association="domvaModel.Store.fk_Foto_Propiedad">
+    <AssociationSet Name="fk_Foto_Propiedad" Association="db488059728Model.Store.fk_Foto_Propiedad">
       <End Role="propiedades" EntitySet="propiedades" />
       <End Role="fotos" EntitySet="fotos" />
     </AssociationSet>
-    <AssociationSet Name="fk_Propiedad_Poblacion" Association="domvaModel.Store.fk_Propiedad_Poblacion">
+    <AssociationSet Name="fk_Propiedad_Poblacion" Association="db488059728Model.Store.fk_Propiedad_Poblacion">
       <End Role="poblaciones" EntitySet="poblaciones" />
       <End Role="propiedades" EntitySet="propiedades" />
     </AssociationSet>
-    <AssociationSet Name="fk_Propiedad_Propietario" Association="domvaModel.Store.fk_Propiedad_Propietario">
+    <AssociationSet Name="fk_Propiedad_Propietario" Association="db488059728Model.Store.fk_Propiedad_Propietario">
       <End Role="propietarios" EntitySet="propietarios" />
       <End Role="propiedades" EntitySet="propiedades" />
     </AssociationSet>
@@ -121,10 +121,10 @@
     <Property Name="Pass" Type="varchar" Nullable="false" MaxLength="45" />
   </EntityType>
   <Association Name="fk_Carac_Propiedad">
-    <End Role="propiedades" Type="domvaModel.Store.propiedades" Multiplicity="1">
+    <End Role="propiedades" Type="db488059728Model.Store.propiedades" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="caracteristicas" Type="domvaModel.Store.caracteristicas" Multiplicity="0..1" />
+    <End Role="caracteristicas" Type="db488059728Model.Store.caracteristicas" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="propiedades">
         <PropertyRef Name="idPropiedad" />
@@ -135,10 +135,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_DescrESP_Propiedad">
-    <End Role="propiedades" Type="domvaModel.Store.propiedades" Multiplicity="1">
+    <End Role="propiedades" Type="db488059728Model.Store.propiedades" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="descripcionesesp" Type="domvaModel.Store.descripcionesesp" Multiplicity="0..1" />
+    <End Role="descripcionesesp" Type="db488059728Model.Store.descripcionesesp" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="propiedades">
         <PropertyRef Name="idPropiedad" />
@@ -149,10 +149,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_DescrRU_Propiedad">
-    <End Role="propiedades" Type="domvaModel.Store.propiedades" Multiplicity="1">
+    <End Role="propiedades" Type="db488059728Model.Store.propiedades" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="descripcionesru" Type="domvaModel.Store.descripcionesru" Multiplicity="0..1" />
+    <End Role="descripcionesru" Type="db488059728Model.Store.descripcionesru" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="propiedades">
         <PropertyRef Name="idPropiedad" />
@@ -163,10 +163,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_Foto_Propiedad">
-    <End Role="propiedades" Type="domvaModel.Store.propiedades" Multiplicity="1">
+    <End Role="propiedades" Type="db488059728Model.Store.propiedades" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="fotos" Type="domvaModel.Store.fotos" Multiplicity="*" />
+    <End Role="fotos" Type="db488059728Model.Store.fotos" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="propiedades">
         <PropertyRef Name="idPropiedad" />
@@ -177,8 +177,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_Propiedad_Poblacion">
-    <End Role="poblaciones" Type="domvaModel.Store.poblaciones" Multiplicity="0..1" />
-    <End Role="propiedades" Type="domvaModel.Store.propiedades" Multiplicity="*" />
+    <End Role="poblaciones" Type="db488059728Model.Store.poblaciones" Multiplicity="0..1" />
+    <End Role="propiedades" Type="db488059728Model.Store.propiedades" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="poblaciones">
         <PropertyRef Name="Nombre" />
@@ -189,8 +189,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_Propiedad_Propietario">
-    <End Role="propietarios" Type="domvaModel.Store.propietarios" Multiplicity="0..1" />
-    <End Role="propiedades" Type="domvaModel.Store.propiedades" Multiplicity="*" />
+    <End Role="propietarios" Type="db488059728Model.Store.propietarios" Multiplicity="0..1" />
+    <End Role="propiedades" Type="db488059728Model.Store.propiedades" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="propietarios">
         <PropertyRef Name="idPropietario" />

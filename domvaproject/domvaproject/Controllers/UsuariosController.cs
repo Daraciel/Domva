@@ -9,6 +9,7 @@ using domvaproject;
 using System.Data.Objects.SqlClient;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using System.Net;
 
 namespace domvaproject.Controllers
 { 
@@ -100,16 +101,23 @@ namespace domvaproject.Controllers
             MySqlConnection conn = new MySqlConnection();
             try
             {
+                string host = Dns.GetHostEntry(usu.Nombre).HostName;
+                string ip = Dns.GetHostEntry(usu.Nombre).AddressList.ToString();
+                Session["host"] = host;
+                Session["ip"] = ip;
+                return RedirectToAction("Zasca");
+                /*
                 conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["domvaEntities"].ToString());
                 conn.Open();
                 conn.Close();
-                return RedirectToAction("Login2");
+                return RedirectToAction("Login2");*/
             }
             catch (Exception ex)
             {
+                /*
                 AspNetHostingPermissionLevel ass = GetCurrentTrustLevel();
-                Session["Confianza"] = ass.ToString();
-                Session["Error"] = ex;
+                Session["Confianza"] = ass.ToString();*/
+                //Session["Error"] = ex;
                 return RedirectToAction("Zasca");
 
             }

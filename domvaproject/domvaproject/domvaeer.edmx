@@ -1,40 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="domvaModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="domvaModelStoreContainer">
-          <EntitySet Name="caracteristicas" EntityType="domvaModel.Store.caracteristicas" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="descripcionesesp" EntityType="domvaModel.Store.descripcionesesp" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="descripcionesru" EntityType="domvaModel.Store.descripcionesru" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="fotos" EntityType="domvaModel.Store.fotos" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="poblaciones" EntityType="domvaModel.Store.poblaciones" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="propiedades" EntityType="domvaModel.Store.propiedades" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="propietarios" EntityType="domvaModel.Store.propietarios" store:Type="Tables" Schema="domva" />
-          <EntitySet Name="usuarios" EntityType="domvaModel.Store.usuarios" store:Type="Tables" Schema="domva" />
-          <AssociationSet Name="fk_Carac_Propiedad" Association="domvaModel.Store.fk_Carac_Propiedad">
+      <Schema Namespace="db488059728Model.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="db488059728ModelStoreContainer">
+          <EntitySet Name="caracteristicas" EntityType="db488059728Model.Store.caracteristicas" store:Type="Tables" Schema="db488059728" />
+          <EntitySet Name="descripcionesesp" EntityType="db488059728Model.Store.descripcionesesp" store:Type="Tables" Schema="db488059728" />
+          <EntitySet Name="descripcionesru" EntityType="db488059728Model.Store.descripcionesru" store:Type="Tables" Schema="db488059728" />
+          <EntitySet Name="fotos" EntityType="db488059728Model.Store.fotos" store:Type="Tables" Schema="db488059728" />
+          <EntitySet Name="poblaciones" EntityType="db488059728Model.Store.poblaciones" store:Type="Tables" Schema="db488059728" />
+          <EntitySet Name="propiedades" EntityType="db488059728Model.Store.propiedades" store:Type="Tables" Schema="db488059728" />
+          <EntitySet Name="propietarios" EntityType="db488059728Model.Store.propietarios" store:Type="Tables" Schema="db488059728" />
+          <EntitySet Name="usuarios" EntityType="db488059728Model.Store.usuarios" store:Type="Tables" Schema="db488059728" />
+          <AssociationSet Name="fk_Carac_Propiedad" Association="db488059728Model.Store.fk_Carac_Propiedad">
             <End Role="propiedades" EntitySet="propiedades" />
             <End Role="caracteristicas" EntitySet="caracteristicas" />
           </AssociationSet>
-          <AssociationSet Name="fk_DescrESP_Propiedad" Association="domvaModel.Store.fk_DescrESP_Propiedad">
+          <AssociationSet Name="fk_DescrESP_Propiedad" Association="db488059728Model.Store.fk_DescrESP_Propiedad">
             <End Role="propiedades" EntitySet="propiedades" />
             <End Role="descripcionesesp" EntitySet="descripcionesesp" />
           </AssociationSet>
-          <AssociationSet Name="fk_DescrRU_Propiedad" Association="domvaModel.Store.fk_DescrRU_Propiedad">
+          <AssociationSet Name="fk_DescrRU_Propiedad" Association="db488059728Model.Store.fk_DescrRU_Propiedad">
             <End Role="propiedades" EntitySet="propiedades" />
             <End Role="descripcionesru" EntitySet="descripcionesru" />
           </AssociationSet>
-          <AssociationSet Name="fk_Foto_Propiedad" Association="domvaModel.Store.fk_Foto_Propiedad">
+          <AssociationSet Name="fk_Foto_Propiedad" Association="db488059728Model.Store.fk_Foto_Propiedad">
             <End Role="propiedades" EntitySet="propiedades" />
             <End Role="fotos" EntitySet="fotos" />
           </AssociationSet>
-          <AssociationSet Name="fk_Propiedad_Poblacion" Association="domvaModel.Store.fk_Propiedad_Poblacion">
+          <AssociationSet Name="fk_Propiedad_Poblacion" Association="db488059728Model.Store.fk_Propiedad_Poblacion">
             <End Role="poblaciones" EntitySet="poblaciones" />
             <End Role="propiedades" EntitySet="propiedades" />
           </AssociationSet>
-          <AssociationSet Name="fk_Propiedad_Propietario" Association="domvaModel.Store.fk_Propiedad_Propietario">
+          <AssociationSet Name="fk_Propiedad_Propietario" Association="db488059728Model.Store.fk_Propiedad_Propietario">
             <End Role="propietarios" EntitySet="propietarios" />
             <End Role="propiedades" EntitySet="propiedades" />
           </AssociationSet>
@@ -126,10 +126,10 @@
           <Property Name="Pass" Type="varchar" Nullable="false" MaxLength="45" />
         </EntityType>
         <Association Name="fk_Carac_Propiedad">
-          <End Role="propiedades" Type="domvaModel.Store.propiedades" Multiplicity="1">
+          <End Role="propiedades" Type="db488059728Model.Store.propiedades" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="caracteristicas" Type="domvaModel.Store.caracteristicas" Multiplicity="0..1" />
+          <End Role="caracteristicas" Type="db488059728Model.Store.caracteristicas" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="propiedades">
               <PropertyRef Name="idPropiedad" />
@@ -140,10 +140,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_DescrESP_Propiedad">
-          <End Role="propiedades" Type="domvaModel.Store.propiedades" Multiplicity="1">
+          <End Role="propiedades" Type="db488059728Model.Store.propiedades" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="descripcionesesp" Type="domvaModel.Store.descripcionesesp" Multiplicity="0..1" />
+          <End Role="descripcionesesp" Type="db488059728Model.Store.descripcionesesp" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="propiedades">
               <PropertyRef Name="idPropiedad" />
@@ -154,10 +154,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_DescrRU_Propiedad">
-          <End Role="propiedades" Type="domvaModel.Store.propiedades" Multiplicity="1">
+          <End Role="propiedades" Type="db488059728Model.Store.propiedades" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="descripcionesru" Type="domvaModel.Store.descripcionesru" Multiplicity="0..1" />
+          <End Role="descripcionesru" Type="db488059728Model.Store.descripcionesru" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="propiedades">
               <PropertyRef Name="idPropiedad" />
@@ -168,10 +168,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_Foto_Propiedad">
-          <End Role="propiedades" Type="domvaModel.Store.propiedades" Multiplicity="1">
+          <End Role="propiedades" Type="db488059728Model.Store.propiedades" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="fotos" Type="domvaModel.Store.fotos" Multiplicity="*" />
+          <End Role="fotos" Type="db488059728Model.Store.fotos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="propiedades">
               <PropertyRef Name="idPropiedad" />
@@ -182,8 +182,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_Propiedad_Poblacion">
-          <End Role="poblaciones" Type="domvaModel.Store.poblaciones" Multiplicity="0..1" />
-          <End Role="propiedades" Type="domvaModel.Store.propiedades" Multiplicity="*" />
+          <End Role="poblaciones" Type="db488059728Model.Store.poblaciones" Multiplicity="0..1" />
+          <End Role="propiedades" Type="db488059728Model.Store.propiedades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="poblaciones">
               <PropertyRef Name="Nombre" />
@@ -194,8 +194,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_Propiedad_Propietario">
-          <End Role="propietarios" Type="domvaModel.Store.propietarios" Multiplicity="0..1" />
-          <End Role="propiedades" Type="domvaModel.Store.propiedades" Multiplicity="*" />
+          <End Role="propietarios" Type="db488059728Model.Store.propietarios" Multiplicity="0..1" />
+          <End Role="propiedades" Type="db488059728Model.Store.propiedades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="propietarios">
               <PropertyRef Name="idPropietario" />
@@ -205,40 +205,41 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="domvaModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="domvaEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-          <EntitySet Name="caracteristicas" EntityType="domvaModel.caracteristicas" />
-          <EntitySet Name="descripcionesesp" EntityType="domvaModel.descripcionesesp" />
-          <EntitySet Name="descripcionesru" EntityType="domvaModel.descripcionesru" />
-          <EntitySet Name="fotos" EntityType="domvaModel.fotos" />
-          <EntitySet Name="poblaciones" EntityType="domvaModel.poblaciones" />
-          <EntitySet Name="propiedades" EntityType="domvaModel.propiedades" />
-          <EntitySet Name="propietarios" EntityType="domvaModel.propietarios" />
-          <EntitySet Name="usuarios" EntityType="domvaModel.usuarios" />
-          <AssociationSet Name="fk_Carac_Propiedad" Association="domvaModel.fk_Carac_Propiedad">
+      <Schema Namespace="db488059728Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="domvaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="caracteristicas" EntityType="db488059728Model.caracteristicas" />
+          <EntitySet Name="descripcionesesp" EntityType="db488059728Model.descripcionesesp" />
+          <EntitySet Name="descripcionesru" EntityType="db488059728Model.descripcionesru" />
+          <EntitySet Name="fotos" EntityType="db488059728Model.fotos" />
+          <EntitySet Name="poblaciones" EntityType="db488059728Model.poblaciones" />
+          <EntitySet Name="propiedades" EntityType="db488059728Model.propiedades" />
+          <EntitySet Name="propietarios" EntityType="db488059728Model.propietarios" />
+          <EntitySet Name="usuarios" EntityType="db488059728Model.usuarios" />
+          <AssociationSet Name="fk_Carac_Propiedad" Association="db488059728Model.fk_Carac_Propiedad">
             <End Role="propiedades" EntitySet="propiedades" />
             <End Role="caracteristicas" EntitySet="caracteristicas" />
           </AssociationSet>
-          <AssociationSet Name="fk_DescrESP_Propiedad" Association="domvaModel.fk_DescrESP_Propiedad">
+          <AssociationSet Name="fk_DescrESP_Propiedad" Association="db488059728Model.fk_DescrESP_Propiedad">
             <End Role="propiedades" EntitySet="propiedades" />
             <End Role="descripcionesesp" EntitySet="descripcionesesp" />
           </AssociationSet>
-          <AssociationSet Name="fk_DescrRU_Propiedad" Association="domvaModel.fk_DescrRU_Propiedad">
+          <AssociationSet Name="fk_DescrRU_Propiedad" Association="db488059728Model.fk_DescrRU_Propiedad">
             <End Role="propiedades" EntitySet="propiedades" />
             <End Role="descripcionesru" EntitySet="descripcionesru" />
           </AssociationSet>
-          <AssociationSet Name="fk_Foto_Propiedad" Association="domvaModel.fk_Foto_Propiedad">
+          <AssociationSet Name="fk_Foto_Propiedad" Association="db488059728Model.fk_Foto_Propiedad">
             <End Role="propiedades" EntitySet="propiedades" />
             <End Role="fotos" EntitySet="fotos" />
           </AssociationSet>
-          <AssociationSet Name="fk_Propiedad_Poblacion" Association="domvaModel.fk_Propiedad_Poblacion">
+          <AssociationSet Name="fk_Propiedad_Poblacion" Association="db488059728Model.fk_Propiedad_Poblacion">
             <End Role="poblaciones" EntitySet="poblaciones" />
             <End Role="propiedades" EntitySet="propiedades" />
           </AssociationSet>
-          <AssociationSet Name="fk_Propiedad_Propietario" Association="domvaModel.fk_Propiedad_Propietario">
+          <AssociationSet Name="fk_Propiedad_Propietario" Association="db488059728Model.fk_Propiedad_Propietario">
             <End Role="propietarios" EntitySet="propietarios" />
             <End Role="propiedades" EntitySet="propiedades" />
           </AssociationSet>
@@ -260,13 +261,13 @@
           <Property Name="PInfantil" Type="Boolean" Nullable="false" />
           <Property Name="Terraza" Type="Boolean" Nullable="false" />
           <Property Name="Montana" Type="Boolean" Nullable="false" />
-          <Property Name="Metros" Type="Int32" />
-          <Property Name="Baños" Type="Int32" />
-          <Property Name="Dormitorios" Type="Int32" />
-          <Property Name="DMar" Type="Int32" />
+          <Property Name="Metros" Type="Int32" Nullable="false" />
+          <Property Name="Baños" Type="Int32" Nullable="false" />
+          <Property Name="Dormitorios" Type="Int32" Nullable="false" />
+          <Property Name="DMar" Type="Int32" Nullable="false" />
           <Property Name="Chimenea" Type="Boolean" Nullable="false" />
           <Property Name="Vendida" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_Carac_Propiedad" FromRole="caracteristicas" ToRole="propiedades" />
+          <NavigationProperty Name="propiedades" Relationship="db488059728Model.fk_Carac_Propiedad" FromRole="caracteristicas" ToRole="propiedades" />
         </EntityType>
         <EntityType Name="descripcionesesp">
           <Key>
@@ -274,7 +275,7 @@
           </Key>
           <Property Name="Propiedad" Type="Int32" Nullable="false" />
           <Property Name="DescripcionESP" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_DescrESP_Propiedad" FromRole="descripcionesesp" ToRole="propiedades" />
+          <NavigationProperty Name="propiedades" Relationship="db488059728Model.fk_DescrESP_Propiedad" FromRole="descripcionesesp" ToRole="propiedades" />
         </EntityType>
         <EntityType Name="descripcionesru">
           <Key>
@@ -282,18 +283,18 @@
           </Key>
           <Property Name="Propiedad" Type="Int32" Nullable="false" />
           <Property Name="DescripcionRU" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_DescrRU_Propiedad" FromRole="descripcionesru" ToRole="propiedades" />
+          <NavigationProperty Name="propiedades" Relationship="db488059728Model.fk_DescrRU_Propiedad" FromRole="descripcionesru" ToRole="propiedades" />
         </EntityType>
         <EntityType Name="fotos">
           <Key>
             <PropertyRef Name="idFoto" />
             <PropertyRef Name="Propiedad" />
           </Key>
-          <Property Name="idFoto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="idFoto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Imagen" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Propiedad" Type="Int32" Nullable="false" />
           <Property Name="Principal" Type="Boolean" />
-          <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_Foto_Propiedad" FromRole="fotos" ToRole="propiedades" />
+          <NavigationProperty Name="propiedades" Relationship="db488059728Model.fk_Foto_Propiedad" FromRole="fotos" ToRole="propiedades" />
         </EntityType>
         <EntityType Name="poblaciones">
           <Key>
@@ -301,38 +302,38 @@
           </Key>
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="CodPostal" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_Propiedad_Poblacion" FromRole="poblaciones" ToRole="propiedades" />
+          <NavigationProperty Name="propiedades" Relationship="db488059728Model.fk_Propiedad_Poblacion" FromRole="poblaciones" ToRole="propiedades" />
         </EntityType>
         <EntityType Name="propiedades">
           <Key>
             <PropertyRef Name="idPropiedad" />
           </Key>
-          <Property Name="idPropiedad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="idPropiedad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Precio" Type="Int32" />
           <Property Name="Propietario" Type="Int32" />
           <Property Name="DescripcionInterna" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
           <Property Name="Categoria" Type="String" MaxLength="65532" Unicode="false" FixedLength="false" />
           <Property Name="Poblacion" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="caracteristicas" Relationship="domvaModel.fk_Carac_Propiedad" FromRole="propiedades" ToRole="caracteristicas" />
-          <NavigationProperty Name="descripcionesesp" Relationship="domvaModel.fk_DescrESP_Propiedad" FromRole="propiedades" ToRole="descripcionesesp" />
-          <NavigationProperty Name="descripcionesru" Relationship="domvaModel.fk_DescrRU_Propiedad" FromRole="propiedades" ToRole="descripcionesru" />
-          <NavigationProperty Name="fotos" Relationship="domvaModel.fk_Foto_Propiedad" FromRole="propiedades" ToRole="fotos" />
-          <NavigationProperty Name="poblaciones" Relationship="domvaModel.fk_Propiedad_Poblacion" FromRole="propiedades" ToRole="poblaciones" />
-          <NavigationProperty Name="propietarios" Relationship="domvaModel.fk_Propiedad_Propietario" FromRole="propiedades" ToRole="propietarios" />
+          <NavigationProperty Name="caracteristicas" Relationship="db488059728Model.fk_Carac_Propiedad" FromRole="propiedades" ToRole="caracteristicas" />
+          <NavigationProperty Name="descripcionesesp" Relationship="db488059728Model.fk_DescrESP_Propiedad" FromRole="propiedades" ToRole="descripcionesesp" />
+          <NavigationProperty Name="descripcionesru" Relationship="db488059728Model.fk_DescrRU_Propiedad" FromRole="propiedades" ToRole="descripcionesru" />
+          <NavigationProperty Name="fotos" Relationship="db488059728Model.fk_Foto_Propiedad" FromRole="propiedades" ToRole="fotos" />
+          <NavigationProperty Name="poblaciones" Relationship="db488059728Model.fk_Propiedad_Poblacion" FromRole="propiedades" ToRole="poblaciones" />
+          <NavigationProperty Name="propietarios" Relationship="db488059728Model.fk_Propiedad_Propietario" FromRole="propiedades" ToRole="propietarios" />
         </EntityType>
         <EntityType Name="propietarios">
           <Key>
             <PropertyRef Name="idPropietario" />
           </Key>
-          <Property Name="idPropietario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="idPropietario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Telefono" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Email" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Localidad" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Direccion" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Descripcion" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="propiedades" Relationship="domvaModel.fk_Propiedad_Propietario" FromRole="propietarios" ToRole="propiedades" />
+          <NavigationProperty Name="propiedades" Relationship="db488059728Model.fk_Propiedad_Propietario" FromRole="propietarios" ToRole="propiedades" />
         </EntityType>
         <EntityType Name="usuarios">
           <Key>
@@ -342,10 +343,10 @@
           <Property Name="Pass" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
         </EntityType>
         <Association Name="fk_Carac_Propiedad">
-          <End Role="propiedades" Type="domvaModel.propiedades" Multiplicity="1">
+          <End Role="propiedades" Type="db488059728Model.propiedades" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="caracteristicas" Type="domvaModel.caracteristicas" Multiplicity="0..1" />
+          <End Role="caracteristicas" Type="db488059728Model.caracteristicas" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="propiedades">
               <PropertyRef Name="idPropiedad" />
@@ -356,10 +357,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_DescrESP_Propiedad">
-          <End Role="propiedades" Type="domvaModel.propiedades" Multiplicity="1">
+          <End Role="propiedades" Type="db488059728Model.propiedades" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="descripcionesesp" Type="domvaModel.descripcionesesp" Multiplicity="0..1" />
+          <End Role="descripcionesesp" Type="db488059728Model.descripcionesesp" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="propiedades">
               <PropertyRef Name="idPropiedad" />
@@ -370,10 +371,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_DescrRU_Propiedad">
-          <End Role="propiedades" Type="domvaModel.propiedades" Multiplicity="1">
+          <End Role="propiedades" Type="db488059728Model.propiedades" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="descripcionesru" Type="domvaModel.descripcionesru" Multiplicity="0..1" />
+          <End Role="descripcionesru" Type="db488059728Model.descripcionesru" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="propiedades">
               <PropertyRef Name="idPropiedad" />
@@ -384,10 +385,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_Foto_Propiedad">
-          <End Role="propiedades" Type="domvaModel.propiedades" Multiplicity="1">
+          <End Role="propiedades" Type="db488059728Model.propiedades" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="fotos" Type="domvaModel.fotos" Multiplicity="*" />
+          <End Role="fotos" Type="db488059728Model.fotos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="propiedades">
               <PropertyRef Name="idPropiedad" />
@@ -398,8 +399,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_Propiedad_Poblacion">
-          <End Role="poblaciones" Type="domvaModel.poblaciones" Multiplicity="0..1" />
-          <End Role="propiedades" Type="domvaModel.propiedades" Multiplicity="*" />
+          <End Role="poblaciones" Type="db488059728Model.poblaciones" Multiplicity="0..1" />
+          <End Role="propiedades" Type="db488059728Model.propiedades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="poblaciones">
               <PropertyRef Name="Nombre" />
@@ -410,8 +411,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_Propiedad_Propietario">
-          <End Role="propietarios" Type="domvaModel.propietarios" Multiplicity="0..1" />
-          <End Role="propiedades" Type="domvaModel.propiedades" Multiplicity="*" />
+          <End Role="propietarios" Type="db488059728Model.propietarios" Multiplicity="0..1" />
+          <End Role="propiedades" Type="db488059728Model.propiedades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="propietarios">
               <PropertyRef Name="idPropietario" />
@@ -425,10 +426,10 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="domvaModelStoreContainer" CdmEntityContainer="domvaEntities">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db488059728ModelStoreContainer" CdmEntityContainer="domvaEntities">
           <EntitySetMapping Name="caracteristicas">
-            <EntityTypeMapping TypeName="domvaModel.caracteristicas">
+            <EntityTypeMapping TypeName="db488059728Model.caracteristicas">
               <MappingFragment StoreEntitySet="caracteristicas">
                 <ScalarProperty Name="Propiedad" ColumnName="Propiedad" />
                 <ScalarProperty Name="Piscina" ColumnName="Piscina" />
@@ -453,7 +454,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="descripcionesesp">
-            <EntityTypeMapping TypeName="domvaModel.descripcionesesp">
+            <EntityTypeMapping TypeName="db488059728Model.descripcionesesp">
               <MappingFragment StoreEntitySet="descripcionesesp">
                 <ScalarProperty Name="Propiedad" ColumnName="Propiedad" />
                 <ScalarProperty Name="DescripcionESP" ColumnName="DescripcionESP" />
@@ -461,7 +462,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="descripcionesru">
-            <EntityTypeMapping TypeName="domvaModel.descripcionesru">
+            <EntityTypeMapping TypeName="db488059728Model.descripcionesru">
               <MappingFragment StoreEntitySet="descripcionesru">
                 <ScalarProperty Name="Propiedad" ColumnName="Propiedad" />
                 <ScalarProperty Name="DescripcionRU" ColumnName="DescripcionRU" />
@@ -469,7 +470,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="fotos">
-            <EntityTypeMapping TypeName="domvaModel.fotos">
+            <EntityTypeMapping TypeName="db488059728Model.fotos">
               <MappingFragment StoreEntitySet="fotos">
                 <ScalarProperty Name="idFoto" ColumnName="idFoto" />
                 <ScalarProperty Name="Imagen" ColumnName="Imagen" />
@@ -479,7 +480,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="poblaciones">
-            <EntityTypeMapping TypeName="domvaModel.poblaciones">
+            <EntityTypeMapping TypeName="db488059728Model.poblaciones">
               <MappingFragment StoreEntitySet="poblaciones">
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="CodPostal" ColumnName="CodPostal" />
@@ -487,7 +488,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="propiedades">
-            <EntityTypeMapping TypeName="domvaModel.propiedades">
+            <EntityTypeMapping TypeName="db488059728Model.propiedades">
               <MappingFragment StoreEntitySet="propiedades">
                 <ScalarProperty Name="idPropiedad" ColumnName="idPropiedad" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -500,7 +501,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="propietarios">
-            <EntityTypeMapping TypeName="domvaModel.propietarios">
+            <EntityTypeMapping TypeName="db488059728Model.propietarios">
               <MappingFragment StoreEntitySet="propietarios">
                 <ScalarProperty Name="idPropietario" ColumnName="idPropietario" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -513,7 +514,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="usuarios">
-            <EntityTypeMapping TypeName="domvaModel.usuarios">
+            <EntityTypeMapping TypeName="db488059728Model.usuarios">
               <MappingFragment StoreEntitySet="usuarios">
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Pass" ColumnName="Pass" />
@@ -525,7 +526,7 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
@@ -540,6 +541,6 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams />
+    <Diagrams></Diagrams>
   </Designer>
 </edmx:Edmx>

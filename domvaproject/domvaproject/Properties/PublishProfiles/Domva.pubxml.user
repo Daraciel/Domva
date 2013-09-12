@@ -10,19 +10,19 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/domvaproject.dll">
-      <publishTime>06/09/2013 13:46:17</publishTime>
+      <publishTime>09/12/2013 10:13:22</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>08/19/2013 12:27:46</publishTime>
+      <publishTime>09/11/2013 18:41:11</publishTime>
     </File>
     <File Include="bin/es/EntityFramework.resources.dll">
-      <publishTime>08/19/2013 12:28:06</publishTime>
+      <publishTime>09/11/2013 18:41:11</publishTime>
     </File>
     <File Include="bin/es/System.Web.Providers.resources.dll">
       <publishTime>08/19/2013 12:28:05</publishTime>
     </File>
     <File Include="bin/Microsoft.CSharp.dll">
-      <publishTime>09/26/2012 03:16:08</publishTime>
+      <publishTime>03/18/2010 18:31:26</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>08/19/2013 12:27:55</publishTime>
@@ -34,22 +34,28 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/13/2013 02:24:56</publishTime>
     </File>
     <File Include="bin/MySql.Web.dll">
-      <publishTime>06/13/2013 02:24:56</publishTime>
+      <publishTime>06/20/2013 00:35:06</publishTime>
     </File>
     <File Include="bin/ru/domvaproject.resources.dll">
-      <publishTime>06/09/2013 13:46:17</publishTime>
+      <publishTime>09/12/2013 10:13:22</publishTime>
+    </File>
+    <File Include="bin/System.Data.Entity.dll">
+      <publishTime>03/18/2010 18:31:26</publishTime>
     </File>
     <File Include="bin/System.Web.Abstractions.dll">
-      <publishTime>09/26/2012 03:16:08</publishTime>
+      <publishTime>03/18/2010 18:31:26</publishTime>
     </File>
     <File Include="bin/System.Web.ApplicationServices.dll">
-      <publishTime>09/26/2012 03:16:08</publishTime>
+      <publishTime>03/18/2010 18:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.dll">
+      <publishTime>03/18/2010 18:31:26</publishTime>
     </File>
     <File Include="bin/System.Web.DynamicData.dll">
-      <publishTime>09/26/2012 03:16:08</publishTime>
+      <publishTime>03/18/2010 18:31:26</publishTime>
     </File>
     <File Include="bin/System.Web.Entity.dll">
-      <publishTime>09/26/2012 03:16:08</publishTime>
+      <publishTime>03/18/2010 18:31:26</publishTime>
     </File>
     <File Include="bin/System.Web.Extensions.dll">
       <publishTime>09/26/2012 03:16:08</publishTime>
@@ -67,10 +73,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>08/19/2013 12:27:56</publishTime>
     </File>
     <File Include="bin/System.Web.Routing.dll">
-      <publishTime>09/26/2012 03:16:08</publishTime>
+      <publishTime>03/18/2010 18:31:26</publishTime>
     </File>
     <File Include="bin/System.Web.Services.dll">
-      <publishTime>09/26/2012 03:16:08</publishTime>
+      <publishTime>03/18/2010 18:31:26</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
       <publishTime>08/19/2013 12:27:57</publishTime>
@@ -80,6 +86,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
       <publishTime>08/19/2013 12:27:57</publishTime>
+    </File>
+    <File Include="bin/System.Xml.Linq.dll">
+      <publishTime>03/18/2010 18:31:26</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>08/19/2013 12:27:32</publishTime>
@@ -247,13 +256,13 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>08/19/2013 12:28:03</publishTime>
     </File>
     <File Include="domvaeer.edmx.diagram">
-      <publishTime>08/30/2013 16:51:20</publishTime>
+      <publishTime>09/11/2013 18:31:21</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>08/19/2013 12:27:33</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>09/02/2013 16:43:38</publishTime>
+      <publishTime>09/11/2013 18:41:14</publishTime>
     </File>
     <File Include="Scripts/jquery-1.7.1.js">
       <publishTime>08/19/2013 12:28:01</publishTime>
@@ -442,13 +451,13 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>09/02/2013 16:02:21</publishTime>
     </File>
     <File Include="Views/Usuarios/Login.cshtml">
-      <publishTime>09/10/2013 12:40:29</publishTime>
+      <publishTime>09/12/2013 09:26:52</publishTime>
     </File>
     <File Include="Views/Usuarios/Login2.cshtml">
       <publishTime>06/09/2013 13:40:12</publishTime>
     </File>
     <File Include="Views/Usuarios/Zasca.cshtml">
-      <publishTime>06/09/2013 13:45:36</publishTime>
+      <publishTime>09/12/2013 09:26:25</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>08/19/2013 12:27:33</publishTime>
@@ -457,7 +466,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>08/19/2013 12:27:33</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/10/2013 17:48:56</publishTime>
+      <publishTime>09/12/2013 09:41:01</publishTime>
     </File>
   </ItemGroup>
 </Project>

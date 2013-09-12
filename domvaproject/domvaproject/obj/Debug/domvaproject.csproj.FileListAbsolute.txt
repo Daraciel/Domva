@@ -1,28 +1,3 @@
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\domvaproject.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\domvaproject.pdb
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\EntityFramework.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\Microsoft.Web.Infrastructure.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\MySql.Data.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\MySql.Data.Entity.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.Helpers.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.Mvc.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.Providers.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.Razor.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.WebPages.Deployment.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.WebPages.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.WebPages.Razor.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\EntityFramework.xml
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.Helpers.xml
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.Mvc.xml
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.Razor.xml
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.WebPages.xml
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.WebPages.Deployment.xml
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\System.Web.WebPages.Razor.xml
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\es\EntityFramework.resources.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\bin\es\System.Web.Providers.resources.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\obj\Debug\domvaproject.csprojResolveAssemblyReference.cache
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\obj\Debug\domvaproject.dll
-c:\users\darkcrow\documents\visual studio 2012\Projects\domvaproject\domvaproject\obj\Debug\domvaproject.pdb
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\domvaproject.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\domvaproject.pdb
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\ru\domvaproject.resources.dll
@@ -31,12 +6,12 @@ C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\Microsoft
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\MySql.Data.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\MySql.Data.Entity.dll
-C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\MySql.Web.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Data.Entity.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Abstractions.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.ApplicationServices.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.DynamicData.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Entity.dll
-C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Extensions.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Helpers.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Mvc.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Providers.dll
@@ -46,6 +21,7 @@ C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.We
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.WebPages.Deployment.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.WebPages.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.WebPages.Razor.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Xml.Linq.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\EntityFramework.xml
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Helpers.xml
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\System.Web.Mvc.xml

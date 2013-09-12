@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="domvaModelStoreContainer" CdmEntityContainer="domvaEntities">
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db488059728ModelStoreContainer" CdmEntityContainer="domvaEntities">
     <EntitySetMapping Name="caracteristicas">
-      <EntityTypeMapping TypeName="domvaModel.caracteristicas">
+      <EntityTypeMapping TypeName="db488059728Model.caracteristicas">
         <MappingFragment StoreEntitySet="caracteristicas">
           <ScalarProperty Name="Propiedad" ColumnName="Propiedad" />
           <ScalarProperty Name="Piscina" ColumnName="Piscina" />
@@ -27,7 +27,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="descripcionesesp">
-      <EntityTypeMapping TypeName="domvaModel.descripcionesesp">
+      <EntityTypeMapping TypeName="db488059728Model.descripcionesesp">
         <MappingFragment StoreEntitySet="descripcionesesp">
           <ScalarProperty Name="Propiedad" ColumnName="Propiedad" />
           <ScalarProperty Name="DescripcionESP" ColumnName="DescripcionESP" />
@@ -35,7 +35,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="descripcionesru">
-      <EntityTypeMapping TypeName="domvaModel.descripcionesru">
+      <EntityTypeMapping TypeName="db488059728Model.descripcionesru">
         <MappingFragment StoreEntitySet="descripcionesru">
           <ScalarProperty Name="Propiedad" ColumnName="Propiedad" />
           <ScalarProperty Name="DescripcionRU" ColumnName="DescripcionRU" />
@@ -43,7 +43,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="fotos">
-      <EntityTypeMapping TypeName="domvaModel.fotos">
+      <EntityTypeMapping TypeName="db488059728Model.fotos">
         <MappingFragment StoreEntitySet="fotos">
           <ScalarProperty Name="idFoto" ColumnName="idFoto" />
           <ScalarProperty Name="Imagen" ColumnName="Imagen" />
@@ -53,7 +53,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="poblaciones">
-      <EntityTypeMapping TypeName="domvaModel.poblaciones">
+      <EntityTypeMapping TypeName="db488059728Model.poblaciones">
         <MappingFragment StoreEntitySet="poblaciones">
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="CodPostal" ColumnName="CodPostal" />
@@ -61,7 +61,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="propiedades">
-      <EntityTypeMapping TypeName="domvaModel.propiedades">
+      <EntityTypeMapping TypeName="db488059728Model.propiedades">
         <MappingFragment StoreEntitySet="propiedades">
           <ScalarProperty Name="idPropiedad" ColumnName="idPropiedad" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -74,7 +74,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="propietarios">
-      <EntityTypeMapping TypeName="domvaModel.propietarios">
+      <EntityTypeMapping TypeName="db488059728Model.propietarios">
         <MappingFragment StoreEntitySet="propietarios">
           <ScalarProperty Name="idPropietario" ColumnName="idPropietario" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -87,7 +87,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="usuarios">
-      <EntityTypeMapping TypeName="domvaModel.usuarios">
+      <EntityTypeMapping TypeName="db488059728Model.usuarios">
         <MappingFragment StoreEntitySet="usuarios">
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Pass" ColumnName="Pass" />

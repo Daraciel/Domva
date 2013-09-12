@@ -1,7 +1,8 @@
 ﻿@{
     ViewBag.Title = "Zasca";
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
-    Exception ex = (Exception)Session["Error"];
+    string host = Session["host"].ToString();
+    string ip = Session["ip"].ToString();
 }
 
 <h2>Zasca</h2>
@@ -9,11 +10,8 @@
 
 <h3>Cosas</h3>
 <label>Nivel:</label>
-@Html.Label(Session["Confianza"].ToString())
+@Html.Label(host)
 <br />
 <label>Escec:</label>
-@ex.InnerException.Message;
-<br />
-<label>Message:</label>
-@ex.Message;
+@Html.Label(ip)
 <br />
