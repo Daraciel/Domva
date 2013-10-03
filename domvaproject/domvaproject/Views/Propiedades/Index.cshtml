@@ -15,6 +15,9 @@
             idPropiedad
         </th>
         <th>
+            Imagen Principal
+        </th>
+        <th>
             Nombre
         </th>
         <th>
@@ -35,6 +38,14 @@
             @Html.DisplayFor(modelItem => item.idPropiedad)
         </td>
         <td>
+            @{ string principal = domvaproject.propiedades.principal(item.idPropiedad);
+               if (principal != "")
+               {
+                   <img src= "@Url.Content("~/images/thumbs/" + principal)" alt="IMAGES" /> 
+               }
+             }
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Nombre)
         </td>
         <td>
@@ -48,7 +59,7 @@
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id = item.idPropiedad }) |
-            @Html.ActionLink("Detalles", "Details", new { id = item.idPropiedad }) |
+           <!-- @Html.ActionLink("Detalles", "Details", new { id = item.idPropiedad }) | -->
             @Html.ActionLink("Borrar", "Delete", new { id = item.idPropiedad })
         </td>
     </tr>

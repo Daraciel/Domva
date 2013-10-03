@@ -1,0 +1,49 @@
+﻿@model domvaproject.fotos
+@{
+    ViewBag.Title = "CreateforPropiedad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CreateforPropiedad</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+
+@using (Html.BeginForm("CreateforPropiedad","Fotos",null,FormMethod.Post, new { enctype = "multipart/form-data" })) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>fotos</legend>
+        
+        <div class="editor-label">
+            <label for="file">Archivo:</label>
+        </div>
+        <div class="editor-field">
+            <input type="file" name="file" id="file" />
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Propiedad)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Propiedad, (SelectList)ViewBag.Propiedades)
+            @Html.ValidationMessageFor(model => model.Propiedad)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Principal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Principal)
+            @Html.ValidationMessageFor(model => model.Principal)
+        </div>
+
+        <p>
+            <input type="submit" name="submit" value="Submit" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

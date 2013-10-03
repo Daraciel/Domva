@@ -9,6 +9,7 @@ using domvaproject;
 using System.Data.Entity.Infrastructure;
 using System.Data.Objects.SqlClient;
 using System.IO;
+using System.Linq.Expressions;
 
 namespace domvaproject.Controllers
 { 
@@ -137,6 +138,39 @@ namespace domvaproject.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public static string principal(int id)
+        {
+            string resul = "";
+            propiedades propiedades = new domvaEntities().propiedades.Find(id);
+            
+            foreach (fotos f in propiedades.fotos)
+            {
+                if (f.Principal==true)
+                    resul = f.Imagen;
+            }
+
+            return resul;
+        }
+
+
+        public int ContarPropiedades()
+        {
+            return db.propiedades.Count();
+        }
+        /*
+        public IEnumerable<propiedades> ObtenerPaginaDePersonas<T>( int paginaActual, int personasPorPagina, Expression<Func<propiedades, T>> ordenacion, Direccion direccion)
+        {
+            if (paginaActual < 1) paginaActual = 1;
+            IQueryable<propiedades> query = db.propiedades;
+            if (direccion == Direccion.Ascendente)
+                query = query.OrderBy(ordenacion);
+            else
+                query = query.OrderByDescending(ordenacion);
+            return query.Skip((paginaActual - 1) * personasPorPagina)
+                        .Take(personasPorPagina)
+                        .ToList();
+        }*/
 
         protected override void Dispose(bool disposing)
         {

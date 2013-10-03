@@ -48,6 +48,54 @@ namespace domvaproject.Controllers
         }
 
 
+
+        public ActionResult CreateforPropiedad(int id)
+        {
+            List<propiedades> props = new List<propiedades>();
+            props = db.propiedades.Where(p => p.idPropiedad.Equals(id)).ToList();
+            ViewBag.Propiedades = new SelectList(props, "idPropiedad", "Nombre");
+            return View();
+        }
+
+
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult CreateforPropiedad(fotos fotos)
+        {
+            int tamW = 220;
+            int tamH = 140;
+            if (ModelState.IsValid)
+            {
+                using (MD5 md5Hash = MD5.Create())
+                {
+                    HttpPostedFileBase archivo = Request.Files[0];
+                    string md5 = GetMd5Hash(md5Hash, archivo.FileName) + ".jpg";
+                    fotos.Imagen = md5;
+                    var path = Path.Combine(Server.MapPath("~/images/photo"), md5);
+                    var pathThumb = Path.Combine(Server.MapPath("~/images/thumbs"), md5);
+                    archivo.SaveAs(path);
+                    Bitmap bmp = CreateThumbnail(path, tamW, tamH);
+                    string OutputFilename = null;
+                    OutputFilename = pathThumb;
+
+                    if (OutputFilename != null)
+                    {
+                        bmp.Save(OutputFilename);
+                    }
+
+                    bmp.Save(OutputFilename, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    bmp.Dispose();
+
+                }
+                db.fotos.Add(fotos);
+                db.SaveChanges();
+                return RedirectToAction("Edit", "Propiedades", new { id = fotos.Propiedad });
+            }
+
+            ViewBag.idFoto = new SelectList(db.propiedades, "idPropiedad", "Nombre", fotos.idFoto);
+            return View(fotos);
+        }
+
         static string GetMd5Hash(MD5 md5Hash, string input)
         {
 
@@ -208,6 +256,23 @@ namespace domvaproject.Controllers
             }
 
             return bmpOut;
+        }
+
+
+        public ActionResult HacerPrincipal(int id, int propiedad)
+        {
+            propiedades prop = db.propiedades.Find(propiedad);
+
+            foreach (fotos f in prop.fotos)
+            {
+                if (f.idFoto == id)
+                    f.Principal = true;
+                else
+                    f.Principal = false;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Edit", "Propiedades", new { id = propiedad });
         }
     }
 }

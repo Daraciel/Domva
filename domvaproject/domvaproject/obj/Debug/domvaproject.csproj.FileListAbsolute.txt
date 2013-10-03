@@ -37,3 +37,5 @@ C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Debug\dom
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Debug\ru\domvaproject.resources.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Debug\domvaproject.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Debug\domvaproject.pdb
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\Microsoft.Web.Helpers.dll
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Debug\domvaproject.csprojResolveAssemblyReference.cache

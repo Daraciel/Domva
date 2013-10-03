@@ -1,0 +1,29 @@
+﻿@model IEnumerable<domvaproject.propiedades>
+
+@{
+    ViewBag.Title = "ViewPage1";
+    var names = new List<string>();
+    names.Add("Imagen");
+    names.Add("Poblacion");
+    names.Add("Precio");
+    names.Add("Nombre");
+    names.Add("Categoria");
+  
+}
+
+<h2>ViewPage1</h2>
+
+    @{
+        var grid = new WebGrid(Model, canPage: true, rowsPerPage: 5);
+        grid.Pager(WebGridPagerModes.NextPrevious);
+        var col = new WebGridColumn();
+        @grid.GetHtml(
+                columns: new []{
+                    grid.Column("", header: "Foto", format: @<img src= "@Url.Content("~/images/thumbs/" + domvaproject.propiedades.principal(item.idPropiedad))" alt="IMAGES" /> ),
+                    grid.Column("Nombre", "Nombre", canSort: true, format:@<b>@item.Nombre</b>),
+                    grid.Column("Precio", "Precio", canSort: true),
+                    grid.Column("Poblacion", "Poblacion", canSort: true),
+                    grid.Column("Categoria", "Categoria", canSort: true),
+                    grid.Column("", header: "Metros", format: @<text> @item.caracteristicas.Metros </text>, canSort: true)
+                    });        
+    }

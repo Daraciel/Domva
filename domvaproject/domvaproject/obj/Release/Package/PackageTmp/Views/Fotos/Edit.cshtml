@@ -29,7 +29,18 @@
             @Html.EditorFor(model => model.Principal)
             @Html.ValidationMessageFor(model => model.Principal)
         </div>
-
+        
+        <div class="bloqueHidden">
+            <div class="editor-label">
+                Identificador
+            </div>
+            <div class="editor-field">
+                @Html.DisplayFor(model => model.Propiedad)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Propiedad)
+            </div>
+        </div>
         <p>
             <input type="submit" value="Save" />
         </p>

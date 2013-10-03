@@ -1,0 +1,52 @@
+﻿body {
+}
+
+/*
+.editor-label {
+
+    float: left;
+
+}
+
+.editor-field {
+    
+    float: left;
+
+}*/
+
+.bloque
+{
+    
+    float: left;
+    width:18%;
+    padding-left:7px;
+    padding-right:7px;
+    margin:4px;
+
+}
+
+
+.bloqueCompleto
+{
+    width:100%;
+    float: left;
+    padding-left:7px;
+    padding-right:7px;
+    margin-bottom:20px;
+
+}
+.EditDescripcion {
+    width:99%;
+    height:170px;
+}
+.bloqueHidden {
+    visibility:hidden;
+    height:1px;
+}
+.campos {
+    float:left;
+}
+.submit {
+    float:left;
+    position:static;
+}

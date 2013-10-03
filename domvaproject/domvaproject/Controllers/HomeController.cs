@@ -9,6 +9,7 @@ namespace domvaproject.Controllers
 {
     public class HomeController : Controller
     {
+        private domvaEntities db = new domvaEntities();
         public ActionResult Index()
         {
             ViewBag.Message = "ASP.NET MVC";
@@ -18,6 +19,12 @@ namespace domvaproject.Controllers
         public ActionResult About()
         {
             return View();
+        }
+
+        public ActionResult Grid()
+        {
+            
+            return View(db.propiedades.ToList());
         }
     }
 }

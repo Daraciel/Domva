@@ -38,3 +38,4 @@ C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Release\d
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Release\ru\domvaproject.resources.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Release\domvaproject.dll
 C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\obj\Release\domvaproject.pdb
+C:\Users\DarkCrow\Documents\GitHub\Domva\domvaproject\domvaproject\bin\Microsoft.Web.Helpers.dll

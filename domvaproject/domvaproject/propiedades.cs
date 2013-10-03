@@ -33,5 +33,11 @@ namespace domvaproject
         public virtual ICollection<fotos> fotos { get; set; }
         public virtual poblaciones poblaciones { get; set; }
         public virtual propietarios propietarios { get; set; }
+
+        public static string principal(int id)
+        {
+            return Controllers.PropiedadesController.principal(id);
+        }
+
     }
 }
