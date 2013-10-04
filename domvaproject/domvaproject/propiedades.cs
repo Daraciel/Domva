@@ -11,9 +11,12 @@ namespace domvaproject
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     
     public partial class propiedades
     {
+
+        private readonly domvaEntities _datos = new domvaEntities();
         public propiedades()
         {
             this.fotos = new HashSet<fotos>();
@@ -37,6 +40,101 @@ namespace domvaproject
         public static string principal(int id)
         {
             return Controllers.PropiedadesController.principal(id);
+        }
+
+
+
+        public int ContarPropiedades(string nombre = null, string localidad = null, int? precioMin = null,
+                                    int? precioMax = null, int? m2Min = null, int? cantDorms = null,
+                                    int? cantBanyos = null, int? distMar = null, bool? vistaMar = null,
+                                    bool? piscina = null, bool? terraza = null, bool? garage = null,
+                                    bool? ascensor = null, bool? aire = null
+                                    )
+        {
+            IQueryable<propiedades> query = _datos.propiedades;
+            query = queryPropiedadesFiltradas(query, nombre, localidad, precioMin, precioMax, m2Min,
+                                                        cantDorms, cantBanyos, distMar, vistaMar, piscina,
+                                                        terraza, garage, ascensor, aire);
+            return query.Count();
+        }
+
+
+        private static IQueryable<propiedades> queryPropiedadesFiltradas(IQueryable<propiedades> query, string nombre = null, string localidad = null, int? precioMin = null,
+                                    int? precioMax = null, int? m2Min = null, int? cantDorms = null,
+                                    int? cantBanyos = null, int? distMar = null, bool? vistaMar = null,
+                                    bool? piscina = null, bool? terraza = null, bool? garage = null,
+                                    bool? ascensor = null, bool? aire = null)
+        {
+            if (!string.IsNullOrWhiteSpace(nombre))
+                query.Where(p => p.Nombre.Contains(nombre));
+            if (localidad != null)
+                query.Where(p => p.Poblacion == localidad);
+            if (precioMin != null)
+                query.Where(p => p.Precio >= precioMin);
+            if (precioMax != null)
+                query.Where(p => p.Precio <= precioMax);
+            if (precioMax != null)
+                query.Where(p => p.caracteristicas.Metros >= m2Min);
+            if (cantDorms != null)
+                query.Where(p => p.caracteristicas.Dormitorios >= cantDorms);
+            if (cantBanyos != null)
+                query.Where(p => p.caracteristicas.Baños >= cantBanyos);
+            if (distMar != null)
+                query.Where(p => p.caracteristicas.DMar <= distMar);
+            if (piscina != null)
+                query.Where(p => p.caracteristicas.Piscina == piscina);
+            if (terraza != null)
+                query.Where(p => p.caracteristicas.Terraza == terraza);
+            if (garage != null)
+                query.Where(p => p.caracteristicas.Garage == garage);
+            if (ascensor != null)
+                query.Where(p => p.caracteristicas.Ascensor == ascensor);
+            if (aire != null)
+                query.Where(p => p.caracteristicas.AAcondicionado == aire);
+
+
+
+            /*
+            if (!string.IsNullOrWhiteSpace(textoBuscar))
+                query = query.Where(p => p.Nombre.Contains(textoBuscar) || p.Apellidos.Contains(textoBuscar));
+            if (maxHijos != null)
+                query = query.Where(p => p.NumeroDeHijos <= maxHijos);
+            if (minHijos != null)
+                query = query.Where(p => p.NumeroDeHijos >= minHijos);*/
+            return query;
+        }
+
+        public IEnumerable<propiedades> ObtenerPaginaDePersonasFiltrada(int paginaActual, int personasPorPagina,
+              string columnaOrdenacion, string sentidoOrdenacion,
+              string nombre = null, string localidad = null, int? precioMin = null,
+              int? precioMax = null, int? m2Min = null, int? cantDorms = null,
+              int? cantBanyos = null, int? distMar = null, bool? vistaMar = null,
+              bool? piscina = null, bool? terraza = null, bool? garage = null,
+              bool? ascensor = null, bool? aire = null
+              )
+        {
+            // Comprobamos los datos de entrada
+            sentidoOrdenacion = sentidoOrdenacion.Equals("desc", StringComparison.CurrentCultureIgnoreCase) ?
+                                sentidoOrdenacion : "asc";
+
+            var validColumns = new[] { "apellidos", "fechanacimiento", "email", "numerodehijos" };
+            if (!validColumns.Contains(columnaOrdenacion.ToLower()))
+                columnaOrdenacion = "apellidos";
+
+            if (paginaActual < 1) paginaActual = 1;
+            if (personasPorPagina < 1) personasPorPagina = 10;
+
+            // Generamos la consulta FALTA ORDER BY
+            var query = (IQueryable<propiedades>)_datos.propiedades;
+
+            query = queryPropiedadesFiltradas(query, nombre, localidad, precioMin, precioMax, m2Min,
+                                                        cantDorms, cantBanyos, distMar, vistaMar, piscina,
+                                                        terraza, garage, ascensor, aire);
+
+            return query
+                    .Skip((paginaActual - 1) * personasPorPagina)
+                    .Take(personasPorPagina)
+                    .ToList();
         }
 
     }

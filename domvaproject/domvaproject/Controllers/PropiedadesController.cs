@@ -10,12 +10,14 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Objects.SqlClient;
 using System.IO;
 using System.Linq.Expressions;
+using domvaproject.ViewModels;
 
 namespace domvaproject.Controllers
 { 
     public class PropiedadesController : Controller
     {
         private domvaEntities db = new domvaEntities();
+        private propiedades _services = new propiedades();
 
         //
         // GET: /Propiedades/
@@ -40,7 +42,11 @@ namespace domvaproject.Controllers
         public ActionResult Create()
         {
             List<propietarios> props = new List<propietarios>();
-            props = db.propietarios.ToList();
+            propietarios minion = new propietarios();
+            minion.idPropietario = 17;
+            minion.Nombre = "Sin Especificar";
+            props.Add(minion);
+            //props = db.propietarios.ToList();
             ViewBag.Propietarios = new SelectList(props,"idPropietario", "Nombre" );
             List<poblaciones> pobls = new List<poblaciones>();
             pobls = db.poblaciones.ToList();
@@ -151,6 +157,50 @@ namespace domvaproject.Controllers
             }
 
             return resul;
+        }
+
+        /*
+        la ubicacion
+        tipo de vivienda
+        precio maximo
+        desde m2
+        candidad de dormitorios
+        candidad de baños
+        la distancia hasta el mar
+        vistas al mar
+        piscina
+        terraza
+        plaza de garaje/parquing
+        ascensor
+        aire acondicionado
+         */
+
+
+        public ActionResult Buscar(int page = 1, string sort = "Nombre", string sortDir = "ASC",
+                                    string nombre = null, string localidad = null, int? precioMin = null,
+                                    int? precioMax = null, int? m2Min = null, int? cantDorms = null,
+                                    int? cantBanyos = null, int? distMar = null, bool? vistaMar=null,
+                                    bool? piscina=null, bool? terraza=null, bool? garage=null,
+                                    bool? ascensor=null, bool? aire=null
+                                    )
+        {
+            int PROPIEDADES_POR_PAGINA = 20;
+            var numprops = _services.ContarPropiedades(nombre, localidad, precioMin, precioMax, m2Min, 
+                                                        cantDorms, cantBanyos, distMar, vistaMar, piscina, 
+                                                        terraza, garage, ascensor, aire);
+            var props = _services.ObtenerPaginaDePersonasFiltrada(page, PROPIEDADES_POR_PAGINA,
+                                           sort, sortDir, nombre, localidad, precioMin, precioMax, m2Min,
+                                                        cantDorms, cantBanyos, distMar, vistaMar, piscina,
+                                                        terraza, garage, ascensor, aire);
+
+            var datos = new PropiedadesFiltro()
+            {
+                NumeroDePropiedades = numprops,
+                PropiedadesPorPagina = PROPIEDADES_POR_PAGINA,
+                Propiedades = props
+            };
+
+            return View(datos);
         }
 
 
