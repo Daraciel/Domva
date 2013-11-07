@@ -176,28 +176,35 @@ namespace domvaproject.Controllers
          */
 
 
+        // GET: /Products/Filterable?Nombre=string&Localidad=string&precioMin=number&precioMax=number&Piscina=true|false
         public ActionResult Buscar(int page = 1, string sort = "Nombre", string sortDir = "ASC",
                                     string nombre = null, string localidad = null, int? precioMin = null,
                                     int? precioMax = null, int? m2Min = null, int? cantDorms = null,
                                     int? cantBanyos = null, int? distMar = null, bool? vistaMar=null,
-                                    bool? piscina=null, bool? terraza=null, bool? garage=null,
+                                    bool? piscina = null, bool? terraza=null, bool? garage=null,
                                     bool? ascensor=null, bool? aire=null
                                     )
         {
-            int PROPIEDADES_POR_PAGINA = 20;
+            int PROPIEDADES_POR_PAGINA = 20;/*
             var numprops = _services.ContarPropiedades(nombre, localidad, precioMin, precioMax, m2Min, 
                                                         cantDorms, cantBanyos, distMar, vistaMar, piscina, 
-                                                        terraza, garage, ascensor, aire);
+                                                        terraza, garage, ascensor, aire);*/
             var props = _services.ObtenerPaginaDePersonasFiltrada(page, PROPIEDADES_POR_PAGINA,
                                            sort, sortDir, nombre, localidad, precioMin, precioMax, m2Min,
                                                         cantDorms, cantBanyos, distMar, vistaMar, piscina,
                                                         terraza, garage, ascensor, aire);
+            var numprops = props.Count();
 
             var datos = new PropiedadesFiltro()
             {
                 NumeroDePropiedades = numprops,
                 PropiedadesPorPagina = PROPIEDADES_POR_PAGINA,
-                Propiedades = props
+                Propiedades = props,
+                Nombre = nombre,
+                Localidad = localidad,
+                Piscina = piscina.HasValue ? piscina.Value : false,
+                PrecioMin = precioMin.HasValue ? precioMin.Value : 0,
+                PrecioMax = precioMax.HasValue ? precioMax.Value : 9999999999
             };
 
             return View(datos);

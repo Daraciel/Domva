@@ -5,3 +5,62 @@
 }
 
 <h2>Buscar</h2>
+
+@using (Html.BeginForm("Buscar", "Propiedades", FormMethod.Get))
+{
+   <fieldset class="filtering">
+      <legend>Filter Product Results</legend>
+      <div>
+         <b>Nombre:</b>
+         @Html.TextBoxFor(model => model.Nombre)
+
+         <b>Localidad:</b>
+         @Html.TextBoxFor(model => model.Localidad)
+         
+         <b>Minimum Price:</b>
+         @Html.TextBoxFor(model => model.PrecioMin, new { size = 8 })
+
+         <b>Maximun Price:</b>
+         @Html.TextBoxFor(model => model.PrecioMax, new { size = 8 })
+          
+         <b>Piscina?</b>
+         @Html.CheckBoxFor(model => model.Piscina)
+
+         <input type="submit" value="Filter Results" />
+      </div>
+   </fieldset>
+}
+
+
+
+<table>
+    <tr>
+      <th style="width: 35%">Propiedad</th>
+      <th style="width: 25%">Categoria</th>
+      <th style="width: 25%">Poblacion</th>
+      <th style="width: 15%">Precio</th>
+   </tr>
+@{
+    foreach(var item in Model.Propiedades)
+    {
+        <tr>
+            <td>
+                @item.Nombre
+            </td>
+            <td>
+                @item.Categoria
+            </td>
+            <td>
+                @item.Poblacion
+            </td>
+            <td>
+                @item.Precio
+            </td>
+        </tr>
+    }
+}
+
+    
+</table>
+
+      

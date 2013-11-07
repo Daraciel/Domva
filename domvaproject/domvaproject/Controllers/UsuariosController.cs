@@ -10,6 +10,7 @@ using System.Data.Objects.SqlClient;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using System.Net;
+using System.Configuration;
 
 namespace domvaproject.Controllers
 { 
