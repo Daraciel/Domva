@@ -1,0 +1,156 @@
+﻿@model domvaproject.ViewModels.PropiedadesFiltro
+
+@{
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+    
+}
+        
+<div class="centercolumn">
+    <div id="maincontent">
+        <div id="content">
+		    <h2 class="underline">Propiedades</h2>
+            @{
+                foreach(var item in Model.Propiedades)
+                {
+                    string principal = domvaproject.propiedades.principal(item.idPropiedad);
+                    string cabecera = item.Nombre + ", " + item.Poblacion;
+                    string precio = item.Precio + " EUR";
+                    string banos = "Baños: " + item.caracteristicas.Baños;
+                    string dorm = "Dormitorios: " + item.caracteristicas.Dormitorios;
+                    string metros = "M²: " + item.caracteristicas.Metros;
+                    string dist = "Distancia al mar: " + item.caracteristicas.DMar;
+                    string todas = "";
+                    string vendida = "En venta";
+
+                    if (item.caracteristicas.Piscina) { todas += "Piscina, "; }
+                    if (item.caracteristicas.Garage) { todas += "Garage, "; }
+                    if (item.caracteristicas.AAcondicionado) { todas += "Aire Acondicionado, "; }
+                    if (item.caracteristicas.Barbacoa) { todas += "Barbacoa, "; }
+                    if (item.caracteristicas.Calefaccion) { todas += "Calefaccion, "; }
+                    if (item.caracteristicas.VMar) { todas += "Vistas al Mar, "; }
+                    if (item.caracteristicas.Terraza) { todas += "Terraza, "; }
+                    if (item.caracteristicas.Ascensor) { todas += "Ascensor, "; }
+                    if (item.caracteristicas.Chimenea) { todas += "Chimenea, "; }
+                    if (item.caracteristicas.PInfantil) { todas += "Parque Infantil, "; }
+                    if (item.caracteristicas.Jardin) { todas += "Jardin, "; }
+                    if (item.caracteristicas.Montana) { todas += "Montaña, "; }
+                    if (item.caracteristicas.ZDeportiva) { todas += "Zona Deportiva, "; }
+                    if (item.caracteristicas.Vendida) { vendida = "Esta propiedad ya ha sido vendida"; }
+                    
+                    
+                    <div class="list_properties">
+					    <div class="title_property2">
+					        <h2>@cabecera</h2>
+					    </div><!-- end .title_property2 -->
+					    <div class="clear"></div>
+					    <div class="list_img"><a href="@Url.Action("Propiedad",  new { id = item.idPropiedad })"><img src="@Url.Content("~/images/thumbs/" + principal)" alt=""/></a></div>
+					    <div class="list_text">
+					        <strong>@precio</strong><br />
+					        @item.Categoria<br />
+					        <br />
+					        <pre>@dist</pre>
+					        <pre>@banos</pre>
+					        <pre>@dorm</pre>
+					        <pre>@metros</pre>
+
+					        @todas<br />
+
+					        <span class="blue">@vendida</span>
+					    </div><!-- end .list_text -->
+					    <div class="clear"></div>
+
+                    </div>
+                }
+            }
+            <div class="clear"></div>
+        </div>
+			
+			<div class="sidebar_right">
+			<div class="sidebar">
+				<ul>				
+					<li class="widget-container widget_categories">
+						<h2 class="widget-title">Filtro</h2>
+                        
+@using (Html.BeginForm("Buscar", "Public", FormMethod.Get))
+    {
+       <fieldset class="filtering">
+         <!-- <legend>Filtrado de propiedades </legend> -->
+           <ul>
+               <li><b>Nombre:</b> @Html.TextBoxFor(model => model.Nombre)</li>
+               <li><b>Localidad:</b>@Html.TextBoxFor(model => model.Localidad)</li>
+               <li><b>Precio Mínimo:</b>@Html.TextBoxFor(model => model.PrecioMin, new { size = 10 })</li>
+               <li><b>Precio Máximo:</b>@Html.TextBoxFor(model => model.PrecioMax, new { size = 10 })</li>
+               <li><b>M2 Mínimos:</b>@Html.TextBoxFor(model => model.M2Min, new { size = 6 })</li>
+               <li><b>Cantidad Dormitorios:</b>@Html.TextBoxFor(model => model.CantDorms, new { size = 2 })</li>
+               <li><b>Cantidad Baños:</b>@Html.TextBoxFor(model => model.CantBanyos, new { size = 2 })</li>
+               <li><b>Distancia al mar Máxima:</b>@Html.TextBoxFor(model => model.DistMar, new { size = 4 })</li>
+               <li><b>Piscina?</b>@Html.CheckBoxFor(model => model.Piscina)</li>
+               <li><b>Vistas al Mar?</b>@Html.CheckBoxFor(model => model.VistaMar)</li>
+               <li><b>Terraza?</b>@Html.CheckBoxFor(model => model.Terraza)</li>
+               <li><b>Garage?</b>@Html.CheckBoxFor(model => model.Garage)</li>
+               <li><b>Ascensor?</b>@Html.CheckBoxFor(model => model.Ascensor)</li>
+               <li><b>Aire?</b>@Html.CheckBoxFor(model => model.Aire)</li>
+           </ul>
+          <div>
+             <input type="submit" value="Filtrar" />
+          </div>
+       </fieldset>
+    }
+				<!--		<ul>
+							<li><a href="#">Resources</a></li>
+							<li><a href="#">House Remodeling</a></li>
+							<li><a href="#">Luxury Homes</a></li>
+							<li><a href="#">Find a Contractor</a></li>
+							<li><a href="#">First Time Buyer</a> </li>
+							<li><a href="#">Free Moving Quote</a></li>
+							<li><a href="#">Gardening</a></li>
+							<li><a href="#">Local Constractors</a></li>
+							<li><a href="#">Rent and Buy</a></li>
+							
+							<li><a href="#">New Homes</a></li>
+							<li><a href="#">Apartment Rentals</a></li>
+							<li><a href="#">Trend Blogs</a></li>
+							<li><a href="#">Assisted Living</a></li>
+							<li><a href="#">Property Search</a></li>
+							<li><a href="#">Property Status</a></li>
+							<li><a href="#">Property Types</a></li>
+							<li><a href="#">Open Houses</a></li>
+							<li><a href="#">Listing Activity</a></li>
+						</ul>  
+					</li>
+					
+					<li class="widget-container widget_categories">
+						<h2 class="widget-title">Property Types</h2>
+						<ul>
+							<li><a href="#">Single Family Home</a></li>
+							<li><a href="#">Commercial </a></li>
+							<li><a href="#">Condo/TownHome</a></li>
+							<li><a href="#">RowHome/Co-Op</a></li>
+						</ul>
+					</li>
+					
+					<li class="widget-container widget_categories">
+						<h2 class="widget-title">Property Features</h2>
+						<ul>
+							<li><a href="#">Any</a></li>
+							<li><a href="#">Central Air</a></li>
+							<li><a href="#">Carport</a></li>
+							<li><a href="#">Dinning Room</a></li>
+							<li><a href="#">Fireplace</a> </li>
+							<li><a href="#">Swimming Pool</a></li>
+							<li><a href="#">Forced Air</a></li>
+							<li><a href="#">Garage - 1 or more</a></li>
+							<li><a href="#">Hardwood Floors</a></li>
+							<li><a href="#">Family Room</a></li>
+						</ul>
+					</li>
+					-->
+				</ul>
+            </div><!-- end #sidebar -->
+			</div><!-- end #sidebar_right -->
+			
+			<div class="clear"></div>
+		</div><!-- end #maincontent -->
+	</div><!-- end #centercolumn -->
+
+      

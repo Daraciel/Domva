@@ -185,7 +185,7 @@ namespace domvaproject.Controllers
                                     bool? ascensor=null, bool? aire=null
                                     )
         {
-            int PROPIEDADES_POR_PAGINA = 5;/*
+            int PROPIEDADES_POR_PAGINA = 1000;/*
             var numprops = _services.ContarPropiedades(nombre, localidad, precioMin, precioMax, m2Min, 
                                                         cantDorms, cantBanyos, distMar, vistaMar, piscina, 
                                                         terraza, garage, ascensor, aire);*/

@@ -41,7 +41,9 @@
     });
     <fieldset>
         <legend>Propiedades</legend>
-        <div class="campos">
+        <div id="Top" class="campos">
+            
+	    <a href="#Imagenes">Ir a Imágenes</a>
         <div class="bloqueCompleto">
             <div class="bloque">
                 <div class="editor-label">
@@ -266,6 +268,7 @@
         
         <h4>Imágenes</h4>
 
+        <div id="Imagenes"></div>
 @{
     int i = 0;
     int cells = 5;
@@ -314,5 +317,5 @@
 }
 
 <div>
-    @Html.ActionLink("Atrás", "Index")
+    @Html.ActionLink("Atrás", "Index") | <a href="#Top">Subir</a>
 </div>

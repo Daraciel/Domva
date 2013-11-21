@@ -1,0 +1,93 @@
+﻿@model domvaproject.ViewModels.PropiedadesFiltro
+
+@{
+    ViewBag.Title = "Buscar";
+}
+
+<h2>Buscar</h2>
+
+@using (Html.BeginForm("Buscar", "Propiedades", FormMethod.Get))
+{
+   <fieldset class="filtering">
+      <legend>Filtrado de propiedades</legend>
+      <div>
+         <b>Nombre:</b>
+         @Html.TextBoxFor(model => model.Nombre)
+
+         <b>Localidad:</b>
+         @Html.TextBoxFor(model => model.Localidad)
+         
+         <b>Precio Mínimo:</b>
+         @Html.TextBoxFor(model => model.PrecioMin, new { size = 10 })
+
+         <b>Precio Máximo:</b>
+         @Html.TextBoxFor(model => model.PrecioMax, new { size = 10 })
+
+         <b>M2 Mínimos:</b>
+         @Html.TextBoxFor(model => model.M2Min, new { size = 6 })
+          
+         <b>Cantidad Dormitorios:</b>
+         @Html.TextBoxFor(model => model.CantDorms, new { size = 2 })
+          
+         <b>Cantidad Baños:</b>
+         @Html.TextBoxFor(model => model.CantBanyos, new { size = 2 })
+          
+         <b>Distancia al mar Máxima:</b>
+         @Html.TextBoxFor(model => model.DistMar, new { size = 4 })
+              
+         <b>Piscina?</b>
+         @Html.CheckBoxFor(model => model.Piscina)
+          
+         <b>Vistas al Mar?</b>
+         @Html.CheckBoxFor(model => model.VistaMar)
+          
+         <b>Terraza?</b>
+         @Html.CheckBoxFor(model => model.Terraza)
+          
+         <b>Garage?</b>
+         @Html.CheckBoxFor(model => model.Garage)
+          
+         <b>Ascensor?</b>
+         @Html.CheckBoxFor(model => model.Ascensor)
+          
+         <b>Aire?</b>
+         @Html.CheckBoxFor(model => model.Aire)
+
+
+         <input type="submit" value="Filtrar" />
+      </div>
+   </fieldset>
+}
+
+
+
+<table>
+    <tr>
+      <th style="width: 35%">Propiedad</th>
+      <th style="width: 25%">Categoria</th>
+      <th style="width: 25%">Poblacion</th>
+      <th style="width: 15%">Precio</th>
+   </tr>
+@{
+    foreach(var item in Model.Propiedades)
+    {
+        <tr>
+            <td>
+                @item.Nombre
+            </td>
+            <td>
+                @item.Categoria
+            </td>
+            <td>
+                @item.Poblacion
+            </td>
+            <td>
+                @item.Precio
+            </td>
+        </tr>
+    }
+}
+    
+</table>
+
+      
