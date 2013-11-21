@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Script-Type" content="text/javascript" /> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="" />
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <title>DomvAlicante</title>
+    <link rel="shortcut icon" href="@Url.Content("~/images/public/content/favicon.ico")" />
+    
+    <link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/inner.css")" rel="stylesheet" type="text/css" />
+
+
+    <script src="@Url.Content("~/js/jquery-1.4.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/js/cufon-yui.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/js/PT_Sans_400.font.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        Cufon.replace('h1')('h2')('h3')('h4')('h5')('h6')('.slider-button a')('.slider-price')('.button')('#nav li a', { hover: true });
+
+    </script>
+    
+    <script src="@Url.Content("~/js/jquery.cycle.all.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/js/hoverIntent.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/js/superfish.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/js/supersubs.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var $jts = jQuery.noConflict();
+        $jts(document).ready(function () {
+            $jts("ul.sf-menu").supersubs({
+                minWidth: 9,		// requires em unit.
+                maxWidth: 25,		// requires em unit.
+                extraWidth: 0			// extra width can ensure lines don't sometimes turn over due to slight browser differences in how they round-off values
+                // due to slight rounding differences and font-family 
+            }).superfish();  // call supersubs first, then superfish, so that subs are 
+            // not display:none when measuring. Call before initialising 
+            // containing tabs for same reason. 
+        });
+
+    </script>
+    <script src="@Url.Content("~/js/jquery.cycle.all.min.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        var $jts = jQuery.noConflict();
+        $jts(document).ready(function () {
+
+            //Slider  
+            $jts('#slideshow').cycle({
+                timeout: 5000,  // milliseconds between slide transitions (0 to disable auto advance)
+                fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...            
+                pager: '#pager',  // selector for element to use as pager container
+                pause: 0,	  // true to enable "pause on hover"
+                pauseOnPagerHover: 0 // true to pause when hovering over pager link
+            });
+        });
+    </script>
+</head>
+<body>
+		<div class="centercolumn2">
+        <img class="banner" src="@Url.Content("~/images/public/BannerC.png")" alt="" />
+            </div>
+    
+	<div id="top-container">
+		<div class="centercolumn">
+		<div id="header">
+			<!--<div id="logo">
+				<a href="@Url.Action("Index")"><img src="@Url.Content("~/images/public/logo.png")" alt="" /></a>
+			</div> end #logo -->
+			<div id="navigation">
+				<ul id="nav" class="sf-menu">
+					<li><a href="@Url.Action("Index")">Inicio</a></li>
+					<li><a href="#">Nosotros</a></li>
+					<li>@Html.ActionLink("Propiedades", "Buscar", "Public")
+						<!--<ul>
+							<li><a href="#">Por Categoría</a>
+                                <ul>
+                                    <li>@Html.ActionLink("Apartamentos", "Buscar", "Public")</li>
+                                    <li><a href="#">Bungalows</a></li>
+                                    <li><a href="#">Villa</a></li>
+                                    <li><a href="#">Locales Comerciales</a></li>
+                                    <li><a href="#">Negocios</a></li>
+                                </ul>
+							</li>
+						</ul>-->
+					</li>
+					<li><a href="#">Otros Servicios</a></li>
+					<li><a href="#">Contacto</a></li>
+				</ul>
+			</div><!-- end #navigation-->
+			<div class="clr"></div>
+		</div><!-- end #header -->
+		</div><!-- end #centercolumn -->
+	</div><!-- end #top-container -->
+
+    
+	
+	<div class="centercolumn">
+        @RenderBody()
+	</div><!-- end #centercolumn -->
+	
+	<div id="bottom-container">
+		<div class="centercolumn">
+		
+			<div id="footer">
+				<div id="footer-left">
+					<div class="one_fourth">
+						<ul>
+							<li class="widget-container">
+								<h2 class="widget-title">Dom v Alicante</h2>
+								<ul>
+									<li><a href="#">Nosotros</a></li>
+									<li><a href="#">Propiedades</a></li>
+									<li><a href="#">Otros Servicios</a></li>
+									<li><a href="#">Contacto</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div><!-- end #one_fourth -->
+					<div class="one_fourth">
+						<ul>
+							<li class="widget-container">
+								<h2 class="widget-title">Para Clientes</h2>
+								<ul>
+									<li><a href="#">Inscribirse </a></li>
+									<li><a href="#">Foro</a></li>
+									<li><a href="#">Promociones</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div><!-- end #one_fourth -->
+					<div class="one_fourth">
+						<ul>
+							<li class="widget-container">
+								<h2 class="widget-title">FAQs</h2>
+								<ul>
+									<li><a href="#">Support </a></li>
+									<li><a href="#">FAQs</a></li>
+									<li><a href="#">Website</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div><!-- end #one_fourth -->
+					<div class="one_fourth last">
+						<ul>
+							<li class="widget-container">
+								<h2 class="widget-title">Propiedades</h2>
+								<ul>
+									<li><a href="#">Apartamentos</a></li>
+									<li><a href="#">Bungalows</a></li>
+									<li><a href="#">Villas</a></li>
+									<li><a href="#">Locales Comerciales</a></li>
+									<li><a href="#">Negocios</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div><!-- end #one_fourth -->
+				</div><!-- end #footer-left -->
+				<div id="footer-right">
+					<h2>Darse de alta en noticias:</h2>
+					<form  method="get" action="" id="newsLetter">
+					<div><input type="text" class="inputbox" value="Enter your email here..." onblur="if (this.value == ''){this.value = 'Enter your email here...'; }" onfocus="if (this.value == 'Enter your email here...') {this.value = ''; }"/><br />
+<input type="submit" name="submit" class="button" value="subscribe"/></div>
+					</form>
+				</div><!-- end #footer-right -->
+			</div><!-- end #footer -->
+			<div class="clear"></div>
+			<div id="copyright">Copyright © 2013 <a href="#">DomvAlicante</a>. Todos los derechos reservados</div>
+			
+		 	<div class="clear"></div>
+		</div><!-- end #centercolumn -->
+	
+	</div><!-- end #bottom-container -->
+	<script type="text/javascript"> Cufon.now(); </script> <!-- to fix cufon problems in IE browser -->
+</body>
+</html>

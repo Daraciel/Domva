@@ -185,7 +185,7 @@ namespace domvaproject.Controllers
                                     bool? ascensor=null, bool? aire=null
                                     )
         {
-            int PROPIEDADES_POR_PAGINA = 20;/*
+            int PROPIEDADES_POR_PAGINA = 5;/*
             var numprops = _services.ContarPropiedades(nombre, localidad, precioMin, precioMax, m2Min, 
                                                         cantDorms, cantBanyos, distMar, vistaMar, piscina, 
                                                         terraza, garage, ascensor, aire);*/
@@ -202,9 +202,20 @@ namespace domvaproject.Controllers
                 Propiedades = props,
                 Nombre = nombre,
                 Localidad = localidad,
-                Piscina = piscina.HasValue ? piscina.Value : false,
                 PrecioMin = precioMin.HasValue ? precioMin.Value : 0,
-                PrecioMax = precioMax.HasValue ? precioMax.Value : 9999999999
+                PrecioMax = precioMax.HasValue ? precioMax.Value : 100000000,
+                M2Min = m2Min.HasValue ? distMar.Value : 0,
+                CantDorms = cantDorms.HasValue ? cantDorms.Value : 0,
+                CantBanyos = cantBanyos.HasValue ? cantBanyos.Value : 0,
+                DistMar = distMar.HasValue ? distMar.Value : 10000,
+                Piscina = piscina.HasValue ? piscina.Value : false,
+                VistaMar = piscina.HasValue ? piscina.Value : false,
+                Terraza = vistaMar.HasValue ? vistaMar.Value : false,
+                Garage = terraza.HasValue ? terraza.Value : false,
+                Ascensor = ascensor.HasValue ? ascensor.Value : false,
+                Aire = aire.HasValue ? aire.Value : false,
+                PaginaActual = page,
+                
             };
 
             return View(datos);

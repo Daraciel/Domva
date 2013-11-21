@@ -9,7 +9,7 @@
 @using (Html.BeginForm("Buscar", "Propiedades", FormMethod.Get))
 {
    <fieldset class="filtering">
-      <legend>Filter Product Results</legend>
+      <legend>Filtrado de propiedades</legend>
       <div>
          <b>Nombre:</b>
          @Html.TextBoxFor(model => model.Nombre)
@@ -17,16 +17,44 @@
          <b>Localidad:</b>
          @Html.TextBoxFor(model => model.Localidad)
          
-         <b>Minimum Price:</b>
-         @Html.TextBoxFor(model => model.PrecioMin, new { size = 8 })
+         <b>Precio Mínimo:</b>
+         @Html.TextBoxFor(model => model.PrecioMin, new { size = 10 })
 
-         <b>Maximun Price:</b>
-         @Html.TextBoxFor(model => model.PrecioMax, new { size = 8 })
+         <b>Precio Máximo:</b>
+         @Html.TextBoxFor(model => model.PrecioMax, new { size = 10 })
+
+         <b>M2 Mínimos:</b>
+         @Html.TextBoxFor(model => model.M2Min, new { size = 6 })
           
+         <b>Cantidad Dormitorios:</b>
+         @Html.TextBoxFor(model => model.CantDorms, new { size = 2 })
+          
+         <b>Cantidad Baños:</b>
+         @Html.TextBoxFor(model => model.CantBanyos, new { size = 2 })
+          
+         <b>Distancia al mar Máxima:</b>
+         @Html.TextBoxFor(model => model.DistMar, new { size = 4 })
+              
          <b>Piscina?</b>
          @Html.CheckBoxFor(model => model.Piscina)
+          
+         <b>Vistas al Mar?</b>
+         @Html.CheckBoxFor(model => model.VistaMar)
+          
+         <b>Terraza?</b>
+         @Html.CheckBoxFor(model => model.Terraza)
+          
+         <b>Garage?</b>
+         @Html.CheckBoxFor(model => model.Garage)
+          
+         <b>Ascensor?</b>
+         @Html.CheckBoxFor(model => model.Ascensor)
+          
+         <b>Aire?</b>
+         @Html.CheckBoxFor(model => model.Aire)
 
-         <input type="submit" value="Filter Results" />
+
+         <input type="submit" value="Filtrar" />
       </div>
    </fieldset>
 }
@@ -59,7 +87,6 @@
         </tr>
     }
 }
-
     
 </table>
 

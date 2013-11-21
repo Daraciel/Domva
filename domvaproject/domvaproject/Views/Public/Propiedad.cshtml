@@ -1,0 +1,215 @@
+﻿@model domvaproject.propiedades
+
+@{
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+}
+
+	<div class="centercolumn">
+			
+		<div id="maincontent">
+			<div id="content">
+				<h2 class="underline">@Model.Nombre</h2>
+				<div id="container-slider">
+				    <ul id="slideshow_detail">
+                        @{
+                            int i=0;
+                            foreach(var foto in Model.fotos)
+                            {
+                                <li>
+						            <h3>Foto @i</h3>
+						            <span>@Url.Content("~/images/thumbs/" + foto.Imagen)</span>
+						            <p></p>
+						            <img src="@Url.Content("~/images/thumbs/" + foto.Imagen)" alt="thumb" />
+					            </li>
+                                i++;
+                            }
+                        }
+				    </ul>
+				    <div id="wrapper">
+					    <div id="fullsize">
+						    <div id="imgprev" class="imgnav" title="Previous Image"></div>
+						    <div id="imglink"></div>
+						    <div id="imgnext" class="imgnav" title="Next Image"></div>
+						    <div id="image"></div>
+						    <div id="information">
+							    <h3></h3>
+							    <p></p>
+						    </div>
+					    </div>
+					    <div id="thumbnails">
+						    <div id="slideleft" title="Slide Left"></div>
+						    <div id="slidearea">
+							    <div id="slider"></div>
+						    </div>
+						    <div id="slideright" title="Slide Right"></div>
+					    </div>
+				    </div>
+			        <script type="text/javascript" src="@Url.Content("~/js/compressed.js")"></script>
+			        <script type="text/javascript" src="@Url.Content("~/js/script.js")"></script>
+			        <script type="text/javascript">
+			         
+			
+				        $('slideshow_detail').style.display='none';
+				        $('wrapper').style.display='block';
+				        var slideshow_detail = new TINY.slideshow_detail("slideshow_detail");
+				        window.onload = function () {
+					        slideshow_detail.auto=true;
+					        slideshow_detail.speed=5;
+					        slideshow_detail.link="linkhover";
+					        slideshow_detail.info="information";
+					        slideshow_detail.thumbs="slider";
+					        slideshow_detail.left="slideleft";
+					        slideshow_detail.right="slideright";
+					        slideshow_detail.scrollSpeed=4;
+					        slideshow_detail.spacing=25;
+					        slideshow_detail.active = "#fff";
+					        slideshow_detail.init("slideshow_detail","image","imgprev","imgnext","imglink");
+				        }
+			        </script>
+			    </div><!-- end content-slider -->
+			
+			    <div class="clear"><br /><br /></div>
+			
+			<h2 class="underline">Detalles de la propiedad</h2>
+			<div id="property-detail">
+			<div class="one_half">
+				<ul class="box_text">
+					<li><span class="left">Tipo	</span>			@Model.Categoria</li>
+					<li><span class="left">Tamaño</span>			@Model.caracteristicas.Metros M²</li>
+					<li><span class="left">Número de Baños</span>		@Model.caracteristicas.Baños</li>
+				</ul>	
+			</div>
+			<div class="one_half last">
+				<ul class="box_text">
+					<li><span class="left">Precio</span>				@Model.Precio €</li>
+					<li><span class="left">Dormitorios</span>	@Model.caracteristicas.Dormitorios</li>
+					<li><span class="left">Distancia al Mar</span>			@Model.caracteristicas.DMar Metros</li>
+				</ul>	
+			</div>
+				<ul class="box_text">
+					<li>
+                        <span class="left">Características</span>	
+                    </li>
+                    <li>
+                        <div class="one_half">
+				            <ul class="box_text">
+					            <li><span class="left">Piscina</span>			@{if (Model.caracteristicas.Piscina){<img src="@Url.Content("~/images/public/icon1.png")" alt="Piscina" />}else{<img src="@Url.Content("~/images/public/list-cross.png")" alt="Piscina" />}} </li>
+					            <li><span class="left">Aire Acondicionado</span>			@{if (Model.caracteristicas.AAcondicionado){<img src="@Url.Content("~/images/public/icon1.png")" alt="Aire Acondicionado" />}else{<img src="@Url.Content("~/images/public/list-cross.png")" alt="Aire Acondicionado" />}} </li>
+					            <li><span class="left">Ascensor</span>	@{if (Model.caracteristicas.Ascensor)
+                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Ascensor" />}
+                                                          else
+                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Ascensor" />}} </li>
+					            <li><span class="left">Garage</span>	@{if (Model.caracteristicas.Garage)
+                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Garage" />}
+                                                          else
+                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Garage" />}} </li>
+					            <li><span class="left">Jardin</span>	@{if (Model.caracteristicas.Jardin)
+                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Jardin" />}
+                                                          else
+                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Jardin" />}} </li>
+					            <li><span class="left">Montaña</span>	@{if (Model.caracteristicas.Montana)
+                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Montaña" />}
+                                                          else
+                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Montaña" />}} </li>
+					            <li><span class="left">Parque Infantil</span>	@{if (Model.caracteristicas.PInfantil)
+                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="PInfantil" />}
+                                                          else
+                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="PInfantil" />}} </li>
+				            </ul>	
+			            </div>
+			            <div class="one_half last">
+				            <ul class="box_text">
+					            <li><span class="left">Barbacoa</span>				@{if (Model.caracteristicas.Barbacoa)
+                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Barbacoa" />}
+                                                          else
+                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Barbacoa" />}} </li>
+					            <li><span class="left">Calefaccion</span>	@{if (Model.caracteristicas.Calefaccion)
+                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Calefaccion" />}
+                                                          else
+                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Calefaccion" />}} </li>
+					                <li><span class="left">Chimenea</span>			@{if (Model.caracteristicas.Chimenea)
+                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Chimenea" />}
+                                                          else
+                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Chimenea" />}} </li>
+					            <li><span class="left">Terraza</span>	@{if (Model.caracteristicas.Terraza)
+                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Terraza" />}
+                                                          else
+                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Terraza" />}} </li>
+					            <li><span class="left">Vistas al mar</span>	@{if (Model.caracteristicas.VMar)
+                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="VMar" />}
+                                                          else
+                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="VMar" />}} </li>
+					            <li><span class="left">Zona Deportiva</span>	@{if (Model.caracteristicas.ZDeportiva)
+                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="ZDeportiva" />}
+                                                          else
+                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="ZDeportiva" />}} </li>
+					            <li><span class="left">Vendida</span>	@{if (Model.caracteristicas.Vendida)
+                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Vendida" />}
+                                                          else
+                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Vendida" />}} </li>
+				                </ul>	
+			                </div>
+                    </li>
+                    <li><span class="left">Descripción</span> <span class="right">@Model.descripcionesesp.DescripcionESP</span></li>
+				</ul>	
+				</div>
+				
+			<div class="clear"><br /><br /></div>
+			
+                <!--
+
+			<h2 class="underline">Location</h2>
+<iframe width="620" height="353" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=222+North+Canon+Drive+%23202,+Beverly+Hills+&amp;aq=&amp;sll=34.066623,-118.386612&amp;sspn=0.005022,0.011362&amp;ie=UTF8&amp;hq=&amp;hnear=222+N+Canon+Dr,+Beverly+Hills,+Los+Angeles,+California+90210&amp;ll=34.068423,-118.398505&amp;spn=0.020085,0.045447&amp;z=14&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=222+North+Canon+Drive+%23202,+Beverly+Hills+&amp;aq=&amp;sll=34.066623,-118.386612&amp;sspn=0.005022,0.011362&amp;ie=UTF8&amp;hq=&amp;hnear=222+N+Canon+Dr,+Beverly+Hills,+Los+Angeles,+California+90210&amp;ll=34.068423,-118.398505&amp;spn=0.020085,0.045447&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+				
+			<div class="clear"><br /><br /></div>
+			-->
+						
+						
+			</div><!-- end #content -->
+			
+			<div class="sidebar_right">
+			<div class="sidebar">
+				<ul>
+					<li class="widget-container widget_text">
+						<h2 class="widget-title">Contáctanos</h2>
+						<div class="agent">
+						<p><img src="@Url.Content("~/images/public/content/pic1.jpg")" alt="" class="alignleft" />	
+							<span class="black">Yulia</span><br />
+							Movil: (866) 479-0889<br />
+							Fijo: (310) 521-6555<br />
+							Email: yulia@domvalicante.es
+						</p>
+					  </div>
+					</li>
+				
+					<li class="widget-container widget_search">
+						<h2 class="widget-title">Te contactamos nosotros</h2>
+						<form method="post" id="contact-agent" >
+						<fieldset>
+                            <legend class="blue">Déjanos tus datos y nosotros te contactamos</legend>
+							<ul>
+								<li>
+								<label>Nombre</label><br />
+								<input type="text" size="21"/>
+								</li>
+								<li>
+								<label>Apellidos</label><br />
+								<input type="text" size="21"/>
+								</li>
+							</ul>
+							<label>Email</label><br />
+							<input type="text" size="34"/><br />
+							<input type="submit" name="submit" class="button" value="Interesarse"/>
+						</fieldset>
+						</form>
+						
+					</li>			
+				</ul>
+            </div><!-- end #sidebar -->
+			</div><!-- end #sidebar_right -->
+			
+			<div class="clear"></div>
+		</div><!-- end #maincontent -->
+	</div><!-- end #centercolumn -->
+
+

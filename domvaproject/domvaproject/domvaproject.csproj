@@ -146,6 +146,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PropiedadesController.cs" />
     <Compile Include="Controllers\PropietariosController.cs" />
+    <Compile Include="Controllers\PublicController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="descripcionesesp.cs">
       <DependentUpon>domvaeer.tt</DependentUpon>
@@ -256,6 +257,9 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="css\inner.css" />
+    <Content Include="css\prettyPhoto.css" />
+    <Content Include="css\style.css" />
     <Content Include="Global.asax" />
     <EntityDeploy Include="domvaeer.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -277,7 +281,106 @@
     <None Include="Properties\PublishProfiles\Domva.pubxml" />
     <None Include="Properties\PublishProfiles\DomvaQuique.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="images\public\arrow.png" />
+    <Content Include="images\public\BannerC.png" />
+    <Content Include="images\public\bg-container-top.gif" />
+    <Content Include="images\public\bg-copyright.gif" />
+    <Content Include="images\public\bg-shadow.gif" />
+    <Content Include="images\public\content\blog-img1.jpg" />
+    <Content Include="images\public\content\blog-img2.jpg" />
+    <Content Include="images\public\content\blog-img3.jpg" />
+    <Content Include="images\public\content\blog-img4.jpg" />
+    <Content Include="images\public\content\img1.jpg" />
+    <Content Include="images\public\content\img2.jpg" />
+    <Content Include="images\public\content\img3.jpg" />
+    <Content Include="images\public\content\img4.jpg" />
+    <Content Include="images\public\content\img5.jpg" />
+    <Content Include="images\public\content\pic1.jpg" />
+    <Content Include="images\public\content\pp-img1.jpg" />
+    <Content Include="images\public\content\pp-img2.jpg" />
+    <Content Include="images\public\content\pp-img3.jpg" />
+    <Content Include="images\public\content\pp-img4.jpg" />
+    <Content Include="images\public\content\pp-img5.jpg" />
+    <Content Include="images\public\content\pp-img6.jpg" />
+    <Content Include="images\public\content\pp-img7.jpg" />
+    <Content Include="images\public\content\pp-img8.jpg" />
+    <Content Include="images\public\content\pp-logo.gif" />
+    <Content Include="images\public\content\pp-nologo.gif" />
+    <Content Include="images\public\content\pp2-img1.jpg" />
+    <Content Include="images\public\content\pp2-img2.jpg" />
+    <Content Include="images\public\content\pp2-img3.jpg" />
+    <Content Include="images\public\content\slider1.jpg" />
+    <Content Include="images\public\content\slider2.jpg" />
+    <Content Include="images\public\content\slider3.jpg" />
+    <Content Include="images\public\content\small-img1.jpg" />
+    <Content Include="images\public\content\small-img2.jpg" />
+    <Content Include="images\public\content\small-img3.jpg" />
+    <Content Include="images\public\content\small-img4.jpg" />
+    <Content Include="images\public\content\small-img5.jpg" />
+    <Content Include="images\public\content\tp-img.jpg" />
+    <Content Include="images\public\dot-line.gif" />
+    <Content Include="images\public\dot.png" />
+    <Content Include="images\public\dropcaps.png" />
+    <Content Include="images\public\facebook\btnNext.png" />
+    <Content Include="images\public\facebook\btnPrevious.png" />
+    <Content Include="images\public\facebook\contentPatternBottom.png" />
+    <Content Include="images\public\facebook\contentPatternLeft.png" />
+    <Content Include="images\public\facebook\contentPatternRight.png" />
+    <Content Include="images\public\facebook\contentPatternTop.png" />
+    <Content Include="images\public\facebook\default_thumbnail.gif" />
+    <Content Include="images\public\facebook\loader.gif" />
+    <Content Include="images\public\facebook\sprite.png" />
+    <Content Include="images\public\hover-opacity4.png" />
+    <Content Include="images\public\icon-star.png" />
+    <Content Include="images\public\icon1.gif" />
+    <Content Include="images\public\icon1.png" />
+    <Content Include="images\public\icon2.png" />
+    <Content Include="images\public\logo.png" />
+    <Content Include="images\public\nav-slide.png" />
+    <Content Include="images\public\pf\pf-img1.jpg" />
+    <Content Include="images\public\pf\pf-img2.jpg" />
+    <Content Include="images\public\pf\pf-img3.jpg" />
+    <Content Include="images\public\pf\pf-img4.jpg" />
+    <Content Include="images\public\pf\pf-large-img1.jpg" />
+    <Content Include="images\public\pf\pf-large-img2.jpg" />
+    <Content Include="images\public\pf\pf-large-img3.jpg" />
+    <Content Include="images\public\pf\pf-large-img4.jpg" />
+    <Content Include="images\public\quote.png" />
+    <Content Include="images\public\slider-detail\large\slider1.jpg" />
+    <Content Include="images\public\slider-detail\large\slider2.jpg" />
+    <Content Include="images\public\slider-detail\large\slider3.jpg" />
+    <Content Include="images\public\slider-detail\large\slider4.jpg" />
+    <Content Include="images\public\slider-detail\large\slider5.jpg" />
+    <Content Include="images\public\slider-detail\opacity.png" />
+    <Content Include="images\public\slider-detail\opacity2.png" />
+    <Content Include="images\public\slider-detail\scroll-left.png" />
+    <Content Include="images\public\slider-detail\scroll-right.png" />
+    <Content Include="images\public\slider-detail\thumb\thumb1.jpg" />
+    <Content Include="images\public\slider-detail\thumb\thumb2.jpg" />
+    <Content Include="images\public\slider-detail\thumb\thumb3.jpg" />
+    <Content Include="images\public\slider-detail\thumb\thumb4.jpg" />
+    <Content Include="images\public\slider-detail\thumb\thumb5.jpg" />
+    <Content Include="images\public\slider-shadow.png" />
     <Content Include="images\star.png" />
+    <Content Include="js\compressed.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\contact.js" />
+    <Content Include="js\cufon-yui.js" />
+    <Content Include="js\DD_belatedPNG.js" />
+    <Content Include="js\fade.js" />
+    <Content Include="js\hoverIntent.js" />
+    <Content Include="js\jquery-1.4.2.min.js" />
+    <Content Include="js\jquery.cycle.all.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery.prettyPhoto.js" />
+    <Content Include="js\PT_Sans_400.font.js" />
+    <Content Include="js\script.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\superfish.js" />
+    <Content Include="js\supersubs.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -317,7 +420,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Propietarios\Index.cshtml" />
     <Content Include="Views\Propietarios\Details.cshtml" />
     <Content Include="Views\Propietarios\Create.cshtml" />
@@ -361,6 +466,10 @@
     <Content Include="Views\Fotos\CreateforPropiedad.cshtml" />
     <Content Include="Views\Fotos\HacerPrincipal.cshtml" />
     <Content Include="Views\Propiedades\Buscar.cshtml" />
+    <Content Include="Views\Shared\_LayoutPublic.cshtml" />
+    <Content Include="Views\Public\Index.cshtml" />
+    <Content Include="Views\Public\Buscar.cshtml" />
+    <Content Include="Views\Public\Propiedad.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -380,8 +489,9 @@
       <CustomToolNamespace>ViewRes</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Shared\SharedStrings.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SharedStrings.ru.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
