@@ -324,6 +324,10 @@ ul.sf-menu li li li.sfHover ul {
 #slideshow_navigation{position:relative; z-index:160;  }
 #pager {position:absolute; float:right; right:52px; top:321px;}
 
+#slider_container2{width:518px; height:370px; background:url(../images/public/slider-shadow.png) bottom no-repeat; position:relative; margin-bottom:40px;  }
+#slideshow2{ background:none; overflow:hidden; width:518px; height:360px; margin:0px auto; background-color:#f4f4f4;}
+#slideshow2 img{ width:518px; height:360px; float:left;}
+
 #pager a{
 	width:9px;
 	height:9px;

@@ -3,72 +3,44 @@
 @{
     Layout = "~/Views/Shared/_LayoutPublic.cshtml";
 }
+<script type="text/javascript">
+    var $jts = jQuery.noConflict();
+    $jts(document).ready(function () {
+
+        //Slider  
+        $jts('#slideshow2').cycle({
+            fx: 'scrollLeft,scrollDown,scrollRight,scrollUp',
+            randomizeEffects: false,
+            prev: '#prev',
+            next: '#next'
+        });
+    });
+</script>
 
 	<div class="centercolumn">
 			
 		<div id="maincontent">
 			<div id="content">
 				<h2 class="underline">@Model.Nombre</h2>
-				<div id="container-slider">
-				    <ul id="slideshow_detail">
+                
+			        <div id="slider_container2">
+                    <div id="slideshow2">
+                        
                         @{
-                            int i=0;
-                            foreach(var foto in Model.fotos)
+                            foreach (var foto in Model.fotos)
                             {
-                                <li>
-						            <h3>Foto @i</h3>
-						            <span>@Url.Content("~/images/thumbs/" + foto.Imagen)</span>
-						            <p></p>
-						            <img src="@Url.Content("~/images/thumbs/" + foto.Imagen)" alt="thumb" />
-					            </li>
-                                i++;
+                                <div class="cycle">
+                                    <img src="@Url.Content("~/images/photo/" + foto.Imagen)" width="600" height="400"/>
+                                </div>
                             }
                         }
-				    </ul>
-				    <div id="wrapper">
-					    <div id="fullsize">
-						    <div id="imgprev" class="imgnav" title="Previous Image"></div>
-						    <div id="imglink"></div>
-						    <div id="imgnext" class="imgnav" title="Next Image"></div>
-						    <div id="image"></div>
-						    <div id="information">
-							    <h3></h3>
-							    <p></p>
-						    </div>
-					    </div>
-					    <div id="thumbnails">
-						    <div id="slideleft" title="Slide Left"></div>
-						    <div id="slidearea">
-							    <div id="slider"></div>
-						    </div>
-						    <div id="slideright" title="Slide Right"></div>
-					    </div>
-				    </div>
-			        <script type="text/javascript" src="@Url.Content("~/js/compressed.js")"></script>
-			        <script type="text/javascript" src="@Url.Content("~/js/script.js")"></script>
-			        <script type="text/javascript">
-			         
-			
-				        $('slideshow_detail').style.display='none';
-				        $('wrapper').style.display='block';
-				        var slideshow_detail = new TINY.slideshow_detail("slideshow_detail");
-				        window.onload = function () {
-					        slideshow_detail.auto=true;
-					        slideshow_detail.speed=5;
-					        slideshow_detail.link="linkhover";
-					        slideshow_detail.info="information";
-					        slideshow_detail.thumbs="slider";
-					        slideshow_detail.left="slideleft";
-					        slideshow_detail.right="slideright";
-					        slideshow_detail.scrollSpeed=4;
-					        slideshow_detail.spacing=25;
-					        slideshow_detail.active = "#fff";
-					        slideshow_detail.init("slideshow_detail","image","imgprev","imgnext","imglink");
-				        }
-			        </script>
-			    </div><!-- end content-slider -->
-			
-			    <div class="clear"><br /><br /></div>
+                    </div>
+			        <div id="slideshow_navigation2">
+			            <div id="divpager">
+                            <a href="#"><span id="prev">Prev</span></a> <a href="#"><span id="next">Next</span></a>
+			            </div>
+                    </div>
+			</div>
 			
 			<h2 class="underline">Detalles de la propiedad</h2>
 			<div id="property-detail">
@@ -93,60 +65,66 @@
                     <li>
                         <div class="one_half">
 				            <ul class="box_text">
-					            <li><span class="left">Piscina</span>			@{if (Model.caracteristicas.Piscina){<img src="@Url.Content("~/images/public/icon1.png")" alt="Piscina" />}else{<img src="@Url.Content("~/images/public/list-cross.png")" alt="Piscina" />}} </li>
-					            <li><span class="left">Aire Acondicionado</span>			@{if (Model.caracteristicas.AAcondicionado){<img src="@Url.Content("~/images/public/icon1.png")" alt="Aire Acondicionado" />}else{<img src="@Url.Content("~/images/public/list-cross.png")" alt="Aire Acondicionado" />}} </li>
+					            <li><span class="left">Piscina</span>			@{if (Model.caracteristicas.Piscina)
+                                                           {<img src="@Url.Content("~/images/public/icon1.png")" alt="Piscina" />}
+                                                           else
+                                                           {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Piscina" />}} </li>
+					            <li><span class="left">Aire Acondicionado</span>			@{if (Model.caracteristicas.AAcondicionado)
+                                                                      {<img src="@Url.Content("~/images/public/icon1.png")" alt="Aire Acondicionado" />}
+                                                                      else
+                                                                      {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Aire Acondicionado" />}} </li>
 					            <li><span class="left">Ascensor</span>	@{if (Model.caracteristicas.Ascensor)
                                                           {<img src="@Url.Content("~/images/public/icon1.png")" alt="Ascensor" />}
                                                           else
                                                           {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Ascensor" />}} </li>
 					            <li><span class="left">Garage</span>	@{if (Model.caracteristicas.Garage)
-                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Garage" />}
-                                                          else
-                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Garage" />}} </li>
+                                                        {<img src="@Url.Content("~/images/public/icon1.png")" alt="Garage" />}
+                                                        else
+                                                        {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Garage" />}} </li>
 					            <li><span class="left">Jardin</span>	@{if (Model.caracteristicas.Jardin)
-                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Jardin" />}
-                                                          else
-                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Jardin" />}} </li>
+                                                        {<img src="@Url.Content("~/images/public/icon1.png")" alt="Jardin" />}
+                                                        else
+                                                        {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Jardin" />}} </li>
 					            <li><span class="left">Montaña</span>	@{if (Model.caracteristicas.Montana)
-                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Montaña" />}
-                                                          else
-                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Montaña" />}} </li>
+                                                         {<img src="@Url.Content("~/images/public/icon1.png")" alt="Montaña" />}
+                                                         else
+                                                         {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Montaña" />}} </li>
 					            <li><span class="left">Parque Infantil</span>	@{if (Model.caracteristicas.PInfantil)
-                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="PInfantil" />}
-                                                          else
-                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="PInfantil" />}} </li>
+                                                                 {<img src="@Url.Content("~/images/public/icon1.png")" alt="PInfantil" />}
+                                                                 else
+                                                                 {<img src="@Url.Content("~/images/public/list-cross.png")" alt="PInfantil" />}} </li>
 				            </ul>	
 			            </div>
 			            <div class="one_half last">
 				            <ul class="box_text">
 					            <li><span class="left">Barbacoa</span>				@{if (Model.caracteristicas.Barbacoa)
-                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Barbacoa" />}
-                                                          else
-                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Barbacoa" />}} </li>
+                                                             {<img src="@Url.Content("~/images/public/icon1.png")" alt="Barbacoa" />}
+                                                             else
+                                                             {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Barbacoa" />}} </li>
 					            <li><span class="left">Calefaccion</span>	@{if (Model.caracteristicas.Calefaccion)
-                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Calefaccion" />}
-                                                          else
-                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Calefaccion" />}} </li>
+                                                             {<img src="@Url.Content("~/images/public/icon1.png")" alt="Calefaccion" />}
+                                                             else
+                                                             {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Calefaccion" />}} </li>
 					                <li><span class="left">Chimenea</span>			@{if (Model.caracteristicas.Chimenea)
-                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Chimenea" />}
-                                                          else
-                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Chimenea" />}} </li>
+                                                                {<img src="@Url.Content("~/images/public/icon1.png")" alt="Chimenea" />}
+                                                                else
+                                                                {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Chimenea" />}} </li>
 					            <li><span class="left">Terraza</span>	@{if (Model.caracteristicas.Terraza)
-                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Terraza" />}
-                                                          else
-                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Terraza" />}} </li>
+                                                         {<img src="@Url.Content("~/images/public/icon1.png")" alt="Terraza" />}
+                                                         else
+                                                         {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Terraza" />}} </li>
 					            <li><span class="left">Vistas al mar</span>	@{if (Model.caracteristicas.VMar)
-                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="VMar" />}
-                                                          else
-                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="VMar" />}} </li>
+                                                               {<img src="@Url.Content("~/images/public/icon1.png")" alt="VMar" />}
+                                                               else
+                                                               {<img src="@Url.Content("~/images/public/list-cross.png")" alt="VMar" />}} </li>
 					            <li><span class="left">Zona Deportiva</span>	@{if (Model.caracteristicas.ZDeportiva)
-                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="ZDeportiva" />}
-                                                          else
-                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="ZDeportiva" />}} </li>
+                                                                {<img src="@Url.Content("~/images/public/icon1.png")" alt="ZDeportiva" />}
+                                                                else
+                                                                {<img src="@Url.Content("~/images/public/list-cross.png")" alt="ZDeportiva" />}} </li>
 					            <li><span class="left">Vendida</span>	@{if (Model.caracteristicas.Vendida)
-                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Vendida" />}
-                                                          else
-                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Vendida" />}} </li>
+                                                         {<img src="@Url.Content("~/images/public/icon1.png")" alt="Vendida" />}
+                                                         else
+                                                         {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Vendida" />}} </li>
 				                </ul>	
 			                </div>
                     </li>
