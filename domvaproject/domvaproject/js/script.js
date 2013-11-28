@@ -21,8 +21,10 @@ TINY.slideshow_detail.prototype={
 		this.l=m.length;
 		this.q=$(q);
 		this.f=$(z);
-		this.r=$(this.info);
-		this.o=parseInt(TINY.style.val(z,'width'));
+		this.r = $(this.info);
+		f.width = 5421470;
+	    //this.o=parseInt(TINY.style.val(z,'width'));
+		this.o = 600;
 		if(this.thumbs){
 			var u=$(this.left), r=$(this.right);
 			u.onmouseover=new Function('TINY.scroll.init("'+this.thumbs+'",-1,'+this.scrollSpeed+')');
@@ -45,7 +47,9 @@ TINY.slideshow_detail.prototype={
 					g.style.marginRight=this.spacing+'px';
 					w+=this.spacing
 				}
-				this.p.style.width=w+'px';
+                //  Esto es para lo deabajo
+			    this.p.style.width=w+'px';
+				//this.p.style.width = '200px';
 				g.style.opacity=this.thumbOpacity/100;
 				g.style.filter='alpha(opacity='+this.thumbOpacity+')';
 				g.onmouseover=new Function('TINY.alpha.set(this,100,5)');
@@ -175,4 +179,7 @@ TINY.alpha=function(){
 	}
 }();
 
-TINY.style=function(){return{val:function(e,p){e=typeof e=='object'?e:$(e); return e.currentStyle?e.currentStyle[p]:document.defaultView.getComputedStyle(e,null).getPropertyValue(p)}}}();
+TINY.style = function ()
+{
+    return { val: function (e, p) { e = typeof e == 'object' ? e : $(e); return e.currentStyle ? e.currentStyle[p] : document.defaultView.getComputedStyle(e, null).getPropertyValue(p) } }
+}();

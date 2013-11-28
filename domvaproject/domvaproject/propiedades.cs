@@ -16,7 +16,6 @@ namespace domvaproject
     
     public partial class propiedades
     {
-
         private readonly domvaEntities _datos = new domvaEntities();
         public propiedades()
         {
@@ -42,8 +41,6 @@ namespace domvaproject
         {
             return Controllers.PropiedadesController.principal(id);
         }
-
-
 
         public int ContarPropiedades(string nombre = null, string localidad = null, int? precioMin = null,
                                     int? precioMax = null, int? m2Min = null, int? cantDorms = null,
@@ -112,6 +109,7 @@ namespace domvaproject
             return query;
         }
 
+
         public IEnumerable<propiedades> ObtenerPaginaDePersonasFiltrada(int paginaActual, int propsporpagina,
               string columnaOrdenacion, string sentidoOrdenacion,
               string nombre = null, string localidad = null, int? precioMin = null,
@@ -145,6 +143,8 @@ namespace domvaproject
                     .Take(propsporpagina)
                     .ToList();
         }
+
+
 
     }
 }

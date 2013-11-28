@@ -24,6 +24,7 @@ namespace domvaproject.Controllers
 
         public ActionResult Index()
         {
+            //return View(db.propiedades.Where(p => p.Destacada == true));
             return View();
         }
 

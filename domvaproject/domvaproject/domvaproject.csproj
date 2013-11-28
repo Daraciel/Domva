@@ -337,6 +337,9 @@
     <Content Include="images\public\icon1.gif" />
     <Content Include="images\public\icon1.png" />
     <Content Include="images\public\icon2.png" />
+    <Content Include="images\public\list-cross.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\public\logo.png" />
     <Content Include="images\public\nav-slide.png" />
     <Content Include="images\public\pf\pf-img1.jpg" />
