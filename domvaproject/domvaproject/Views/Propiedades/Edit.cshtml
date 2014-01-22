@@ -13,6 +13,21 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
+
+    
+    List<SelectListItem> itemsTipoCompra = new List<SelectListItem>();
+    itemsTipoCompra.Add(new SelectListItem
+    {
+        Text = "Venta",
+        Value = "Venta"
+    });
+    itemsTipoCompra.Add(new SelectListItem
+    {
+        Text = "Alquiler",
+        Value = "Alquiler"
+    });
+    
+    
     List<SelectListItem> items = new List<SelectListItem>();
     items.Add(new SelectListItem
     {
@@ -94,6 +109,16 @@
                 <div class="editor-field">
                     @Html.DropDownListFor(model => model.Poblacion, (SelectList)ViewBag.Poblaciones)
                     @Html.ValidationMessageFor(model => model.Poblacion)
+                </div>
+            </div>
+            
+            <div class="bloque">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.TipoCompra)
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.TipoCompra, itemsTipoCompra)
+                    @Html.ValidationMessageFor(model => model.TipoCompra)
                 </div>
             </div>
         </div>

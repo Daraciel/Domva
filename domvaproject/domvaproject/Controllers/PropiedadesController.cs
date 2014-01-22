@@ -178,7 +178,8 @@ namespace domvaproject.Controllers
 
         // GET: /Products/Filterable?Nombre=string&Localidad=string&precioMin=number&precioMax=number&Piscina=true|false
         public ActionResult Buscar(int page = 1, string sort = "Nombre", string sortDir = "ASC",
-                                    string nombre = null, string localidad = null, int? precioMin = null,
+                                    string nombre = null, string localidad = null, 
+                                    string tipocompra = null, string tipoedif = null, int? precioMin = null,
                                     int? precioMax = null, int? m2Min = null, int? cantDorms = null,
                                     int? cantBanyos = null, int? distMar = null, bool? vistaMar=null,
                                     bool? piscina = null, bool? terraza=null, bool? garage=null,
@@ -190,7 +191,7 @@ namespace domvaproject.Controllers
                                                         cantDorms, cantBanyos, distMar, vistaMar, piscina, 
                                                         terraza, garage, ascensor, aire);*/
             var props = _services.ObtenerPaginaDePersonasFiltrada(page, PROPIEDADES_POR_PAGINA,
-                                           sort, sortDir, nombre, localidad, precioMin, precioMax, m2Min,
+                                           sort, sortDir, nombre, localidad, tipocompra, tipoedif, precioMin, precioMax, m2Min,
                                                         cantDorms, cantBanyos, distMar, vistaMar, piscina,
                                                         terraza, garage, ascensor, aire);
             var numprops = props.Count();

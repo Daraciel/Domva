@@ -63,6 +63,7 @@
     <EntitySetMapping Name="propiedades">
       <EntityTypeMapping TypeName="db488059728Model.propiedades">
         <MappingFragment StoreEntitySet="propiedades">
+          <ScalarProperty Name="TipoCompra" ColumnName="TipoCompra" />
           <ScalarProperty Name="idPropiedad" ColumnName="idPropiedad" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Precio" ColumnName="Precio" />

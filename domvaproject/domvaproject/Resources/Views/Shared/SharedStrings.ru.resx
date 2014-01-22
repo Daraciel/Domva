@@ -117,7 +117,181 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Aire" xml:space="preserve">
+    <value>Кондиционер</value>
+  </data>
+  <data name="Alquiler" xml:space="preserve">
+    <value>Аренда</value>
+  </data>
+  <data name="Anterior" xml:space="preserve">
+    <value>&lt; Предыдущая</value>
+  </data>
+  <data name="Apartamento" xml:space="preserve">
+    <value>Квартира</value>
+  </data>
+  <data name="Apellidos" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="Ascensor" xml:space="preserve">
+    <value>Лифт</value>
+  </data>
+  <data name="Banos" xml:space="preserve">
+    <value>Санузлы</value>
+  </data>
+  <data name="Barbacoa" xml:space="preserve">
+    <value>Барбекю</value>
+  </data>
+  <data name="Bungalow" xml:space="preserve">
+    <value>Бунгало</value>
+  </data>
+  <data name="Calefaccion" xml:space="preserve">
+    <value>Отопление</value>
+  </data>
+  <data name="Cantidad" xml:space="preserve">
+    <value>Колличество</value>
+  </data>
+  <data name="Caracteristicas" xml:space="preserve">
+    <value>Характеристика</value>
+  </data>
+  <data name="Chimenea" xml:space="preserve">
+    <value>Камин</value>
+  </data>
+  <data name="Contacta" xml:space="preserve">
+    <value>Свяжитесь с нами</value>
+  </data>
+  <data name="Contactamos" xml:space="preserve">
+    <value>Мы свяжемся с Вами</value>
+  </data>
+  <data name="Contacto" xml:space="preserve">
+    <value>Контакт</value>
+  </data>
+  <data name="Dejadatos" xml:space="preserve">
+    <value>Оставьте Ваши данные и мы свяжемся с Вами</value>
+  </data>
+  <data name="Descripcion" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="Detalles" xml:space="preserve">
+    <value>Детали</value>
+  </data>
+  <data name="DMar" xml:space="preserve">
+    <value>Дистанция до моря</value>
+  </data>
+  <data name="Dormitorios" xml:space="preserve">
+    <value>Спальни</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="Enventa" xml:space="preserve">
+    <value>Продажа</value>
+  </data>
+  <data name="Filtro" xml:space="preserve">
+    <value>Поиск недвижимости</value>
+  </data>
+  <data name="Garage" xml:space="preserve">
+    <value>Гараж</value>
+  </data>
+  <data name="Inicio" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="Interes" xml:space="preserve">
+    <value>мне интересно</value>
+  </data>
+  <data name="Jardin" xml:space="preserve">
+    <value>Парковая зона</value>
+  </data>
+  <data name="LocalComercial" xml:space="preserve">
+    <value>Коммерческое помещение</value>
+  </data>
+  <data name="Max" xml:space="preserve">
+    <value>Максимум</value>
+  </data>
+  <data name="Min" xml:space="preserve">
+    <value>Минимум</value>
+  </data>
+  <data name="Montana" xml:space="preserve">
+    <value>Горная местность</value>
+  </data>
+  <data name="Movil" xml:space="preserve">
+    <value>Мобильный</value>
+  </data>
+  <data name="Negocio" xml:space="preserve">
+    <value>Бизнес</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="Nosotros" xml:space="preserve">
+    <value>О нас</value>
+  </data>
+  <data name="OtrosServicios" xml:space="preserve">
+    <value>Другие услуги</value>
+  </data>
+  <data name="PInfantil" xml:space="preserve">
+    <value>Детская площадка</value>
+  </data>
+  <data name="Piscina" xml:space="preserve">
+    <value>Бассейн</value>
+  </data>
+  <data name="PMax" xml:space="preserve">
+    <value>Максимальная стоимость</value>
+  </data>
+  <data name="PMin" xml:space="preserve">
+    <value>Минимальная стоимость</value>
+  </data>
+  <data name="Poblacion" xml:space="preserve">
+    <value>Местность</value>
+  </data>
+  <data name="Precio" xml:space="preserve">
+    <value>Стоимость</value>
+  </data>
+  <data name="Propiedades" xml:space="preserve">
+    <value>Недвижимость</value>
+  </data>
+  <data name="Siguiente" xml:space="preserve">
+    <value>Следующая &gt;</value>
+  </data>
+  <data name="Tamano" xml:space="preserve">
+    <value>М2</value>
+  </data>
+  <data name="Telefono" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Terraza" xml:space="preserve">
+    <value>Терраса</value>
+  </data>
+  <data name="TipoCompra" xml:space="preserve">
+    <value>Вариант покупки</value>
+  </data>
+  <data name="TipoPropiedad" xml:space="preserve">
+    <value>Вариант</value>
+  </data>
   <data name="Title" xml:space="preserve">
-    <value>En ruso</value>
+    <value>Добро пожаловать в "Дом в Аликанте"</value>
+  </data>
+  <data name="Vendida" xml:space="preserve">
+    <value>Продано</value>
+  </data>
+  <data name="Venta" xml:space="preserve">
+    <value>Продажа</value>
+  </data>
+  <data name="Villa" xml:space="preserve">
+    <value>Вилла</value>
+  </data>
+  <data name="Vistas" xml:space="preserve">
+    <value>Вид на море</value>
+  </data>
+  <data name="Yavendida" xml:space="preserve">
+    <value>Эта недвижимость продана</value>
+  </data>
+  <data name="ZDeportiva" xml:space="preserve">
+    <value>Спортивная зона</value>
+  </data>
+  <data name="Buscador" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="Filtrar" xml:space="preserve">
+    <value>Фильтр</value>
   </data>
 </root>

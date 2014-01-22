@@ -8,14 +8,16 @@
     <meta name="keywords" content="" />
     <meta name="title" content="" />
     <meta name="description" content="" />
-    <title>DomvAlicante</title>
+    <title>@ViewRes.SharedStrings.Title</title>
     <link rel="shortcut icon" href="@Url.Content("~/images/public/content/favicon.ico")" />
     
     <link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/css/inner.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/prettyPhoto.css")" rel="stylesheet" type="text/css" />
 
 
     <script src="@Url.Content("~/js/jquery-1.4.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/js/jquery.prettyPhoto.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/js/cufon-yui.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/js/PT_Sans_400.font.js")" type="text/javascript"></script>
     <script type="text/javascript">
@@ -23,7 +25,7 @@
 
     </script>
     
-    <script src="@Url.Content("~/js/jquery.cycle.all.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/js/jquery.cycle.all.min.js")" type="text/javascript"></script>  
     <script src="@Url.Content("~/js/hoverIntent.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/js/superfish.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/js/supersubs.js")" type="text/javascript"></script>
@@ -41,8 +43,7 @@
             // containing tabs for same reason. 
         });
 
-    </script>
-    <script src="@Url.Content("~/js/jquery.cycle.all.min.js")" type="text/javascript"></script>
+    </script><!--
     <script type="text/javascript">
         var $jts = jQuery.noConflict();
         $jts(document).ready(function () {
@@ -53,10 +54,11 @@
                 fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...            
                 pager: '#pager',  // selector for element to use as pager container
                 pause: 0,	  // true to enable "pause on hover"
-                pauseOnPagerHover: 0 // true to pause when hovering over pager link
+                pauseOnPagerHover: 0, // true to pause when hovering over pager link
+                width: auto
             });
         });
-    </script>
+    </script>-->
 </head>
 <body>
 		<div class="centercolumn2">
@@ -71,9 +73,9 @@
 			</div> end #logo -->
 			<div id="navigation">
 				<ul id="nav" class="sf-menu">
-					<li><a href="@Url.Action("Index")">Inicio</a></li>
-					<li><a href="#">Nosotros</a></li>
-					<li>@Html.ActionLink("Propiedades", "Buscar", "Public")
+					<li><a href="@Url.Action("Index")">@ViewRes.SharedStrings.Inicio</a></li>
+					<li><a href="#">@ViewRes.SharedStrings.Nosotros</a></li>
+					<li>@Html.ActionLink(ViewRes.SharedStrings.Propiedades, "Buscar", "Public")
 						<!--<ul>
 							<li><a href="#">Por Categoría</a>
                                 <ul>
@@ -86,10 +88,12 @@
 							</li>
 						</ul>-->
 					</li>
-					<li><a href="#">Otros Servicios</a></li>
-					<li><a href="#">Contacto</a></li>
+					<li><a href="#">@ViewRes.SharedStrings.OtrosServicios</a></li>
+					<li><a href="#">@ViewRes.SharedStrings.Contacto</a></li>
 				</ul>
 			</div><!-- end #navigation-->
+            <a href="@Url.Action("ChangeCulture", new { lang = "es", returnUrl = this.Request.RawUrl })"><img src="@Url.Content("~/images/public/Spain.png")" alt=""/></a>
+            <a href="@Url.Action("ChangeCulture", new { lang = "ru", returnUrl = this.Request.RawUrl })"><img src="@Url.Content("~/images/public/Russia.png")" alt=""/></a>
 			<div class="clr"></div>
 		</div><!-- end #header -->
 		</div><!-- end #centercolumn -->

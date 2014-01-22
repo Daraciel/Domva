@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="db488059728Model.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="db488059728Model.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="db488059728ModelStoreContainer">
           <EntitySet Name="caracteristicas" EntityType="db488059728Model.Store.caracteristicas" store:Type="Tables" Schema="db488059728" />
           <EntitySet Name="descripcionesesp" EntityType="db488059728Model.Store.descripcionesesp" store:Type="Tables" Schema="db488059728" />
@@ -44,24 +44,24 @@
             <PropertyRef Name="Propiedad" />
           </Key>
           <Property Name="Propiedad" Type="int" Nullable="false" />
-          <Property Name="Piscina" Type="bool" />
-          <Property Name="AAcondicionado" Type="bool" />
-          <Property Name="Barbacoa" Type="bool" />
-          <Property Name="VMar" Type="bool" />
-          <Property Name="Ascensor" Type="bool" />
-          <Property Name="Calefaccion" Type="bool" />
-          <Property Name="Garage" Type="bool" />
-          <Property Name="ZDeportiva" Type="bool" />
-          <Property Name="Jardin" Type="bool" />
-          <Property Name="PInfantil" Type="bool" />
-          <Property Name="Terraza" Type="bool" />
-          <Property Name="Montana" Type="bool" />
-          <Property Name="Metros" Type="int" />
-          <Property Name="Baños" Type="int" />
-          <Property Name="Dormitorios" Type="int" />
-          <Property Name="DMar" Type="int" />
-          <Property Name="Chimenea" Type="bool" />
-          <Property Name="Vendida" Type="bool" />
+          <Property Name="Piscina" Type="bool" Nullable="false" />
+          <Property Name="AAcondicionado" Type="bool" Nullable="false" />
+          <Property Name="Barbacoa" Type="bool" Nullable="false" />
+          <Property Name="VMar" Type="bool" Nullable="false" />
+          <Property Name="Ascensor" Type="bool" Nullable="false" />
+          <Property Name="Calefaccion" Type="bool" Nullable="false" />
+          <Property Name="Garage" Type="bool" Nullable="false" />
+          <Property Name="ZDeportiva" Type="bool" Nullable="false" />
+          <Property Name="Jardin" Type="bool" Nullable="false" />
+          <Property Name="PInfantil" Type="bool" Nullable="false" />
+          <Property Name="Terraza" Type="bool" Nullable="false" />
+          <Property Name="Montana" Type="bool" Nullable="false" />
+          <Property Name="Metros" Type="int" Nullable="false" />
+          <Property Name="Baños" Type="int" Nullable="false" />
+          <Property Name="Dormitorios" Type="int" Nullable="false" />
+          <Property Name="DMar" Type="int" Nullable="false" />
+          <Property Name="Chimenea" Type="bool" Nullable="false" />
+          <Property Name="Vendida" Type="bool" Nullable="false" />
         </EntityType>
         <EntityType Name="descripcionesesp">
           <Key>
@@ -105,6 +105,7 @@
           <Property Name="DescripcionInterna" Type="text" />
           <Property Name="Categoria" Type="enum" />
           <Property Name="Poblacion" Type="varchar" MaxLength="45" />
+          <Property Name="TipoCompra" Type="enum" />
         </EntityType>
         <EntityType Name="propietarios">
           <Key>
@@ -320,6 +321,7 @@
           <NavigationProperty Name="fotos" Relationship="db488059728Model.fk_Foto_Propiedad" FromRole="propiedades" ToRole="fotos" />
           <NavigationProperty Name="poblaciones" Relationship="db488059728Model.fk_Propiedad_Poblacion" FromRole="propiedades" ToRole="poblaciones" />
           <NavigationProperty Name="propietarios" Relationship="db488059728Model.fk_Propiedad_Propietario" FromRole="propiedades" ToRole="propietarios" />
+          <Property Type="String" Name="TipoCompra" MaxLength="65532" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="propietarios">
           <Key>
@@ -489,6 +491,7 @@
           <EntitySetMapping Name="propiedades">
             <EntityTypeMapping TypeName="db488059728Model.propiedades">
               <MappingFragment StoreEntitySet="propiedades">
+                <ScalarProperty Name="TipoCompra" ColumnName="TipoCompra" />
                 <ScalarProperty Name="idPropiedad" ColumnName="idPropiedad" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />

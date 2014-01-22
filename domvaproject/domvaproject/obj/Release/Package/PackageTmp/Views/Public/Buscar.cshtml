@@ -7,92 +7,33 @@
         
 <div class="centercolumn">
     <div id="maincontent">
-        <div id="content">
-		    <h2 class="underline">Propiedades</h2>
-            @{
-                foreach(var item in Model.Propiedades)
-                {
-                    string principal = domvaproject.propiedades.principal(item.idPropiedad);
-                    string cabecera = item.Nombre + ", " + item.Poblacion;
-                    string precio = item.Precio + " EUR";
-                    string banos = "Baños: " + item.caracteristicas.Baños;
-                    string dorm = "Dormitorios: " + item.caracteristicas.Dormitorios;
-                    string metros = "M²: " + item.caracteristicas.Metros;
-                    string dist = "Distancia al mar: " + item.caracteristicas.DMar;
-                    string todas = "";
-                    string vendida = "En venta";
-
-                    if (item.caracteristicas.Piscina) { todas += "Piscina, "; }
-                    if (item.caracteristicas.Garage) { todas += "Garage, "; }
-                    if (item.caracteristicas.AAcondicionado) { todas += "Aire Acondicionado, "; }
-                    if (item.caracteristicas.Barbacoa) { todas += "Barbacoa, "; }
-                    if (item.caracteristicas.Calefaccion) { todas += "Calefaccion, "; }
-                    if (item.caracteristicas.VMar) { todas += "Vistas al Mar, "; }
-                    if (item.caracteristicas.Terraza) { todas += "Terraza, "; }
-                    if (item.caracteristicas.Ascensor) { todas += "Ascensor, "; }
-                    if (item.caracteristicas.Chimenea) { todas += "Chimenea, "; }
-                    if (item.caracteristicas.PInfantil) { todas += "Parque Infantil, "; }
-                    if (item.caracteristicas.Jardin) { todas += "Jardin, "; }
-                    if (item.caracteristicas.Montana) { todas += "Montaña, "; }
-                    if (item.caracteristicas.ZDeportiva) { todas += "Zona Deportiva, "; }
-                    if (item.caracteristicas.Vendida) { vendida = "Esta propiedad ya ha sido vendida"; }
-                    
-                    
-                    <div class="list_properties">
-					    <div class="title_property2">
-					        <h2>@cabecera</h2>
-					    </div><!-- end .title_property2 -->
-					    <div class="clear"></div>
-					    <div class="list_img"><a href="@Url.Action("Propiedad",  new { id = item.idPropiedad })"><img src="@Url.Content("~/images/thumbs/" + principal)" alt=""/></a></div>
-					    <div class="list_text">
-					        <strong>@precio</strong><br />
-					        @item.Categoria<br />
-					        <br />
-					        <pre>@dist</pre>
-					        <pre>@banos</pre>
-					        <pre>@dorm</pre>
-					        <pre>@metros</pre>
-
-					        @todas<br />
-
-					        <span class="blue">@vendida</span>
-					    </div><!-- end .list_text -->
-					    <div class="clear"></div>
-
-                    </div>
-                }
-            }
-            <div class="clear"></div>
-        </div>
-			
-			<div class="sidebar_right">
+        
+		<div class="sidebar_left">
 			<div class="sidebar">
 				<ul>				
 					<li class="widget-container widget_categories">
-						<h2 class="widget-title">Filtro</h2>
+						<h2 class="widget-title">@ViewRes.SharedStrings.Buscador</h2>
                         
 @using (Html.BeginForm("Buscar", "Public", FormMethod.Get))
     {
        <fieldset class="filtering">
          <!-- <legend>Filtrado de propiedades </legend> -->
            <ul>
-               <li><b>Nombre:</b> @Html.TextBoxFor(model => model.Nombre)</li>
-               <li><b>Localidad:</b>@Html.TextBoxFor(model => model.Localidad)</li>
-               <li><b>Precio Mínimo:</b>@Html.TextBoxFor(model => model.PrecioMin, new { size = 10 })</li>
-               <li><b>Precio Máximo:</b>@Html.TextBoxFor(model => model.PrecioMax, new { size = 10 })</li>
-               <li><b>M2 Mínimos:</b>@Html.TextBoxFor(model => model.M2Min, new { size = 6 })</li>
-               <li><b>Cantidad Dormitorios:</b>@Html.TextBoxFor(model => model.CantDorms, new { size = 2 })</li>
-               <li><b>Cantidad Baños:</b>@Html.TextBoxFor(model => model.CantBanyos, new { size = 2 })</li>
-               <li><b>Distancia al mar Máxima:</b>@Html.TextBoxFor(model => model.DistMar, new { size = 4 })</li>
-               <li><b>Piscina?</b>@Html.CheckBoxFor(model => model.Piscina)</li>
-               <li><b>Vistas al Mar?</b>@Html.CheckBoxFor(model => model.VistaMar)</li>
-               <li><b>Terraza?</b>@Html.CheckBoxFor(model => model.Terraza)</li>
-               <li><b>Garage?</b>@Html.CheckBoxFor(model => model.Garage)</li>
-               <li><b>Ascensor?</b>@Html.CheckBoxFor(model => model.Ascensor)</li>
-               <li><b>Aire?</b>@Html.CheckBoxFor(model => model.Aire)</li>
+               <li><b>@ViewRes.SharedStrings.PMin:</b>@Html.TextBoxFor(model => model.PrecioMin, new { size = 10 })</li>
+               <li><b>@ViewRes.SharedStrings.PMax:</b>@Html.TextBoxFor(model => model.PrecioMax, new { size = 10 })</li>
+               <li><b>M2 @ViewRes.SharedStrings.Min:</b>@Html.TextBoxFor(model => model.M2Min, new { size = 6 })</li>
+               <li><b>@ViewRes.SharedStrings.Cantidad @ViewRes.SharedStrings.Dormitorios:</b>@Html.TextBoxFor(model => model.CantDorms, new { size = 2 })</li>
+               <li><b>@ViewRes.SharedStrings.Cantidad @ViewRes.SharedStrings.Banos:</b>@Html.TextBoxFor(model => model.CantBanyos, new { size = 2 })</li>
+               <li><b>@ViewRes.SharedStrings.DMar @ViewRes.SharedStrings.Max:</b>@Html.TextBoxFor(model => model.DistMar, new { size = 4 })</li>
+               <li><b>@ViewRes.SharedStrings.Piscina?</b>@Html.CheckBoxFor(model => model.Piscina)</li>
+               <li><b>@ViewRes.SharedStrings.Vistas?</b>@Html.CheckBoxFor(model => model.VistaMar)</li>
+               <li><b>@ViewRes.SharedStrings.Terraza?</b>@Html.CheckBoxFor(model => model.Terraza)</li>
+               <li><b>@ViewRes.SharedStrings.Garage?</b>@Html.CheckBoxFor(model => model.Garage)</li>
+               <li><b>@ViewRes.SharedStrings.Ascensor?</b>@Html.CheckBoxFor(model => model.Ascensor)</li>
+               <li><b>@ViewRes.SharedStrings.Aire?</b>@Html.CheckBoxFor(model => model.Aire)</li>
            </ul>
           <div>
-             <input type="submit" value="Filtrar" />
+             <input type="submit" value="@ViewRes.SharedStrings.Filtrar" />
           </div>
        </fieldset>
     }
@@ -147,10 +88,102 @@
 					-->
 				</ul>
             </div><!-- end #sidebar -->
-			</div><!-- end #sidebar_right -->
+			</div><!-- end #sidebar_left -->
 			
-			<div class="clear"></div>
-		</div><!-- end #maincontent -->
-	</div><!-- end #centercolumn -->
+
+        <div id="content">
+		    <h2 class="underline">@ViewRes.SharedStrings.Propiedades</h2>
+            @{
+                foreach(var item in Model.Propiedades)
+                {
+                    string principal = domvaproject.propiedades.principal(item.idPropiedad);
+                    string cabecera = item.Nombre + ", " + item.Poblacion;
+                    string precio = item.Precio + " EUR";
+                    string banos = ViewRes.SharedStrings.Banos + ": " + item.caracteristicas.Baños;
+                    string dorm = ViewRes.SharedStrings.Dormitorios+": " + item.caracteristicas.Dormitorios;
+                    string metros = "M²: " + item.caracteristicas.Metros;
+                    string dist = ViewRes.SharedStrings.DMar+": " + item.caracteristicas.DMar;
+                    string todas = "";
+                    string vendida = ViewRes.SharedStrings.Enventa;
+                    string cat = item.Categoria;
+                    string Categoria = "";
+                    switch (cat)
+                    {
+                        case "Apartamento":
+                            Categoria = ViewRes.SharedStrings.Apartamento;
+                            break;
+                        case "Villa":
+                            Categoria = ViewRes.SharedStrings.Villa;
+                            break;
+                        case "Bungalow":
+                            Categoria = ViewRes.SharedStrings.Bungalow;
+                            break;
+                        case "Local Comercial":
+                            Categoria = ViewRes.SharedStrings.LocalComercial;
+                            break;
+                        case "Negocio":
+                            Categoria = ViewRes.SharedStrings.Negocio;
+                            break;
+                    }
+
+                    string compra = item.TipoCompra;
+                    string TipoCompra = "";
+                    switch (compra)
+                    {
+
+                        case "Venta":
+                            TipoCompra = ViewRes.SharedStrings.Venta;
+                            break;
+                        case "Alquiler":
+                            TipoCompra = ViewRes.SharedStrings.Alquiler;
+                            break;
+                    }
+
+                    if (item.caracteristicas.Piscina) { todas += ViewRes.SharedStrings.Piscina+", "; }
+                    if (item.caracteristicas.Garage) { todas += ViewRes.SharedStrings.Garage + ", "; }
+                    if (item.caracteristicas.AAcondicionado) { todas += ViewRes.SharedStrings.Aire + ", "; }
+                    if (item.caracteristicas.Barbacoa) { todas += ViewRes.SharedStrings.Barbacoa + ", "; }
+                    if (item.caracteristicas.Calefaccion) { todas += ViewRes.SharedStrings.Calefaccion + ", "; }
+                    if (item.caracteristicas.VMar) { todas += ViewRes.SharedStrings.Vistas + ", "; }
+                    if (item.caracteristicas.Terraza) { todas += ViewRes.SharedStrings.Terraza + ", "; }
+                    if (item.caracteristicas.Ascensor) { todas += ViewRes.SharedStrings.Ascensor + ", "; }
+                    if (item.caracteristicas.Chimenea) { todas += ViewRes.SharedStrings.Chimenea + ", "; }
+                    if (item.caracteristicas.PInfantil) { todas += ViewRes.SharedStrings.PInfantil + ", "; }
+                    if (item.caracteristicas.Jardin) { todas += ViewRes.SharedStrings.Jardin + ", "; }
+                    if (item.caracteristicas.Montana) { todas += ViewRes.SharedStrings.Montana + ", "; }
+                    if (item.caracteristicas.ZDeportiva) { todas += ViewRes.SharedStrings.ZDeportiva + ", "; }
+                    if (item.caracteristicas.Vendida) { vendida = ViewRes.SharedStrings.Yavendida; }
+                    if (todas.Length > 0) { todas = todas.Remove(todas.Length - 2); }
+                    
+                    <div class="list_properties">
+					    <div class="title_property2">
+					        <h2>@cabecera</h2>
+					    </div><!-- end .title_property2 -->
+					    <div class="clear"></div>
+					    <div class="list_img"><a href="@Url.Action("Propiedad",  new { id = item.idPropiedad })"><img src="@Url.Content("~/images/thumbs/" + principal)" alt=""/></a></div>
+					    <div class="list_text">
+					        <strong>@precio</strong><br />
+					        @Categoria, @TipoCompra<br />
+					        <br />
+					        <pre>@dist</pre>
+					        <pre>@banos</pre>
+					        <pre>@dorm</pre>
+					        <pre>@metros</pre>
+
+					        @todas<br />
+
+					        <span class="blue">@vendida</span>
+					    </div><!-- end .list_text -->
+					    <div class="clear"></div>
+
+                    </div>
+                }
+            }
+            <div class="clear"></div>
+        </div>
+			
+		<div class="clear"></div>
+	</div><!-- end #maincontent -->
+</div><!-- end #centercolumn -->
 
       

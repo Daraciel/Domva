@@ -281,7 +281,9 @@
       <LastGenOutput>domvaeer.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\Domva.pubxml" />
-    <None Include="Properties\PublishProfiles\DomvaQuique.pubxml" />
+    <None Include="Properties\PublishProfiles\DomvaQuique.pubxml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="images\public\arrow.png" />
     <Content Include="images\public\BannerC.png" />
@@ -323,6 +325,7 @@
     <Content Include="images\public\dot-line.gif" />
     <Content Include="images\public\dot.png" />
     <Content Include="images\public\dropcaps.png" />
+    <Content Include="images\public\English.png" />
     <Content Include="images\public\facebook\btnNext.png" />
     <Content Include="images\public\facebook\btnPrevious.png" />
     <Content Include="images\public\facebook\contentPatternBottom.png" />
@@ -351,6 +354,7 @@
     <Content Include="images\public\pf\pf-large-img3.jpg" />
     <Content Include="images\public\pf\pf-large-img4.jpg" />
     <Content Include="images\public\quote.png" />
+    <Content Include="images\public\Russia.png" />
     <Content Include="images\public\slider-detail\large\slider1.jpg" />
     <Content Include="images\public\slider-detail\large\slider2.jpg" />
     <Content Include="images\public\slider-detail\large\slider3.jpg" />
@@ -366,6 +370,7 @@
     <Content Include="images\public\slider-detail\thumb\thumb4.jpg" />
     <Content Include="images\public\slider-detail\thumb\thumb5.jpg" />
     <Content Include="images\public\slider-shadow.png" />
+    <Content Include="images\public\Spain.png" />
     <Content Include="images\star.png" />
     <Content Include="js\compressed.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -475,6 +480,7 @@
     <Content Include="Views\Public\Index.cshtml" />
     <Content Include="Views\Public\Buscar.cshtml" />
     <Content Include="Views\Public\Propiedad.cshtml" />
+    <Content Include="Views\Public\Contactar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

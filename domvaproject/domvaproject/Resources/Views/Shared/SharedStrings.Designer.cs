@@ -61,11 +61,533 @@ namespace ViewRes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Aire Acondicionado.
+        /// </summary>
+        public static string Aire {
+            get {
+                return ResourceManager.GetString("Aire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Alquiler.
+        /// </summary>
+        public static string Alquiler {
+            get {
+                return ResourceManager.GetString("Alquiler", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt; Anterior.
+        /// </summary>
+        public static string Anterior {
+            get {
+                return ResourceManager.GetString("Anterior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Apartamento.
+        /// </summary>
+        public static string Apartamento {
+            get {
+                return ResourceManager.GetString("Apartamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Apellidos.
+        /// </summary>
+        public static string Apellidos {
+            get {
+                return ResourceManager.GetString("Apellidos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ascensor.
+        /// </summary>
+        public static string Ascensor {
+            get {
+                return ResourceManager.GetString("Ascensor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Baños.
+        /// </summary>
+        public static string Banos {
+            get {
+                return ResourceManager.GetString("Banos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Barbacoa.
+        /// </summary>
+        public static string Barbacoa {
+            get {
+                return ResourceManager.GetString("Barbacoa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Bungalow.
+        /// </summary>
+        public static string Bungalow {
+            get {
+                return ResourceManager.GetString("Bungalow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Buscador.
+        /// </summary>
+        public static string Buscador {
+            get {
+                return ResourceManager.GetString("Buscador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Calefacción.
+        /// </summary>
+        public static string Calefaccion {
+            get {
+                return ResourceManager.GetString("Calefaccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cantidad.
+        /// </summary>
+        public static string Cantidad {
+            get {
+                return ResourceManager.GetString("Cantidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Características.
+        /// </summary>
+        public static string Caracteristicas {
+            get {
+                return ResourceManager.GetString("Caracteristicas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Chimenea.
+        /// </summary>
+        public static string Chimenea {
+            get {
+                return ResourceManager.GetString("Chimenea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contáctanos.
+        /// </summary>
+        public static string Contacta {
+            get {
+                return ResourceManager.GetString("Contacta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Te contactamos nosotros.
+        /// </summary>
+        public static string Contactamos {
+            get {
+                return ResourceManager.GetString("Contactamos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contacto.
+        /// </summary>
+        public static string Contacto {
+            get {
+                return ResourceManager.GetString("Contacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Déjanos tus datos y nosotros te contactamos.
+        /// </summary>
+        public static string Dejadatos {
+            get {
+                return ResourceManager.GetString("Dejadatos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción.
+        /// </summary>
+        public static string Descripcion {
+            get {
+                return ResourceManager.GetString("Descripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Detalles de la propiedad.
+        /// </summary>
+        public static string Detalles {
+            get {
+                return ResourceManager.GetString("Detalles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Distancia al mar.
+        /// </summary>
+        public static string DMar {
+            get {
+                return ResourceManager.GetString("DMar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Dormitorios.
+        /// </summary>
+        public static string Dormitorios {
+            get {
+                return ResourceManager.GetString("Dormitorios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a E-Mail.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a En venta.
+        /// </summary>
+        public static string Enventa {
+            get {
+                return ResourceManager.GetString("Enventa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Filtrar.
+        /// </summary>
+        public static string Filtrar {
+            get {
+                return ResourceManager.GetString("Filtrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Filtro de propiedades.
+        /// </summary>
+        public static string Filtro {
+            get {
+                return ResourceManager.GetString("Filtro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Garage.
+        /// </summary>
+        public static string Garage {
+            get {
+                return ResourceManager.GetString("Garage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Inicio.
+        /// </summary>
+        public static string Inicio {
+            get {
+                return ResourceManager.GetString("Inicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Interesarse.
+        /// </summary>
+        public static string Interes {
+            get {
+                return ResourceManager.GetString("Interes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Jardin.
+        /// </summary>
+        public static string Jardin {
+            get {
+                return ResourceManager.GetString("Jardin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Local Comercial.
+        /// </summary>
+        public static string LocalComercial {
+            get {
+                return ResourceManager.GetString("LocalComercial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Máxima.
+        /// </summary>
+        public static string Max {
+            get {
+                return ResourceManager.GetString("Max", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mínimos.
+        /// </summary>
+        public static string Min {
+            get {
+                return ResourceManager.GetString("Min", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Montaña.
+        /// </summary>
+        public static string Montana {
+            get {
+                return ResourceManager.GetString("Montana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Movil.
+        /// </summary>
+        public static string Movil {
+            get {
+                return ResourceManager.GetString("Movil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Negocio.
+        /// </summary>
+        public static string Negocio {
+            get {
+                return ResourceManager.GetString("Negocio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre.
+        /// </summary>
+        public static string Nombre {
+            get {
+                return ResourceManager.GetString("Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nosotros.
+        /// </summary>
+        public static string Nosotros {
+            get {
+                return ResourceManager.GetString("Nosotros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Otros Servicios.
+        /// </summary>
+        public static string OtrosServicios {
+            get {
+                return ResourceManager.GetString("OtrosServicios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Parque Infantil.
+        /// </summary>
+        public static string PInfantil {
+            get {
+                return ResourceManager.GetString("PInfantil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Piscina.
+        /// </summary>
+        public static string Piscina {
+            get {
+                return ResourceManager.GetString("Piscina", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Precio Máximo.
+        /// </summary>
+        public static string PMax {
+            get {
+                return ResourceManager.GetString("PMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Precio Mínimo.
+        /// </summary>
+        public static string PMin {
+            get {
+                return ResourceManager.GetString("PMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Poblacion.
+        /// </summary>
+        public static string Poblacion {
+            get {
+                return ResourceManager.GetString("Poblacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Precio.
+        /// </summary>
+        public static string Precio {
+            get {
+                return ResourceManager.GetString("Precio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Propiedades.
+        /// </summary>
+        public static string Propiedades {
+            get {
+                return ResourceManager.GetString("Propiedades", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Siguiente &gt;.
+        /// </summary>
+        public static string Siguiente {
+            get {
+                return ResourceManager.GetString("Siguiente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tamaño.
+        /// </summary>
+        public static string Tamano {
+            get {
+                return ResourceManager.GetString("Tamano", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Telefono.
+        /// </summary>
+        public static string Telefono {
+            get {
+                return ResourceManager.GetString("Telefono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Terraza.
+        /// </summary>
+        public static string Terraza {
+            get {
+                return ResourceManager.GetString("Terraza", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo de compra.
+        /// </summary>
+        public static string TipoCompra {
+            get {
+                return ResourceManager.GetString("TipoCompra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo.
+        /// </summary>
+        public static string TipoPropiedad {
+            get {
+                return ResourceManager.GetString("TipoPropiedad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Bienvenidos a DomvAlicante.
         /// </summary>
         public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Vendida.
+        /// </summary>
+        public static string Vendida {
+            get {
+                return ResourceManager.GetString("Vendida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Venta.
+        /// </summary>
+        public static string Venta {
+            get {
+                return ResourceManager.GetString("Venta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Villa.
+        /// </summary>
+        public static string Villa {
+            get {
+                return ResourceManager.GetString("Villa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Vistas al Mar.
+        /// </summary>
+        public static string Vistas {
+            get {
+                return ResourceManager.GetString("Vistas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Esta propiedad ya ha sido vendida.
+        /// </summary>
+        public static string Yavendida {
+            get {
+                return ResourceManager.GetString("Yavendida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Zona Deportiva.
+        /// </summary>
+        public static string ZDeportiva {
+            get {
+                return ResourceManager.GetString("ZDeportiva", resourceCulture);
             }
         }
     }

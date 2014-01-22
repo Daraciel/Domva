@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace domvaproject.ViewModels
 {
     public class PropiedadesFiltro
     {
+        private readonly domvaEntities _datos = new domvaEntities();
 
         public int NumeroDePropiedades { get; set; }
         public IEnumerable<propiedades> Propiedades { get; set; }
@@ -28,7 +30,16 @@ namespace domvaproject.ViewModels
         public bool Ascensor { get; set; }
         public bool Aire { get; set; }
 
+
+        public string TipoCompra { get; set; }
+        public string TipoEdif { get; set; }
+
+
         public int PaginaActual { get; set; }
+        public IEnumerable<SelectListItem> GetPropiedades()
+        {
+            return (IEnumerable<SelectListItem>)_datos.poblaciones.Select(pob => new SelectListItem { Value = pob.Nombre, Text = pob.Nombre });
+        }
         public int CantPaginas
         {
             get

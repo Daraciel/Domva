@@ -2,6 +2,8 @@
 
 @{
     Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+
+    Response.Redirect("~/Public/Buscar");
 }
 
         
@@ -12,57 +14,33 @@
 			<div id="pager"></div>
 			</div><!-- end slideshow navigation -->
 				<div id="slideshow">  
-					<div class="cycle">
-						<img src="images/public/content/slider1.jpg" alt="" />
-						<div class="farme-slide-text">
-							<ul class="slide-text">
-								<li><span class="left">Property Type:</span>	Modern Home</li>
-								<li><span class="left">Address:</span>	Woodland Park, NJ 75412</li>
-								<li><span class="left">House Size:</span>	1,715 Sq Ft</li>
-								<li><span class="left">Year Built:</span>	2011</li>
-								<li><span class="left">Baths:</span>	3 Bath</li>
-								<li><span class="left">Beds:</span>	2 Bed</li>
-							</ul>
-							<div class="frame-price">
-								<div class="slider-button"><a href="#">more info</a></div>
-								<div class="slider-price">$ 2,200,000</div>
-							</div>
-						</div>
-					</div><!-- end cycle -->
-					<div class="cycle">
-						<img src="images/public/content/slider2.jpg" alt="" />
-						<div class="farme-slide-text">
-							<ul class="slide-text">
-								<li><span class="left">Property Type:</span>	Modern Home</li>
-								<li><span class="left">Address:</span>	Woodland Park, NJ 75412</li>
-								<li><span class="left">House Size:</span>	1,715 Sq Ft</li>
-								<li><span class="left">Year Built:</span>	2011</li>
-								<li><span class="left">Baths:</span>	3 Bath</li>
-								<li><span class="left">Beds:</span>	2 Bed</li>
-							</ul>
-							<div class="frame-price">
-								<div class="slider-button"><a href="#">more info</a></div>
-								<div class="slider-price">$ 1,200,000</div>
-							</div>
-						</div>
-					</div><!-- end cycle -->
-					<div class="cycle">
-						<img src="images/public/content/slider3.jpg" alt="" />
-						<div class="farme-slide-text">
-							<ul class="slide-text">
-								<li><span class="left">Property Type:</span>	Modern Home</li>
-								<li><span class="left">Address:</span>	Woodland Park, NJ 75412</li>
-								<li><span class="left">House Size:</span>	1,715 Sq Ft</li>
-								<li><span class="left">Year Built:</span>	2011</li>
-								<li><span class="left">Baths:</span>	3 Bath</li>
-								<li><span class="left">Beds:</span>	2 Bed</li>
-							</ul>
-							<div class="frame-price">
-								<div class="slider-button"><a href="#">more info</a></div>
-								<div class="slider-price">$ 2,800,000</div>
-							</div>
-						</div>
-					</div><!-- end cycle -->
+
+                    @{/*
+                        foreach(var item in Model.Propiedades)
+                        {
+
+                            string principal = domvaproject.propiedades.principal(item.idPropiedad);
+					        <div class="cycle">
+						        <img src="@Url.Content("~/images/thumbs/" + principal)" alt="" />
+						        <div class="farme-slide-text">
+							        <ul class="slide-text">
+								        <li><span class="left">Propiedad:</span>	@item.Nombre</li>
+								        <li><span class="left">Categoría:</span>	@item.Categoria</li>
+								        <li><span class="left">Población:</span>	@item.Poblacion</li>
+								        <li><span class="left">Tamaño:</span>	@item.caracteristicas.Metros M²</li>
+								        <li><span class="left">Baños:</span>	@item.caracteristicas.Baños Baños</li>
+								        <li><span class="left">Dormitorios:</span>	@item.caracteristicas.Dormitorios Dormitorios</li>
+							        </ul>
+							        <div class="frame-price">
+								        <div class="slider-button"><a href="#">Más Información</a></div>
+								        <div class="slider-price">€ @item.Precio</div>
+							        </div>
+						        </div>
+					        </div><!-- end cycle -->
+                        }   */
+                        
+                     }
+
                     <div class="cycle">
 						<img src="images/public/content/slider3.jpg" alt="" />
 						<div class="farme-slide-text">

@@ -11,12 +11,10 @@ namespace domvaproject
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.Objects.SqlClient;
     using System.Linq;
     
     public partial class propiedades
     {
-        private readonly domvaEntities _datos = new domvaEntities();
         public propiedades()
         {
             this.fotos = new HashSet<fotos>();
@@ -29,6 +27,7 @@ namespace domvaproject
         public string DescripcionInterna { get; set; }
         public string Categoria { get; set; }
         public string Poblacion { get; set; }
+        public string TipoCompra { get; set; }
     
         public virtual caracteristicas caracteristicas { get; set; }
         public virtual descripcionesesp descripcionesesp { get; set; }
@@ -37,6 +36,8 @@ namespace domvaproject
         public virtual poblaciones poblaciones { get; set; }
         public virtual propietarios propietarios { get; set; }
 
+
+        private readonly domvaEntities _datos = new domvaEntities();
         public static string principal(int id)
         {
             return Controllers.PropiedadesController.principal(id);
@@ -50,9 +51,9 @@ namespace domvaproject
                                     )
         {
             IQueryable<propiedades> query = _datos.propiedades;
-            query = queryPropiedadesFiltradas(query, nombre, localidad, precioMin, precioMax, m2Min,
+            /*query = queryPropiedadesFiltradas(query, nombre, localidad, precioMin, precioMax, m2Min,
                                                         cantDorms, cantBanyos, distMar, vistaMar, piscina,
-                                                        terraza, garage, ascensor, aire);
+                                                        terraza, garage, ascensor, aire);*/
             return query.Count();
         }
 
@@ -64,16 +65,21 @@ namespace domvaproject
                 return B;
         }
 
-        private static IQueryable<propiedades> queryPropiedadesFiltradas(IQueryable<propiedades> query, string nombre = null, string localidad = null, int? precioMin = null,
+        private static IQueryable<propiedades> queryPropiedadesFiltradas(IQueryable<propiedades> query, string nombre = null, string localidad = null, 
+                                    string tipocompra = null, string tipoedif = null, int? precioMin = null,
                                     int? precioMax = null, int? m2Min = null, int? cantDorms = null,
                                     int? cantBanyos = null, int? distMar = null, bool? vistaMar = null,
                                     bool? piscina = null, bool? terraza = null, bool? garage = null,
                                     bool? ascensor = null, bool? aire = null)
         {/*
             if (!string.IsNullOrWhiteSpace(nombre))
-                query = query.Where(p => p.Nombre.ToUpper().Contains(nombre.ToUpper()));
+                query = query.Where(p => p.Nombre.ToUpper().Contains(nombre.ToUpper()));*/
             if (!string.IsNullOrWhiteSpace(localidad))
-                query = query.Where(p => p.Poblacion.Contains(localidad));*/
+                query = query.Where(p => p.Poblacion == localidad);
+            if (!string.IsNullOrWhiteSpace(tipocompra))
+                query = query.Where(p => p.TipoCompra == tipocompra);
+            if (!string.IsNullOrWhiteSpace(tipoedif))
+                query = query.Where(p => p.Categoria == tipoedif);
             if (precioMin != null)
                 query = query.Where(p => p.Precio >= precioMin);
             if (precioMax != null)
@@ -110,9 +116,11 @@ namespace domvaproject
         }
 
 
+
         public IEnumerable<propiedades> ObtenerPaginaDePersonasFiltrada(int paginaActual, int propsporpagina,
               string columnaOrdenacion, string sentidoOrdenacion,
-              string nombre = null, string localidad = null, int? precioMin = null,
+              string nombre = null, string localidad = null, string tipocompra = null,
+                            string tipoedif = null, int? precioMin = null,
               int? precioMax = null, int? m2Min = null, int? cantDorms = null,
               int? cantBanyos = null, int? distMar = null, bool? vistaMar = null,
               bool? piscina = null, bool? terraza = null, bool? garage = null,
@@ -123,7 +131,7 @@ namespace domvaproject
             sentidoOrdenacion = sentidoOrdenacion.Equals("desc", StringComparison.CurrentCultureIgnoreCase) ?
                                 sentidoOrdenacion : "asc";
 
-            var validColumns = new[] { "nombre", "precio",};
+            var validColumns = new[] { "nombre", "precio", };
             if (!validColumns.Contains(columnaOrdenacion.ToLower()))
                 columnaOrdenacion = "nombre";
 
@@ -133,7 +141,7 @@ namespace domvaproject
             // Generamos la consulta FALTA ORDER BY
             var query = (IQueryable<propiedades>)_datos.propiedades;
 
-            query = queryPropiedadesFiltradas(query, nombre, localidad, precioMin, precioMax, m2Min,
+            query = queryPropiedadesFiltradas(query, nombre, localidad, tipocompra, tipoedif, precioMin, precioMax, m2Min,
                                                         cantDorms, cantBanyos, distMar, vistaMar, piscina,
                                                         terraza, garage, ascensor, aire);
 
@@ -143,8 +151,6 @@ namespace domvaproject
                     .Take(propsporpagina)
                     .ToList();
         }
-
-
 
     }
 }

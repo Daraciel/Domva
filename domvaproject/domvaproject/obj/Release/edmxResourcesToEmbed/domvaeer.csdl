@@ -111,6 +111,7 @@
     <NavigationProperty Name="fotos" Relationship="db488059728Model.fk_Foto_Propiedad" FromRole="propiedades" ToRole="fotos" />
     <NavigationProperty Name="poblaciones" Relationship="db488059728Model.fk_Propiedad_Poblacion" FromRole="propiedades" ToRole="poblaciones" />
     <NavigationProperty Name="propietarios" Relationship="db488059728Model.fk_Propiedad_Propietario" FromRole="propiedades" ToRole="propietarios" />
+    <Property Type="String" Name="TipoCompra" MaxLength="65532" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="propietarios">
     <Key>

@@ -2,20 +2,67 @@
 
 @{
     Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+    System.Globalization.CultureInfo info = (System.Globalization.CultureInfo)Session["Culture"];
+    string lang = info.Name;
+
+    string cat = Model.Categoria;
+    string Categoria="";
+    switch(cat)
+    {
+        case "Apartamento":
+            Categoria = ViewRes.SharedStrings.Apartamento;
+            break;
+        case "Villa":
+            Categoria = ViewRes.SharedStrings.Villa;
+            break;
+        case "Bungalow":
+            Categoria = ViewRes.SharedStrings.Bungalow;
+            break;
+        case "Local Comercial":
+            Categoria = ViewRes.SharedStrings.LocalComercial;
+            break;
+        case "Negocio":
+            Categoria = ViewRes.SharedStrings.Negocio;
+            break;
+    }
+
+    string compra = Model.TipoCompra;
+    string TipoCompra = "";
+    switch(compra)
+    {
+
+        case "Venta":
+            TipoCompra = ViewRes.SharedStrings.Venta;
+            break;
+        case "Alquiler":
+            TipoCompra = ViewRes.SharedStrings.Alquiler;
+            break;
+    }
+    
 }
+
+
 <script type="text/javascript">
     var $jts = jQuery.noConflict();
+
     $jts(document).ready(function () {
 
         //Slider  
         $jts('#slideshow2').cycle({
             fx: 'scrollLeft,scrollDown,scrollRight,scrollUp',
             randomizeEffects: false,
-            prev: '#prev',
-            next: '#next'
+            prev:  'prev',
+            next: 'next'
         });
     });
-</script>
+</script>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+        $("a[rel^='prettyPhoto']").prettyPhoto();
+    });
+</script>
+
 
 	<div class="centercolumn">
 			
@@ -30,66 +77,82 @@
                             foreach (var foto in Model.fotos)
                             {
                                 <div class="cycle">
-                                    <img src="@Url.Content("~/images/photo/" + foto.Imagen)" width="600" height="400"/>
+                                    <a href="@Url.Content("~/images/photo/" + foto.Imagen)" rel="prettyPhoto"> <img src="@Url.Content("~/images/photo/" + foto.Imagen)" width="600" height="400"/></a>
                                 </div>
                             }
                         }
                     </div>
 			        <div id="slideshow_navigation2">
 			            <div id="divpager">
-                            <a href="#"><span id="prev">Prev</span></a> <a href="#"><span id="next">Next</span></a>
+                            <a href="#"><span id="prev">@ViewRes.SharedStrings.Anterior</span></a> | <a href="#"><span id="next">@ViewRes.SharedStrings.Siguiente</span></a>
 			            </div>
                     </div>
 			</div>
 			
-			<h2 class="underline">Detalles de la propiedad</h2>
+			<h2 class="underline">@ViewRes.SharedStrings.Detalles</h2>
 			<div id="property-detail">
-			<div class="one_half">
+			    <div class="one_half">
 				<ul class="box_text">
-					<li><span class="left">Tipo	</span>			@Model.Categoria</li>
-					<li><span class="left">Tamaño</span>			@Model.caracteristicas.Metros M²</li>
-					<li><span class="left">Número de Baños</span>		@Model.caracteristicas.Baños</li>
+					<li><span class="left">@ViewRes.SharedStrings.Poblacion	</span>			@Model.Poblacion</li>
+					<li><span class="left">@ViewRes.SharedStrings.TipoPropiedad	</span>			@Categoria</li>
+					<li><span class="left">@ViewRes.SharedStrings.Tamano</span>			@Model.caracteristicas.Metros M²</li>
+					<li><span class="left">@ViewRes.SharedStrings.Dormitorios</span>	@Model.caracteristicas.Dormitorios</li>
 				</ul>	
 			</div>
-			<div class="one_half last">
+			    <div class="one_half last">
 				<ul class="box_text">
-					<li><span class="left">Precio</span>				@Model.Precio €</li>
-					<li><span class="left">Dormitorios</span>	@Model.caracteristicas.Dormitorios</li>
-					<li><span class="left">Distancia al Mar</span>			@Model.caracteristicas.DMar Metros</li>
+					<li><span class="left">@ViewRes.SharedStrings.Precio</span>				@Model.Precio €</li>
+					<li><span class="left">@ViewRes.SharedStrings.TipoCompra</span>		@TipoCompra</li>
+					<li><span class="left">@ViewRes.SharedStrings.Banos</span>	@Model.caracteristicas.Baños</li>
+					<li><span class="left">@ViewRes.SharedStrings.DMar	</span>			@Model.caracteristicas.DMar</li>
 				</ul>	
 			</div>
+                <ul class="box_text">
+                    <li><span class="left">@ViewRes.SharedStrings.Descripcion</span></li> 
+                    <li><span >@{
+                        if(lang=="es")
+                        {
+                            @Model.descripcionesesp.DescripcionESP
+                        }  
+                        else if(lang=="ru")
+                        {
+                            @Model.descripcionesru.DescripcionRU
+                        }
+                        }</span></li>
+                </ul>
 				<ul class="box_text">
 					<li>
-                        <span class="left">Características</span>	
+                        <span class="left">@ViewRes.SharedStrings.Caracteristicas</span>	
                     </li>
+                    
                     <li>
                         <div class="one_half">
 				            <ul class="box_text">
-					            <li><span class="left">Piscina</span>			@{if (Model.caracteristicas.Piscina)
+					            <li><span class="left">@ViewRes.SharedStrings.Piscina</span>			@{if (Model.caracteristicas.Piscina)
                                                            {<img src="@Url.Content("~/images/public/icon1.png")" alt="Piscina" />}
                                                            else
                                                            {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Piscina" />}} </li>
-					            <li><span class="left">Aire Acondicionado</span>			@{if (Model.caracteristicas.AAcondicionado)
+					            <li><span class="left">@ViewRes.SharedStrings.Aire</span>			@{if (Model.caracteristicas.AAcondicionado)
                                                                       {<img src="@Url.Content("~/images/public/icon1.png")" alt="Aire Acondicionado" />}
                                                                       else
                                                                       {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Aire Acondicionado" />}} </li>
-					            <li><span class="left">Ascensor</span>	@{if (Model.caracteristicas.Ascensor)
+					            <li><span class="left">@ViewRes.SharedStrings.Ascensor</span>	@{if (Model.caracteristicas.Ascensor)
                                                           {<img src="@Url.Content("~/images/public/icon1.png")" alt="Ascensor" />}
                                                           else
                                                           {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Ascensor" />}} </li>
-					            <li><span class="left">Garage</span>	@{if (Model.caracteristicas.Garage)
+					            <li><span class="left">@ViewRes.SharedStrings.Garage</span>	@{if (Model.caracteristicas.Garage)
                                                         {<img src="@Url.Content("~/images/public/icon1.png")" alt="Garage" />}
                                                         else
                                                         {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Garage" />}} </li>
-					            <li><span class="left">Jardin</span>	@{if (Model.caracteristicas.Jardin)
+					            <li><span class="left">@ViewRes.SharedStrings.Jardin</span>	@{if (Model.caracteristicas.Jardin)
                                                         {<img src="@Url.Content("~/images/public/icon1.png")" alt="Jardin" />}
                                                         else
                                                         {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Jardin" />}} </li>
-					            <li><span class="left">Montaña</span>	@{if (Model.caracteristicas.Montana)
+					            <li><span class="left">@ViewRes.SharedStrings.Montana</span>	@{if (Model.caracteristicas.Montana)
                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Montaña" />}
                                                          else
                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Montaña" />}} </li>
-					            <li><span class="left">Parque Infantil</span>	@{if (Model.caracteristicas.PInfantil)
+					            <li><span class="left">@ViewRes.SharedStrings.PInfantil</span>	@{if (Model.caracteristicas.PInfantil)
                                                                  {<img src="@Url.Content("~/images/public/icon1.png")" alt="PInfantil" />}
                                                                  else
                                                                  {<img src="@Url.Content("~/images/public/list-cross.png")" alt="PInfantil" />}} </li>
@@ -97,38 +160,37 @@
 			            </div>
 			            <div class="one_half last">
 				            <ul class="box_text">
-					            <li><span class="left">Barbacoa</span>				@{if (Model.caracteristicas.Barbacoa)
+					            <li><span class="left">@ViewRes.SharedStrings.Barbacoa</span>				@{if (Model.caracteristicas.Barbacoa)
                                                              {<img src="@Url.Content("~/images/public/icon1.png")" alt="Barbacoa" />}
                                                              else
                                                              {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Barbacoa" />}} </li>
-					            <li><span class="left">Calefaccion</span>	@{if (Model.caracteristicas.Calefaccion)
+					            <li><span class="left">@ViewRes.SharedStrings.Calefaccion</span>	@{if (Model.caracteristicas.Calefaccion)
                                                              {<img src="@Url.Content("~/images/public/icon1.png")" alt="Calefaccion" />}
                                                              else
                                                              {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Calefaccion" />}} </li>
-					                <li><span class="left">Chimenea</span>			@{if (Model.caracteristicas.Chimenea)
+					                <li><span class="left">@ViewRes.SharedStrings.Chimenea</span>			@{if (Model.caracteristicas.Chimenea)
                                                                 {<img src="@Url.Content("~/images/public/icon1.png")" alt="Chimenea" />}
                                                                 else
                                                                 {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Chimenea" />}} </li>
-					            <li><span class="left">Terraza</span>	@{if (Model.caracteristicas.Terraza)
+					            <li><span class="left">@ViewRes.SharedStrings.Terraza</span>	@{if (Model.caracteristicas.Terraza)
                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Terraza" />}
                                                          else
                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Terraza" />}} </li>
-					            <li><span class="left">Vistas al mar</span>	@{if (Model.caracteristicas.VMar)
+					            <li><span class="left">@ViewRes.SharedStrings.Vistas</span>	@{if (Model.caracteristicas.VMar)
                                                                {<img src="@Url.Content("~/images/public/icon1.png")" alt="VMar" />}
                                                                else
                                                                {<img src="@Url.Content("~/images/public/list-cross.png")" alt="VMar" />}} </li>
-					            <li><span class="left">Zona Deportiva</span>	@{if (Model.caracteristicas.ZDeportiva)
+					            <li><span class="left">@ViewRes.SharedStrings.ZDeportiva</span>	@{if (Model.caracteristicas.ZDeportiva)
                                                                 {<img src="@Url.Content("~/images/public/icon1.png")" alt="ZDeportiva" />}
                                                                 else
                                                                 {<img src="@Url.Content("~/images/public/list-cross.png")" alt="ZDeportiva" />}} </li>
-					            <li><span class="left">Vendida</span>	@{if (Model.caracteristicas.Vendida)
+					            <li><span class="left">@ViewRes.SharedStrings.Vendida</span>	@{if (Model.caracteristicas.Vendida)
                                                          {<img src="@Url.Content("~/images/public/icon1.png")" alt="Vendida" />}
                                                          else
                                                          {<img src="@Url.Content("~/images/public/list-cross.png")" alt="Vendida" />}} </li>
 				                </ul>	
 			                </div>
                     </li>
-                    <li><span class="left">Descripción</span> <span class="right">@Model.descripcionesesp.DescripcionESP</span></li>
 				</ul>	
 				</div>
 				
@@ -149,37 +211,45 @@
 			<div class="sidebar">
 				<ul>
 					<li class="widget-container widget_text">
-						<h2 class="widget-title">Contáctanos</h2>
+						<h2 class="widget-title">@ViewRes.SharedStrings.Contacta</h2>
 						<div class="agent">
 						<p>
-							<span class="black">Yulia</span><br />
-							Movil: +34 672976873<br />
-							Movil: +34 622755776<br />
-							Email: yulia@domvalicante.es
+							<span class="black">Yulia Shevtsova</span><br />
+							@ViewRes.SharedStrings.Movil: +34 672976873<br />
+							@ViewRes.SharedStrings.Movil: +34 622755776<br />
+							@ViewRes.SharedStrings.Email: yulia@domvalicante.com
 						</p>
 					  </div>
 					</li>
 				
 					<li class="widget-container widget_search">
-						<h2 class="widget-title">Te contactamos nosotros</h2>
-						<form method="post" id="contact-agent" >
+						<h2 class="widget-title">@ViewRes.SharedStrings.Contactamos</h2>
+
+                        @using (Html.BeginForm("Contactar", "Public", FormMethod.Get, new { id = "contact-agent" }))
+                        {
 						<fieldset>
-                            <legend class="blue">Déjanos tus datos y nosotros te contactamos</legend>
+                            <legend class="blue">@ViewRes.SharedStrings.Dejadatos</legend>
 							<ul>
 								<li>
-								<label>Nombre</label><br />
-								<input type="text" size="21"/>
+								<label>@ViewRes.SharedStrings.Nombre</label><br />
+                                    @Html.TextBox("Name")
 								</li>
 								<li>
-								<label>Apellidos</label><br />
-								<input type="text" size="21"/>
+								<label>@ViewRes.SharedStrings.Apellidos</label><br />
+                                    @Html.TextBox("Surname")
 								</li>
+								<li>
+								<label>@ViewRes.SharedStrings.Telefono</label><br />
+                                    @Html.TextBox("Tlf")
+								</li>
+
 							</ul>
-							<label>Email</label><br />
-							<input type="text" size="34"/><br />
-							<input type="submit" name="submit" class="button" value="Interesarse"/>
+                            @Html.Hidden("Casa",Model.Nombre)
+							<label>@ViewRes.SharedStrings.Email</label><br />
+                                    @Html.TextBox("Email")<br />
+							<input type="submit" name="submit" class="button" value="@ViewRes.SharedStrings.Interes"/>
 						</fieldset>
-						</form>
+                        }
 						
 					</li>			
 				</ul>
