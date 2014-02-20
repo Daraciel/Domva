@@ -28,12 +28,12 @@
     });
     itemsTipoCompra.Add(new SelectListItem
     {
-        Text = "Venta",
+        Text = ViewRes.SharedStrings.Venta,
         Value = "Venta"
     });
     itemsTipoCompra.Add(new SelectListItem
     {
-        Text = "Alquiler",
+        Text = ViewRes.SharedStrings.Alquiler,
         Value = "Alquiler"
     });
 
@@ -48,27 +48,27 @@
     });
     items.Add(new SelectListItem
     {
-        Text = "Apartamento",
+        Text =ViewRes.SharedStrings.Apartamento,
         Value = "Apartamento"
     });
     items.Add(new SelectListItem
     {
-        Text = "Villa",
+        Text = ViewRes.SharedStrings.Villa,
         Value = "Villa"
     });
     items.Add(new SelectListItem
     {
-        Text = "Bungalow",
+        Text = ViewRes.SharedStrings.Bungalow,
         Value = "Bungalow"
     });
     items.Add(new SelectListItem
     {
-        Text = "Local Comercial",
+        Text = ViewRes.SharedStrings.LocalComercial,
         Value = "Local Comercial"
     });
     items.Add(new SelectListItem
     {
-        Text = "Negocio",
+        Text = ViewRes.SharedStrings.Negocio,
         Value = "Negocio"
     });
     
@@ -81,15 +81,24 @@
         Value = ""
     });
     itemsLoc.AddRange(Model.GetPropiedades());
+
+    itemsLoc.Add(new SelectListItem
+    {
+
+        Text = "Otros",
+        Value = "Otros"
+    });
+    
        <fieldset class="filtering">
          <!-- <legend>Filtrado de propiedades </legend> -->
            <ul>
                <li><b>@ViewRes.SharedStrings.Poblacion:</b>@Html.DropDownListFor(model => model.Localidad, itemsLoc)</li>
                <li></li>
-               <li><b>@ViewRes.SharedStrings.TipoCompra:</b>@Html.DropDownListFor(model => model.TipoCompra, itemsTipoCompra)</li>
                <li><b>@ViewRes.SharedStrings.TipoPropiedad:</b>@Html.DropDownListFor(model => model.TipoEdif, items)</li>
-               <li><b>@ViewRes.SharedStrings.PMin:</b>@Html.TextBoxFor(model => model.PrecioMin, new { size = 10 })</li>
+               <li></li>
+               <li><b>@ViewRes.SharedStrings.TipoCompra:</b>@Html.DropDownListFor(model => model.TipoCompra, itemsTipoCompra)</li>
                <li><b>@ViewRes.SharedStrings.PMax:</b>@Html.TextBoxFor(model => model.PrecioMax, new { size = 10 })</li>
+               <!-- <li><b>@ViewRes.SharedStrings.PMin:</b>@Html.TextBoxFor(model => model.PrecioMin, new { size = 10 })</li> -->
                <li><b>M2 @ViewRes.SharedStrings.Min:</b>@Html.TextBoxFor(model => model.M2Min, new { size = 6 })</li>
                <li><b>@ViewRes.SharedStrings.Cantidad @ViewRes.SharedStrings.Dormitorios:</b>@Html.TextBoxFor(model => model.CantDorms, new { size = 2 })</li>
                <li><b>@ViewRes.SharedStrings.Cantidad @ViewRes.SharedStrings.Banos:</b>@Html.TextBoxFor(model => model.CantBanyos, new { size = 2 })</li>
@@ -106,55 +115,6 @@
           </div>
        </fieldset>
     }
-				<!--		<ul>
-							<li><a href="#">Resources</a></li>
-							<li><a href="#">House Remodeling</a></li>
-							<li><a href="#">Luxury Homes</a></li>
-							<li><a href="#">Find a Contractor</a></li>
-							<li><a href="#">First Time Buyer</a> </li>
-							<li><a href="#">Free Moving Quote</a></li>
-							<li><a href="#">Gardening</a></li>
-							<li><a href="#">Local Constractors</a></li>
-							<li><a href="#">Rent and Buy</a></li>
-							
-							<li><a href="#">New Homes</a></li>
-							<li><a href="#">Apartment Rentals</a></li>
-							<li><a href="#">Trend Blogs</a></li>
-							<li><a href="#">Assisted Living</a></li>
-							<li><a href="#">Property Search</a></li>
-							<li><a href="#">Property Status</a></li>
-							<li><a href="#">Property Types</a></li>
-							<li><a href="#">Open Houses</a></li>
-							<li><a href="#">Listing Activity</a></li>
-						</ul>  
-					</li>
-					
-					<li class="widget-container widget_categories">
-						<h2 class="widget-title">Property Types</h2>
-						<ul>
-							<li><a href="#">Single Family Home</a></li>
-							<li><a href="#">Commercial </a></li>
-							<li><a href="#">Condo/TownHome</a></li>
-							<li><a href="#">RowHome/Co-Op</a></li>
-						</ul>
-					</li>
-					
-					<li class="widget-container widget_categories">
-						<h2 class="widget-title">Property Features</h2>
-						<ul>
-							<li><a href="#">Any</a></li>
-							<li><a href="#">Central Air</a></li>
-							<li><a href="#">Carport</a></li>
-							<li><a href="#">Dinning Room</a></li>
-							<li><a href="#">Fireplace</a> </li>
-							<li><a href="#">Swimming Pool</a></li>
-							<li><a href="#">Forced Air</a></li>
-							<li><a href="#">Garage - 1 or more</a></li>
-							<li><a href="#">Hardwood Floors</a></li>
-							<li><a href="#">Family Room</a></li>
-						</ul>
-					</li>
-					-->
 				</ul>
             </div><!-- end #sidebar -->
 			</div><!-- end #sidebar_left -->

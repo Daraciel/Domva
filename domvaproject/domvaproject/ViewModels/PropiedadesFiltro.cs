@@ -38,7 +38,9 @@ namespace domvaproject.ViewModels
         public int PaginaActual { get; set; }
         public IEnumerable<SelectListItem> GetPropiedades()
         {
-            return (IEnumerable<SelectListItem>)_datos.poblaciones.Select(pob => new SelectListItem { Value = pob.Nombre, Text = pob.Nombre });
+            IEnumerable<SelectListItem> lista = _datos.poblaciones.Select(pob => new SelectListItem { Value = pob.Nombre, Text = pob.Nombre });
+
+            return lista.Where(loc => loc.Text != "Otros");
         }
         public int CantPaginas
         {

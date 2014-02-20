@@ -28,12 +28,12 @@
     });
     itemsTipoCompra.Add(new SelectListItem
     {
-        Text = "Venta",
+        Text = ViewRes.SharedStrings.Venta,
         Value = "Venta"
     });
     itemsTipoCompra.Add(new SelectListItem
     {
-        Text = "Alquiler",
+        Text = ViewRes.SharedStrings.Alquiler,
         Value = "Alquiler"
     });
 
@@ -48,27 +48,27 @@
     });
     items.Add(new SelectListItem
     {
-        Text = "Apartamento",
+        Text =ViewRes.SharedStrings.Apartamento,
         Value = "Apartamento"
     });
     items.Add(new SelectListItem
     {
-        Text = "Villa",
+        Text = ViewRes.SharedStrings.Villa,
         Value = "Villa"
     });
     items.Add(new SelectListItem
     {
-        Text = "Bungalow",
+        Text = ViewRes.SharedStrings.Bungalow,
         Value = "Bungalow"
     });
     items.Add(new SelectListItem
     {
-        Text = "Local Comercial",
+        Text = ViewRes.SharedStrings.LocalComercial,
         Value = "Local Comercial"
     });
     items.Add(new SelectListItem
     {
-        Text = "Negocio",
+        Text = ViewRes.SharedStrings.Negocio,
         Value = "Negocio"
     });
     
@@ -81,15 +81,24 @@
         Value = ""
     });
     itemsLoc.AddRange(Model.GetPropiedades());
+
+    itemsLoc.Add(new SelectListItem
+    {
+
+        Text = "Otros",
+        Value = "Otros"
+    });
+    
        <fieldset class="filtering">
          <!-- <legend>Filtrado de propiedades </legend> -->
            <ul>
                <li><b>@ViewRes.SharedStrings.Poblacion:</b>@Html.DropDownListFor(model => model.Localidad, itemsLoc)</li>
                <li></li>
-               <li><b>@ViewRes.SharedStrings.TipoCompra:</b>@Html.DropDownListFor(model => model.TipoCompra, itemsTipoCompra)</li>
                <li><b>@ViewRes.SharedStrings.TipoPropiedad:</b>@Html.DropDownListFor(model => model.TipoEdif, items)</li>
-               <li><b>@ViewRes.SharedStrings.PMin:</b>@Html.TextBoxFor(model => model.PrecioMin, new { size = 10 })</li>
+               <li></li>
+               <li><b>@ViewRes.SharedStrings.TipoCompra:</b>@Html.DropDownListFor(model => model.TipoCompra, itemsTipoCompra)</li>
                <li><b>@ViewRes.SharedStrings.PMax:</b>@Html.TextBoxFor(model => model.PrecioMax, new { size = 10 })</li>
+               <!-- <li><b>@ViewRes.SharedStrings.PMin:</b>@Html.TextBoxFor(model => model.PrecioMin, new { size = 10 })</li> -->
                <li><b>M2 @ViewRes.SharedStrings.Min:</b>@Html.TextBoxFor(model => model.M2Min, new { size = 6 })</li>
                <li><b>@ViewRes.SharedStrings.Cantidad @ViewRes.SharedStrings.Dormitorios:</b>@Html.TextBoxFor(model => model.CantDorms, new { size = 2 })</li>
                <li><b>@ViewRes.SharedStrings.Cantidad @ViewRes.SharedStrings.Banos:</b>@Html.TextBoxFor(model => model.CantBanyos, new { size = 2 })</li>
