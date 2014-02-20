@@ -486,6 +486,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="images\photo\" />
     <Folder Include="images\thumbs\" />
+    <Folder Include="texts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

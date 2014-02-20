@@ -10,7 +10,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/domvaproject.dll">
-      <publishTime>12/12/2013 12:10:40</publishTime>
+      <publishTime>01/22/2014 13:03:34</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>09/26/2013 13:09:33</publishTime>
@@ -52,7 +52,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/20/2013 00:35:06</publishTime>
     </File>
     <File Include="bin/ru/domvaproject.resources.dll">
-      <publishTime>12/12/2013 12:10:40</publishTime>
+      <publishTime>01/22/2014 13:03:34</publishTime>
     </File>
     <File Include="bin/System.Data.Entity.dll">
       <publishTime>03/18/2010 18:31:26</publishTime>
@@ -535,7 +535,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>11/29/2013 14:52:53</publishTime>
     </File>
     <File Include="images/star.png">
-      <publishTime>10/03/2013 13:23:21</publishTime>
+      <publishTime>03/10/2013 13:23:21</publishTime>
     </File>
     <File Include="js/compressed.js">
       <publishTime>11/21/2013 13:52:56</publishTime>
@@ -706,7 +706,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>09/27/2013 12:08:28</publishTime>
     </File>
     <File Include="Views/Fotos/HacerPrincipal.cshtml">
-      <publishTime>10/03/2013 11:12:45</publishTime>
+      <publishTime>03/10/2013 11:12:45</publishTime>
     </File>
     <File Include="Views/Fotos/Index.cshtml">
       <publishTime>09/26/2013 13:09:32</publishTime>
@@ -715,7 +715,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>09/26/2013 13:09:32</publishTime>
     </File>
     <File Include="Views/Home/Grid.cshtml">
-      <publishTime>10/02/2013 13:01:10</publishTime>
+      <publishTime>02/10/2013 13:01:10</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>09/26/2013 13:09:32</publishTime>
@@ -736,7 +736,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>11/29/2013 09:59:31</publishTime>
     </File>
     <File Include="Views/Propiedades/Index.cshtml">
-      <publishTime>10/03/2013 13:30:05</publishTime>
+      <publishTime>03/10/2013 13:30:05</publishTime>
     </File>
     <File Include="Views/Propietarios/Create.cshtml">
       <publishTime>09/26/2013 13:09:32</publishTime>
@@ -754,7 +754,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>09/26/2013 13:09:32</publishTime>
     </File>
     <File Include="Views/Public/Buscar.cshtml">
-      <publishTime>12/12/2013 12:08:19</publishTime>
+      <publishTime>01/22/2014 11:58:01</publishTime>
     </File>
     <File Include="Views/Public/Contactar.cshtml">
       <publishTime>11/28/2013 14:51:53</publishTime>
@@ -769,10 +769,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>09/26/2013 13:09:32</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>11/29/2013 14:37:32</publishTime>
+      <publishTime>12/12/2013 12:33:18</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutPublic.cshtml">
-      <publishTime>11/12/2013 13:43:32</publishTime>
+      <publishTime>01/22/2014 12:46:46</publishTime>
     </File>
     <File Include="Views/Shared/_LoginLayout.cshtml">
       <publishTime>11/20/2013 11:54:04</publishTime>

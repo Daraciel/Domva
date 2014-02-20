@@ -76,6 +76,26 @@
 					<li><a href="@Url.Action("Index")">@ViewRes.SharedStrings.Inicio</a></li>
 					<li><a href="#">@ViewRes.SharedStrings.Nosotros</a></li>
 					<li>@Html.ActionLink(ViewRes.SharedStrings.Propiedades, "Buscar", "Public")
+                        <ul>
+                            <li>Venta
+                                <ul>
+                                    <li>@Html.ActionLink(ViewRes.SharedStrings.Apartamento, "Buscar", "Public", new { tipocompra = "Venta", tipoedif = "Apartamento" })</li>
+                                    <li>@Html.ActionLink(ViewRes.SharedStrings.Bungalow, "Buscar", "Public",new { tipocompra = "Venta", tipoedif = "Bungalow" }, null)</li>
+                                    <li>@Html.ActionLink(ViewRes.SharedStrings.Villa, "Buscar", "Public",new { tipocompra = "Venta", tipoedif = "Villa" }, null)</li>
+                                    <li>@Html.ActionLink(ViewRes.SharedStrings.LocalComercial, "Buscar", "Public",new { tipocompra = "Venta", tipoedif = "Local Comercial" }, null)></li>
+                                    <li>@Html.ActionLink(ViewRes.SharedStrings.Negocio, "Buscar", "Public",new { tipocompra = "Venta", tipoedif = "Negocio" }, null)</li>
+                                </ul>
+                            </li>
+                            <li>Alquiler
+                                <ul>
+                                    <li>@Html.ActionLink(ViewRes.SharedStrings.Apartamento, "Buscar", "Public", new { tipocompra = "Alquiler", tipoedif = "Apartamento" })</li>
+                                    <li>@Html.ActionLink(ViewRes.SharedStrings.Bungalow, "Buscar", "Public",new { tipocompra = "Alquiler", tipoedif = "Bungalow" }, null)</li>
+                                    <li>@Html.ActionLink(ViewRes.SharedStrings.Villa, "Buscar", "Public",new { tipocompra = "Alquiler", tipoedif = "Villa" }, null)</li>
+                                    <li>@Html.ActionLink(ViewRes.SharedStrings.LocalComercial, "Buscar", "Public",new { tipocompra = "Alquiler", tipoedif = "Local Comercial" }, null)></li>
+                                    <li>@Html.ActionLink(ViewRes.SharedStrings.Negocio, "Buscar", "Public",new { tipocompra = "Alquiler", tipoedif = "Negocio" }, null)</li>
+                                </ul>
+                            </li>
+                        </ul>
 						<!--<ul>
 							<li><a href="#">Por Categoría</a>
                                 <ul>

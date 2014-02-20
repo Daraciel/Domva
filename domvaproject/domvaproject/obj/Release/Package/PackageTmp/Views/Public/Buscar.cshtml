@@ -3,6 +3,7 @@
 @{
     Layout = "~/Views/Shared/_LayoutPublic.cshtml";
     
+    
 }
         
 <div class="centercolumn">
@@ -15,22 +16,90 @@
 						<h2 class="widget-title">@ViewRes.SharedStrings.Buscador</h2>
                         
 @using (Html.BeginForm("Buscar", "Public", FormMethod.Get))
+{
+
+    List<SelectListItem> itemsTipoCompra = new List<SelectListItem>();
+
+    itemsTipoCompra.Add(new SelectListItem
     {
+
+        Text = " ",
+        Value = ""
+    });
+    itemsTipoCompra.Add(new SelectListItem
+    {
+        Text = "Venta",
+        Value = "Venta"
+    });
+    itemsTipoCompra.Add(new SelectListItem
+    {
+        Text = "Alquiler",
+        Value = "Alquiler"
+    });
+
+
+    List<SelectListItem> items = new List<SelectListItem>();
+
+    items.Add(new SelectListItem
+    {
+
+        Text = " ",
+        Value = ""
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "Apartamento",
+        Value = "Apartamento"
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "Villa",
+        Value = "Villa"
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "Bungalow",
+        Value = "Bungalow"
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "Local Comercial",
+        Value = "Local Comercial"
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "Negocio",
+        Value = "Negocio"
+    });
+    
+    List<SelectListItem> itemsLoc = new List<SelectListItem>();
+
+    itemsLoc.Add(new SelectListItem
+    {
+        
+        Text = " ",
+        Value = ""
+    });
+    itemsLoc.AddRange(Model.GetPropiedades());
        <fieldset class="filtering">
          <!-- <legend>Filtrado de propiedades </legend> -->
            <ul>
+               <li><b>@ViewRes.SharedStrings.Poblacion:</b>@Html.DropDownListFor(model => model.Localidad, itemsLoc)</li>
+               <li></li>
+               <li><b>@ViewRes.SharedStrings.TipoCompra:</b>@Html.DropDownListFor(model => model.TipoCompra, itemsTipoCompra)</li>
+               <li><b>@ViewRes.SharedStrings.TipoPropiedad:</b>@Html.DropDownListFor(model => model.TipoEdif, items)</li>
                <li><b>@ViewRes.SharedStrings.PMin:</b>@Html.TextBoxFor(model => model.PrecioMin, new { size = 10 })</li>
                <li><b>@ViewRes.SharedStrings.PMax:</b>@Html.TextBoxFor(model => model.PrecioMax, new { size = 10 })</li>
                <li><b>M2 @ViewRes.SharedStrings.Min:</b>@Html.TextBoxFor(model => model.M2Min, new { size = 6 })</li>
                <li><b>@ViewRes.SharedStrings.Cantidad @ViewRes.SharedStrings.Dormitorios:</b>@Html.TextBoxFor(model => model.CantDorms, new { size = 2 })</li>
                <li><b>@ViewRes.SharedStrings.Cantidad @ViewRes.SharedStrings.Banos:</b>@Html.TextBoxFor(model => model.CantBanyos, new { size = 2 })</li>
                <li><b>@ViewRes.SharedStrings.DMar @ViewRes.SharedStrings.Max:</b>@Html.TextBoxFor(model => model.DistMar, new { size = 4 })</li>
-               <li><b>@ViewRes.SharedStrings.Piscina?</b>@Html.CheckBoxFor(model => model.Piscina)</li>
-               <li><b>@ViewRes.SharedStrings.Vistas?</b>@Html.CheckBoxFor(model => model.VistaMar)</li>
-               <li><b>@ViewRes.SharedStrings.Terraza?</b>@Html.CheckBoxFor(model => model.Terraza)</li>
-               <li><b>@ViewRes.SharedStrings.Garage?</b>@Html.CheckBoxFor(model => model.Garage)</li>
-               <li><b>@ViewRes.SharedStrings.Ascensor?</b>@Html.CheckBoxFor(model => model.Ascensor)</li>
-               <li><b>@ViewRes.SharedStrings.Aire?</b>@Html.CheckBoxFor(model => model.Aire)</li>
+               <li><b>@ViewRes.SharedStrings.Piscina </b>@Html.CheckBoxFor(model => model.Piscina)</li>
+               <li><b>@ViewRes.SharedStrings.Vistas </b>@Html.CheckBoxFor(model => model.VistaMar)</li>
+               <li><b>@ViewRes.SharedStrings.Terraza </b>@Html.CheckBoxFor(model => model.Terraza)</li>
+               <li><b>@ViewRes.SharedStrings.Garage </b>@Html.CheckBoxFor(model => model.Garage)</li>
+               <li><b>@ViewRes.SharedStrings.Ascensor </b>@Html.CheckBoxFor(model => model.Ascensor)</li>
+               <li><b>@ViewRes.SharedStrings.Aire </b>@Html.CheckBoxFor(model => model.Aire)</li>
            </ul>
           <div>
              <input type="submit" value="@ViewRes.SharedStrings.Filtrar" />
